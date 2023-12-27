@@ -1,0 +1,2 @@
+export { CollapseCorenLogo } from './logos';
+

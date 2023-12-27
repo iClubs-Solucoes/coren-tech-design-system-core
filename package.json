@@ -1,0 +1,89 @@
+{
+  "name": "@iclubs-packages/design-system-coren",
+  "description": "Coren design-system",
+  "private": false,
+  "version": "1.0.0",
+  "main": "./dist/design-system-boilerplate.cjs",
+  "module": "./dist/design-system-boilerplate.mjs",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/design-system-boilerplate.mjs",
+      "require": "./dist/design-system-boilerplate.cjs",
+      "types": "./dist/components/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run --coverage --silent",
+    "test-visible": "vitest run --coverage",
+    "check-coverage": "node ./scripts/check-coverage.js",
+    "prepublishOnly": "yarn test-visible && yarn check-coverage",
+    "lint": "eslint --ext .ts,.tsx .",
+    "lint-fix": "eslint --fix --ext .ts,.tsx .",
+    "format": "prettier --write .",
+    "new:component": "plop --plopfile ./generators/plopfile.js component",
+    "storybook": "storybook dev -p 6006"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-imask": "^7.3.0",
+    "styled-components": "^6.0.7",
+    "vite-plugin-svgr": "^4.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.3.1",
+    "@storybook/addon-interactions": "7.3.1",
+    "@storybook/addon-links": "7.3.1",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/addon-styling": "^1.3.6",
+    "@storybook/blocks": "7.3.1",
+    "@storybook/builder-vite": "^7.6.6",
+    "@storybook/react": "7.3.1",
+    "@storybook/react-vite": "7.3.1",
+    "@storybook/testing-library": "0.2.0",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^20.4.9",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.0.11",
+    "@types/styled-components": "^5.1.34",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-istanbul": "^1.1.0",
+    "dts-bundle-generator": "^8.0.1",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-storybook": "^0.6.13",
+    "jsdom": "^22.1.0",
+    "node-fetch": "^3.3.2",
+    "plop": "^3.1.2",
+    "prettier": "^3.0.1",
+    "react-dom": "^18.2.0",
+    "storybook": "7.3.1",
+    "storybook-react-context": "^0.6.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.6.2",
+    "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.6.4",
+    "vite-tsconfig-paths": "^4.2.2",
+    "vitest": "^0.33.0"
+  }
+}

@@ -1,0 +1,1 @@
+export { coordinatesComponent } from './coordinatesComponent';

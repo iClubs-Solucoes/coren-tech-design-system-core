@@ -1,0 +1,15 @@
+import { MouseEventHandler, ReactElement } from 'react';
+
+export type ButtonProps = {
+  children?: string | ReactElement;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+} & ButtonStyleProps;
+
+export type ButtonStyleProps = {
+  type?: 'button' | 'submit' | 'reset';
+  onlyIcon?: boolean;
+  buttonTheme?: 'primary' | 'secondary' | 'third' | 'fourth';
+  icon?: ReactElement;
+  disabledBtn?: boolean;
+  border?: boolean;
+};
