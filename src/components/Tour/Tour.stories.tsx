@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Tour } from './Tour';
 
 export default {
-  title: 'components/Tour',
+  title: 'Components/Tour',
   component: Tour,
 } as Meta<typeof Tour>;
 

@@ -4,7 +4,7 @@ import { SearchIcon } from 'common/assets/icons';
 import { Button } from './Button';
 
 export default {
-  title: 'Components/Button',
+  title: 'Primitives/Button',
   component: Button,
   onClick: { action: 'clicked' },
 } as Meta<typeof Button>;

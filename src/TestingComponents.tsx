@@ -1,4 +1,3 @@
-import { Component } from '@iclubs-packages/design-system-boilerplate';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -12,9 +11,5 @@ const Container = styled.div`
 `;
 
 export function TestingComponents() {
-  return (
-    <Container>
-      <Component text="Test your component here" />
-    </Container>
-  );
+  return <Container>{/**Test */}</Container>;
 }

@@ -1,39 +1,15 @@
 import { BoxTailIcon } from 'common/assets/icons';
 import { colors, font } from 'common/styles';
-import { shadow } from 'common/styles/theme';
-import { Button } from 'components';
+import { Button } from 'primitives';
 import styled, { css } from 'styled-components';
 
 import { VisualizationDetailsStyleProps } from './types';
 
 const modifier = {
-  open: () => css`
-    right: 0rem;
-    box-shadow: ${shadow.drawer};
-  `,
-
   progressBar: (progress: number) => css`
     width: ${progress}%;
   `,
 };
-
-export const Container = styled.div<VisualizationDetailsStyleProps>`
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  transition: all 0.5s ease-out;
-  width: 64rem;
-  height: 100%;
-  padding: 8rem 5.6rem 5.6rem 5.6rem;
-  right: -64rem;
-  top: 0;
-  background-color: ${colors.neutral.white1};
-  z-index: 2;
-
-  ${({ open }) => css`
-    ${!!open && modifier.open()}
-  `}
-`;
 
 export const Header = styled.div`
   margin-bottom: 6.4rem;

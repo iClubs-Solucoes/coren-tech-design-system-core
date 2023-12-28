@@ -12,7 +12,7 @@ import { Search } from './Search/Search';
 import { Trigger } from './Trigger/Trigger';
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Primitives/Dropdown',
   component: Dropdown,
 } as Meta<typeof Dropdown>;
 

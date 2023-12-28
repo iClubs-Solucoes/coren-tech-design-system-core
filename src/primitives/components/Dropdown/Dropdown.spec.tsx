@@ -8,12 +8,12 @@ import { Field } from './Field';
 import { Item } from './Item';
 import { Menu } from './Menu';
 import { Trigger } from './Trigger';
-import { DropdownMenuProps } from './types';
+import { DropdownProps } from './types';
 
-function Wrapper({ ...dropdownMenuProps }: DropdownMenuProps) {
+function Wrapper({ ...DropdownProps }: DropdownProps) {
   return (
     <ScrollProvider>
-      <Dropdown {...dropdownMenuProps} />
+      <Dropdown {...DropdownProps} />
     </ScrollProvider>
   );
 }

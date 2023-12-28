@@ -1,5 +1,5 @@
 import { Tour } from 'components';
-import { Navbar } from 'primitives/components/Navbar/Navbar';
+import { Navbar } from 'primitives';
 
 import * as S from './styles';
 import { VisualizationDetailsProps } from './types';

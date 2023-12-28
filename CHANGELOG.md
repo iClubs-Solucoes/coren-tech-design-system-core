@@ -1,14 +1,6 @@
 # Change Log
 
-All notable changes to the "@iclubs-packages/design-system" project will be documented in this file.
-
-## [0.0.1] - 2023-01-18
-
-- Update all packages to the latest versions (update to vite 4.x)
-
-## [0.0.1] - 2022-09-08
-
-- Update all packages to the latest versions (update to vite 3.x)
+All notable changes to the "@iclubs-packages/design-system-coren" project will be documented in this file.
 
 ## [0.0.0] - 2022-03-28
 

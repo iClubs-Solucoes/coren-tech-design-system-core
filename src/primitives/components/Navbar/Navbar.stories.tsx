@@ -4,7 +4,7 @@ import { ScrollProvider } from 'hooks';
 import { Navbar } from './Navbar';
 
 export default {
-  title: 'Containers/Navbar',
+  title: 'Primitives/Navbar',
   component: Navbar,
 } as Meta<typeof Navbar>;
 

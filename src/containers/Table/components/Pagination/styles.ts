@@ -1,5 +1,5 @@
 import { colors, font } from 'common/styles';
-import { Button } from 'components';
+import { Button } from 'primitives';
 import styled, { css } from 'styled-components';
 
 import { PaginationStyleProps } from './types';
