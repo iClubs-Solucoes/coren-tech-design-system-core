@@ -61,7 +61,7 @@
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.3.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "@vitest/coverage-istanbul": "^1.1.0",
+    "@vitest/coverage-istanbul": "^0.34.1",
     "dts-bundle-generator": "^8.0.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
