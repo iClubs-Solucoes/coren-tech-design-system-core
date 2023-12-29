@@ -10,17 +10,17 @@ export function List({
   ...styleProps
 }: ListProps) {
   const renderItem = useCallback(
-    (children: ReactElement) => {
-      return cloneElement(children, {
-        ...children.props,
+    (c: ReactElement) => {
+      return cloneElement(c, {
+        ...c.props,
         open,
         onClick: () => {
-          children.props?.onClick?.();
-          if (!children.props?.noopClose) onCloseDropdown?.(false);
+          c.props?.onClick?.();
+          if (!c.props?.noopClose) onCloseDropdown?.(false);
         },
       });
     },
-    [open],
+    [open, children],
   );
 
   const render = useCallback(() => {

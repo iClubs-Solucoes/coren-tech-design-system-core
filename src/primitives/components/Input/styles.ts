@@ -1,4 +1,4 @@
-import { colors, font } from 'common/styles';
+import { colors } from 'common/styles';
 import styled from 'styled-components';
 
 export const Container = styled.input`

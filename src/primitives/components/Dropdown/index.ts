@@ -14,8 +14,6 @@ export { Menu } from './Menu';
 
 export type { DropdownProps } from './types';
 
-export type { MenuProps, MenuStyleProps } from './Menu';
-
 export type { ArrowProps, ArrowStyleProps } from './Arrow';
 
 export type { FieldProps, FieldStyleProps } from './Field';

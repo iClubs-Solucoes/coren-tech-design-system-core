@@ -6,7 +6,6 @@ import { Button } from './Button';
 export default {
   title: 'Primitives/Button',
   component: Button,
-  onClick: { action: 'clicked' },
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = function Template(args) {
