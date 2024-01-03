@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
@@ -42,7 +44,8 @@ export default defineConfig({
         'src/components/**/index.ts',
         'src/containers/**/index.ts',
         'src/primitives/components/**/index.ts',
-
+        'src/hooks',
+        'src/contexts',
         'src/index.ts',
       ],
       exclude: ['**/*.spec.tsx/**', '**/*.stories.tsx/**'],
