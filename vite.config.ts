@@ -65,6 +65,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

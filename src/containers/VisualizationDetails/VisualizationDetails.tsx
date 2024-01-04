@@ -13,9 +13,10 @@ export function VisualizationDetails({
   progress,
   onCancel,
   onOk,
+  ...navbarProps
 }: VisualizationDetailsProps) {
   return (
-    <Navbar>
+    <Navbar {...navbarProps}>
       <>
         <S.Header>
           <S.Title>{title}</S.Title>

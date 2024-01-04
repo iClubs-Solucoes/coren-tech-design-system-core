@@ -1,4 +1,7 @@
+import { useToast } from 'hooks/Toast';
 import styled from 'styled-components';
+
+import { Button } from './index';
 
 const Container = styled.div`
   width: 100%;
@@ -11,5 +14,21 @@ const Container = styled.div`
 `;
 
 export function TestingComponents() {
-  return <Container>{/**Test */}</Container>;
+  const { toast } = useToast();
+  return (
+    <Container>
+      <Button
+        buttonTheme="primary"
+        onClick={() => {
+          toast({
+            title: 'TituloA',
+            description: 'subtitle',
+            themes: 'success',
+          });
+        }}
+      >
+        Clique
+      </Button>
+    </Container>
+  );
 }
