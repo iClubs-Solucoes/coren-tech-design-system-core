@@ -10,11 +10,13 @@ export type ToastProviderProps = {
 
 export type IToastContext = {
   toast: ToastFunction;
+  removeToast: (index?: number) => void;
 };
 
 export type ToastMessage = {
   title: string;
   description?: string;
+  id?: number;
   show?: boolean;
   location?: ToastLocation;
   themes: ToastTheme;

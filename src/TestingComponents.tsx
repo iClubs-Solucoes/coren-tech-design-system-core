@@ -25,6 +25,12 @@ export function TestingComponents() {
             description: 'subtitle',
             themes: 'success',
           });
+          toast({
+            title: 'TituloA',
+            description: 'subtitle',
+            themes: 'success',
+            location: 'bottom',
+          });
         }}
       >
         Clique

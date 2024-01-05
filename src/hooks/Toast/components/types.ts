@@ -1,11 +1,13 @@
-import { ToastLocation, ToastTheme } from '../types';
+import { ToastLocation, ToastMessage, ToastTheme } from '../types';
 
 export type ToastProps = {
   title: string;
+  id?: number;
   themes: ToastTheme;
   location?: ToastLocation;
   closingTime?: number;
   description?: string;
+  onClose?: () => void;
 };
 
 export type ToastStyleProps = {
@@ -15,4 +17,8 @@ export type ToastStyleProps = {
 
 export type ToastListStyleProps = {
   location?: ToastLocation;
+};
+
+export type ToastContainerProps = {
+  toasts: ToastMessage[];
 };
