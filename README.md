@@ -32,13 +32,13 @@ Install the dependencies
 With yarn:
 
 ```
-yarn add @iclubs-packages/design-system-core
+yarn add @iclubs-packages/design-system
 ```
 
 With npm:
 
 ```
-npm i @iclubs-packages/design-system-core
+npm i @iclubs-packages/design-system
 ```
 
 Next step you need implement the CoreProvider in your App.tsx:
@@ -56,7 +56,7 @@ export function App() {
 Import the components, containers and so on. And after, use it. For example:
 
 ```
-import { Card } from "@iclubs-packages/design-system-core";
+import { Card } from "@iclubs-packages/design-system";
 
 export function App() {
   return <Card>Hello README!</Card>;
