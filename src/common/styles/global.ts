@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { colors, font } from './theme';
 
-export default createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;

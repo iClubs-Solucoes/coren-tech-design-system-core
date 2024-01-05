@@ -12,9 +12,9 @@ import { createPortal } from 'react-dom';
 import { useScroll } from 'hooks';
 
 import * as S from './styles';
-import { DropdownMenuProps } from './types';
+import { DropdownProps } from './types';
 
-export function Dropdown({ children, disabled, onChange }: DropdownMenuProps) {
+export function Dropdown({ children, disabled, onChange }: DropdownProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   const [open, setOpen] = useState(false);

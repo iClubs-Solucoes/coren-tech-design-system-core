@@ -23,6 +23,7 @@ export function Trigger({
   return (
     <S.Container
       disabled={disabled}
+      data-testid="trigger-dropdown"
       onMouseEnter={e => {
         if (!disabled && hover && !!onMouseEnter) onMouseEnter(e);
       }}

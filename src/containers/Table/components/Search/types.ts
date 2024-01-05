@@ -1,4 +1,4 @@
-import { InputProps } from 'components/Input/types';
+import { InputProps } from 'primitives';
 
 export type SearchProps = object & SearchStyleProps & InputProps;
 

@@ -1,5 +1,7 @@
-import { Component } from '@iclubs-packages/design-system-boilerplate';
+import { useToast } from 'hooks/Toast';
 import styled from 'styled-components';
+
+import { Button } from './index';
 
 const Container = styled.div`
   width: 100%;
@@ -12,9 +14,27 @@ const Container = styled.div`
 `;
 
 export function TestingComponents() {
+  const { toast } = useToast();
   return (
     <Container>
-      <Component text="Test your component here" />
+      <Button
+        buttonTheme="primary"
+        onClick={() => {
+          toast({
+            title: 'TituloA',
+            description: 'subtitle',
+            themes: 'success',
+          });
+          toast({
+            title: 'TituloA',
+            description: 'subtitle',
+            themes: 'success',
+            location: 'bottom',
+          });
+        }}
+      >
+        Clique
+      </Button>
     </Container>
   );
 }

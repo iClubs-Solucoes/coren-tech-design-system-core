@@ -10,3 +10,7 @@ export {
   Pagination,
   Search,
 } from './Table';
+
+export type * from './Table';
+
+export type * from './VisualizationDetails';

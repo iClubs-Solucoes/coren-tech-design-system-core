@@ -1,8 +1,8 @@
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 import type { Preview } from '@storybook/react';
 import React from 'react';
-import GlobalStyles from '../src/common/styles/global';
-import { CoreProvider } from '../src/context';
+import {GlobalStyles} from '../src/common/styles/global';
+import { CoreProvider } from '../src/contexts';
 
 const preview: Preview = {
   parameters: {

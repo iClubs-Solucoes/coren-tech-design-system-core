@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { InputProps } from 'components/Input/types';
+import { InputProps } from 'primitives';
 
 export type TextFieldProps = {
   label?: string;

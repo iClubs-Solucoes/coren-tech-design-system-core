@@ -1,5 +1,5 @@
 import { Tour } from 'components';
-import { Navbar } from 'primitives/components/Navbar/Navbar';
+import { Navbar } from 'primitives';
 
 import * as S from './styles';
 import { VisualizationDetailsProps } from './types';
@@ -13,13 +13,19 @@ export function VisualizationDetails({
   progress,
   onCancel,
   onOk,
+  ...navbarProps
 }: VisualizationDetailsProps) {
   return (
-    <Navbar>
+    <Navbar {...navbarProps}>
       <>
         <S.Header>
           <S.Title>{title}</S.Title>
-          {progress !== undefined && <S.BarProgress progress={progress} />}
+          {progress !== undefined && (
+            <S.BarProgress
+              data-testid="progress-bar-visualization-details"
+              progress={progress}
+            />
+          )}
         </S.Header>
         <S.Content>{children}</S.Content>
         <S.Footer>

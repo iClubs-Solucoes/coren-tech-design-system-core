@@ -27,7 +27,6 @@ This project was built with:
 To use this design system library you must follow the following steps:
 
 
-
 Install the dependencies
 
 With yarn:
@@ -42,7 +41,17 @@ With npm:
 npm i @iclubs-packages/design-system
 ```
 
+Next step you need implement the CoreProvider in your App.tsx:
 
+```
+export function App() {
+  return (
+      <CoreProvider>
+        {/*Rest of your application*/}
+      </CoreProvider>
+  );
+}
+```
 
 Import the components, containers and so on. And after, use it. For example:
 

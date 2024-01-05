@@ -1,9 +1,11 @@
 /// <reference types="vitest" />
+
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import packageJson from './package.json';
+import coverageConfig from './coverage.json' assert { type: 'json' }; 
 import svgr from 'vite-plugin-svgr';
 
 const getPackageName = () => {
@@ -27,22 +29,6 @@ const fileName = {
 const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
 
 export default defineConfig({
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: getPackageNameCamelCase(),
-      formats,
-      fileName: format => fileName[format],
-    },
-    rollupOptions: {
-      external: ['react', 'styled-components'],
-      output: {
-        globals: {
-          react: 'React',
-        },
-      },
-    },
-  },
   plugins: [
     dts({
       insertTypesEntry: true,
@@ -58,7 +44,8 @@ export default defineConfig({
         'src/components/**/index.ts',
         'src/containers/**/index.ts',
         'src/primitives/components/**/index.ts',
-
+        'src/hooks',
+        'src/contexts',
         'src/index.ts',
       ],
       exclude: ['**/*.spec.tsx/**', '**/*.stories.tsx/**'],
@@ -78,4 +65,32 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/index.ts'),
+      name: getPackageNameCamelCase(),
+      formats,
+      fileName: format => fileName[format],
+    },
+    rollupOptions: {
+      external: ['react', 'styled-components'],
+      output: {
+        globals: {
+          react: 'React',
+        },
+      },
+    },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    testTimeout: 60 * 1000,
+    setupFiles: './src/setupTests.ts',
+    include: ['./src/**/*.spec.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    coverage: {
+      ...coverageConfig as any
+    },
+  }
+
 });

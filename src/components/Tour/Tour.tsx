@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
 
 import { coordinatesComponent } from 'common/utils';
 import { useScroll } from 'hooks';
@@ -53,7 +53,7 @@ export function Tour({
         {children}
       </S.ChildrenPosition>
       {!!focus &&
-        ReactDOM.createPortal(
+        createPortal(
           <>
             <S.Container
               coordinates={coordinates}

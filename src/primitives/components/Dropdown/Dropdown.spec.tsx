@@ -6,14 +6,15 @@ import { Arrow } from './Arrow';
 import { Dropdown } from './Dropdown';
 import { Field } from './Field';
 import { Item } from './Item';
+import { List } from './List';
 import { Menu } from './Menu';
 import { Trigger } from './Trigger';
-import { DropdownMenuProps } from './types';
+import { DropdownProps } from './types';
 
-function Wrapper({ ...dropdownMenuProps }: DropdownMenuProps) {
+function Wrapper({ ...DropdownProps }: DropdownProps) {
   return (
     <ScrollProvider>
-      <Dropdown {...dropdownMenuProps} />
+      <Dropdown {...DropdownProps} />
     </ScrollProvider>
   );
 }
@@ -62,14 +63,13 @@ describe('<Dropdown />', () => {
     render(
       <Wrapper onChange={handleChange}>
         <Trigger>
-          <Field>
-            <p>Open here</p>
-            <Arrow />
-          </Field>
+          <Field>Open here</Field>
         </Trigger>
         <Menu>
-          <Item>Item 1</Item>
-          <Item>Item 2</Item>
+          <List>
+            <Item noopClose>Item 1</Item>
+            <Item>Item 2</Item>
+          </List>
         </Menu>
       </Wrapper>,
     );
@@ -81,16 +81,25 @@ describe('<Dropdown />', () => {
     fireEvent.click(fieldWithTrigger);
 
     expect(screen.getByText('Item 1')).toBeTruthy();
+    fireEvent.click(screen.getByText('Item 1'));
+    fireEvent.click(screen.getByText('Item 2'));
+
     expect(handleChange).toBeCalled();
   });
 
-  it('should hover work with trigger', () => {
+  it('should hover work with triggers', () => {
+    const handleMouseEnter = vi.fn();
+    const handleMouseLeave = vi.fn();
+
     render(
       <Wrapper onChange={handleChange}>
-        <Trigger hover>
+        <Trigger
+          hover
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <Field>
             <p>Open here</p>
-            <Arrow />
           </Field>
         </Trigger>
         <Menu>
@@ -100,14 +109,27 @@ describe('<Dropdown />', () => {
       </Wrapper>,
     );
 
-    const fieldWithTrigger = screen.getByText(/Open here/i);
+    const fieldWithTrigger = screen.getByTestId('trigger-dropdown');
 
-    expect(fieldWithTrigger).toBeTruthy();
     fireEvent.mouseEnter(fieldWithTrigger);
+    fireEvent.mouseLeave(fieldWithTrigger);
+  });
+
+  it("should hover don't work with triggers", () => {
+    render(
+      <Trigger disabled>
+        <Field>
+          <p>Open here</p>
+        </Field>
+      </Trigger>,
+    );
+
+    fireEvent.click(screen.getByTestId('trigger-dropdown'));
+    fireEvent.mouseLeave(screen.getByTestId('trigger-dropdown'));
   });
 
   describe('Hover', () => {
-    it('should hover work with trigger', () => {
+    it('should hover work with triggers', () => {
       render(
         <Wrapper onChange={handleChange}>
           <Trigger hover>
@@ -126,7 +148,9 @@ describe('<Dropdown />', () => {
       const fieldWithTrigger = screen.getByText(/Open here/i);
 
       expect(fieldWithTrigger).toBeTruthy();
+
       fireEvent.mouseEnter(fieldWithTrigger);
+
       expect(screen.queryByText('Item 1')).toBeTruthy();
     });
 
@@ -187,5 +211,47 @@ describe('<Dropdown />', () => {
     });
 
     expect(screen.queryByText('Item 1')).not.toBeTruthy();
+  });
+
+  describe('Render with strings', () => {
+    it('should render Menu', () => {
+      render(<Menu open>Menu</Menu>);
+
+      expect(screen.getByText(/Menu/i)).toBeTruthy();
+    });
+
+    it('should render List', () => {
+      render(<List open>List</List>);
+
+      expect(screen.getByText(/List/i)).toBeTruthy();
+    });
+
+    it('should render List with one item', () => {
+      render(
+        <List open>
+          <Item>Item 1</Item>
+        </List>,
+      );
+
+      expect(screen.getByText(/Item 1/i)).toBeTruthy();
+    });
+
+    it('should render List without items to render', () => {
+      render(
+        <List open>
+          {[].map((item: string) => (
+            <Item key={item}>{item}</Item>
+          ))}
+        </List>,
+      );
+
+      expect(screen.queryByText(/Item 1/i)).not.toBeTruthy();
+    });
+
+    it('should render Trigger', () => {
+      render(<Trigger open>Trigger</Trigger>);
+
+      expect(screen.queryByText(/Trigger/i)).toBeTruthy();
+    });
   });
 });

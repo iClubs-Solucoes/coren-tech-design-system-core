@@ -8,11 +8,10 @@ import { Field } from './Field/Field';
 import { Item } from './Item/Item';
 import { List } from './List/List';
 import { Menu } from './Menu/Menu';
-import { Search } from './Search/Search';
 import { Trigger } from './Trigger/Trigger';
 
 export default {
-  title: 'Components/Dropdown',
+  title: 'Primitives/Dropdown',
   component: Dropdown,
 } as Meta<typeof Dropdown>;
 
@@ -87,7 +86,6 @@ const TemplateWithSearch: StoryFn<typeof Dropdown> = function Template(args) {
               width: '40rem',
             }}
           >
-            <Search noopClose placeholder="Placeholder" />
             <List>
               <Item hover>Iteawdadwadm</Item>
               <Item hover>Item</Item>
