@@ -22,6 +22,8 @@ export function DatePicker() {
         selected={startDate}
         onChange={date => setStartDate(date)}
         showYearDropdown
+        showTimeSelect
+        timeIntervals={1}
       />
     </S.DatePickerContainer>
   );
