@@ -9,7 +9,10 @@ export { TextField } from './TextField';
 export { Tabs } from './Tabs';
 
 export type * from './Select';
-export type * from './Tabs';
-export type * from './Tour';
-export type * from './TextField';
 export type * from './Switch';
+export type * from './Tabs';
+export type * from './TextField';
+export type * from './Tour';
+
+export { DatePicker } from './DatePicker';
+
