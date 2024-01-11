@@ -21,6 +21,7 @@ export function DatePicker() {
         locale="ptBR"
         selected={startDate}
         onChange={date => setStartDate(date)}
+        showYearDropdown
       />
     </S.DatePickerContainer>
   );
