@@ -7,7 +7,7 @@ import * as S from './styles';
 
 registerLocale('ptBR', ptBR);
 
-import 'react-datepicker/dist/react-datepicker.css';
+import './styles.css';
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
@@ -24,6 +24,7 @@ export function DatePicker() {
         showYearDropdown
         showTimeSelect
         timeIntervals={1}
+        minDate={new Date()}
       />
     </S.DatePickerContainer>
   );

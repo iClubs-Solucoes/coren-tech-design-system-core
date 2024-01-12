@@ -1,0 +1,55 @@
+@import 'react-datepicker/dist/react-datepicker.css';
+
+.react-datepicker__month-container {
+  width: 50rem;
+  background-color: pink;
+  color: #969eac;
+  font-size: 1rem;
+  font-family: 'Mulish';
+  
+  display: flex;
+  flex-direction: column;
+
+  .react-datepicker__month {
+    padding: 1rem 0;
+  }
+
+  /* .react-datepicker__month-text {
+    display: inline-block;
+    width: 5rem;
+    margin: 0.5rem;
+    font-size: 1rem;
+    padding: 0.2rem;
+    &:hover {
+      background-color: #534cea;
+    }
+  }  */
+  
+  .react-datepicker__current-month {
+    display: inline;
+    padding-left: 3rem;
+  }
+
+  .react-datepicker__header__dropdown {
+    display: inline;
+    padding-right: 3rem;
+  }
+
+  .react-datepicker__day-names {
+    padding-top: 0.5rem;
+  }
+
+  .react-datepicker__month {
+    width: fit-content;
+    align-self: end;
+  }
+
+  .react-datepicker__week {
+    width: fit-content;
+  }
+
+  .react-datepicker__year-dropdown {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
