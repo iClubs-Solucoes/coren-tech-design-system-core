@@ -54,9 +54,11 @@ const modifiers = {
         ${IconCSS}
       }
 
-      ${StepContainer}:not(:hover)  & {
+      ${StepContainer}:not(:hover) & {
         margin-right: 0;
       }
+
+      transition: margin-right 1s ease;
     `,
   },
 };
