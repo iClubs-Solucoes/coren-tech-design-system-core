@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-onboarding",
     "@storybook/addon-styling",
+    "storybook-addon-pseudo-states"
   ],
   framework: {
     name: "@storybook/react-vite",
