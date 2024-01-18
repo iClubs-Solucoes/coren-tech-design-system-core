@@ -1,4 +1,4 @@
-import { Tour } from 'components';
+import { ProgressBar, Tour } from 'components';
 import { Navbar } from 'primitives';
 
 import * as S from './styles';
@@ -20,12 +20,7 @@ export function VisualizationDetails({
       <>
         <S.Header>
           <S.Title>{title}</S.Title>
-          {progress !== undefined && (
-            <S.BarProgress
-              data-testid="progress-bar-visualization-details"
-              progress={progress}
-            />
-          )}
+          <ProgressBar progress={progress} />
         </S.Header>
         <S.Content>{children}</S.Content>
         <S.Footer>
