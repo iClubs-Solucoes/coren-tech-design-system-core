@@ -15,3 +15,5 @@ export type * from './TextField';
 export type * from './Switch';
 
 export { ProgressBar } from './ProgressBar';
+
+export { Checkbox } from './Checkbox';
