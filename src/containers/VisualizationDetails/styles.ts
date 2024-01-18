@@ -5,12 +5,6 @@ import styled, { css } from 'styled-components';
 
 import { VisualizationDetailsStyleProps } from './types';
 
-const modifier = {
-  progressBar: (progress: number) => css`
-    width: ${progress}%;
-  `,
-};
-
 export const Header = styled.div`
   margin-bottom: 6.4rem;
 `;
@@ -21,29 +15,6 @@ export const Title = styled.h2`
   font: ${font.presets.primaryTitles};
   color: ${colors.neutral.gray5};
   margin-bottom: 3.2rem;
-`;
-
-export const BarProgress = styled.div<VisualizationDetailsStyleProps>`
-  display: flex;
-  width: 100%;
-  border-radius: 0.8rem;
-  height: 0.8rem;
-  background-color: ${colors.neutral.gray1};
-  transition: width 0.5s;
-
-  &::before {
-    content: ' ';
-    display: inline-block;
-
-    border-radius: 0.8rem;
-    height: 0.8rem;
-    background-color: ${colors.neutral.gray5};
-    transition: width 0.5s;
-    width: 0rem;
-    ${({ progress }) => css`
-      ${!!progress && modifier.progressBar(progress)}
-    `}
-  }
 `;
 
 export const Footer = styled.div`
