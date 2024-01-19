@@ -14,7 +14,7 @@ export const StepContainer = styled.div<StepContainerStyleProps>`
   cursor: pointer;
   width: fit-content;
 
-  ${({ currentStep }) => css`
+  ${({ currentStep, disabled }) => css`
     ${!currentStep &&
     css`
       &:not(:hover) {
@@ -26,6 +26,11 @@ export const StepContainer = styled.div<StepContainerStyleProps>`
         max-width: unset;
         max-height: unset;
       }
+    `}
+
+    ${disabled &&
+    css`
+      cursor: not-allowed;
     `}
   `}
 `;
