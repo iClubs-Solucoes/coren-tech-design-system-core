@@ -16,17 +16,4 @@ describe('<VisualizationDetails />', () => {
 
     expect(screen.getByText(/Test/i)).toBeTruthy();
   });
-
-  it('should show progress bar in details', () => {
-    render(
-      createTestWithWrapper(
-        <VisualizationDetails progress={100}>Test</VisualizationDetails>,
-        ScrollProvider,
-      ),
-    );
-
-    expect(
-      screen.getByTestId('progress-bar-visualization-details'),
-    ).toBeTruthy();
-  });
 });

@@ -8,12 +8,8 @@ export { TextField } from './TextField';
 
 export { Tabs } from './Tabs';
 
-export type * from './Select';
-export type * from './Tabs';
-export type * from './Tour';
-export type * from './TextField';
-export type * from './Switch';
-
-export { ProgressBar } from './ProgressBar';
-
 export { Checkbox } from './Checkbox';
+
+export { SkeletonLoading } from './SkeletonLoading';
+
+export { HourglassLoading } from './HourglassLoading';

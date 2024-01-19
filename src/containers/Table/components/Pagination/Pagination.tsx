@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { KeyboardArrowRightIcon } from 'common/assets/icons';
-import { Arrow } from 'primitives';
+import { Dropdown } from 'primitives';
 
 import * as S from './styles';
 import { PaginationProps } from './types';
@@ -56,7 +56,7 @@ export function Pagination({
         onClick={handlePrevious}
         disabledBtn={disabled}
       >
-        <Arrow icon={<KeyboardArrowRightIcon />} direction="top" />
+        <Dropdown.Arrow icon={<KeyboardArrowRightIcon />} direction="top" />
       </S.ButtonPagination>
       <S.Page>{pageNow + 1}</S.Page>
       <S.ButtonPagination
@@ -64,7 +64,7 @@ export function Pagination({
         onClick={handleNext}
         disabledBtn={disabled}
       >
-        <Arrow icon={<KeyboardArrowRightIcon />} direction="bottom" />
+        <Dropdown.Arrow icon={<KeyboardArrowRightIcon />} direction="bottom" />
       </S.ButtonPagination>
     </S.Container>
   );

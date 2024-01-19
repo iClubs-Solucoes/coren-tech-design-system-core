@@ -25,6 +25,7 @@ import EyeIcon from './eye_icon.svg?react';
 import Feedback from './feedback.svg?react';
 import FilterIcon from './filter.svg?react';
 import History from './history.svg?react';
+import HourglassIcon from './hourglass.svg?react';
 import KeyboardArrowRightIcon from './keyboard_arrow_right.svg?react';
 import LessIcon from './less.svg?react';
 import RestrictedEntriesIcon from './lock_person.svg?react';
@@ -70,6 +71,7 @@ export {
   Feedback,
   FilterIcon,
   History,
+  HourglassIcon,
   KeyboardArrowRightIcon,
   LessIcon,
   LogoutIcon,

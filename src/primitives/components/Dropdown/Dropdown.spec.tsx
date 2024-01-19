@@ -2,19 +2,15 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import { ScrollProvider } from 'hooks';
 import { describe, expect, it, vi } from 'vitest';
 
-import { Arrow } from './Arrow';
-import { Dropdown } from './Dropdown';
-import { Field } from './Field';
-import { Item } from './Item';
-import { List } from './List';
-import { Menu } from './Menu';
-import { Trigger } from './Trigger';
-import { DropdownProps } from './types';
+import { Dropdown } from './';
+import { RootProps } from './types';
 
-function Wrapper({ ...DropdownProps }: DropdownProps) {
+const { Root, Arrow, Trigger, Menu, List, Item, Field } = Dropdown;
+
+function Wrapper({ ...RootProps }: RootProps) {
   return (
     <ScrollProvider>
-      <Dropdown {...DropdownProps} />
+      <Root {...RootProps} />
     </ScrollProvider>
   );
 }
