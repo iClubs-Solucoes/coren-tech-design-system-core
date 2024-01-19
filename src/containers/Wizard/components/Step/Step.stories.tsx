@@ -16,6 +16,7 @@ Default.args = {
   name: 'Novo picolé',
   preIcon: '1',
   currentStep: true,
+  disabled: false,
 };
 
 export const Hover = Template.bind({});
@@ -23,6 +24,7 @@ Hover.args = {
   name: 'Novo picolé',
   preIcon: '1',
   currentStep: true,
+  disabled: false,
 };
 Hover.parameters = { pseudo: { hover: true } };
 
@@ -30,6 +32,7 @@ export const NextStep = Template.bind({});
 NextStep.args = {
   name: 'Novo picolé',
   preIcon: '1',
+  disabled: false,
   currentStep: false,
 };
 
@@ -38,5 +41,6 @@ NextStepHover.args = {
   name: 'Novo picolé',
   preIcon: '1',
   currentStep: false,
+  disabled: false,
 };
 NextStepHover.parameters = { pseudo: { hover: true } };

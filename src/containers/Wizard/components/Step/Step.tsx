@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import * as S from './styles';
 import { StepProps } from './types';
 
@@ -11,11 +13,15 @@ export function Step({
   const displayNumber =
     typeof preIcon === 'string' || typeof preIcon === 'number';
 
+  const handleClick = useCallback(() => {
+    if (!disabled) onClick?.();
+  }, [disabled]);
+
   return (
     <S.StepContainer
       currentStep={currentStep}
       disabled={disabled}
-      onClick={onClick}
+      onClick={handleClick}
     >
       {preIcon && displayNumber && (
         <S.PreIcon>
@@ -24,7 +30,9 @@ export function Step({
       )}
 
       {preIcon && !displayNumber && (
-        <S.PreIconContainer>{preIcon}</S.PreIconContainer>
+        <S.PreIconContainer data-testid="wizard-step-pre-icon">
+          {preIcon}
+        </S.PreIconContainer>
       )}
 
       {name && <S.Name currentStep={currentStep}>{name}</S.Name>}
