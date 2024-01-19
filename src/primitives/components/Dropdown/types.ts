@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-export type DropdownProps = {
+export type RootProps = {
   children: ReactElement[];
   onChange?: (value: boolean) => void;
   disabled?: boolean;

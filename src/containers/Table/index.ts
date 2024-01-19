@@ -9,7 +9,3 @@ export {
   Pagination,
   Search,
 } from './components';
-
-export type * from './types';
-
-export type * from './components';

@@ -3,11 +3,11 @@ import { SearchIcon } from 'common/assets/icons';
 import { ScrollProvider } from 'hooks';
 
 import { Arrow } from './Arrow/Arrow';
-import { Dropdown } from './Dropdown';
 import { Field } from './Field/Field';
 import { Item } from './Item/Item';
 import { List } from './List/List';
 import { Menu } from './Menu/Menu';
+import { Root as Dropdown } from './Root';
 import { Trigger } from './Trigger/Trigger';
 
 export default {

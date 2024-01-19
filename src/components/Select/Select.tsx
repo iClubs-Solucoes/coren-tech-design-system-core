@@ -1,5 +1,5 @@
 import { SuspectIcon } from 'common/assets/icons';
-import { Dropdown, Trigger, Menu, Arrow } from 'primitives';
+import { Dropdown } from 'primitives';
 
 import * as S from './styles';
 import { SelectProps } from './types';
@@ -11,15 +11,15 @@ export function Select({
 }: SelectProps) {
   return (
     <S.Container>
-      <Dropdown>
-        <Trigger>
+      <Dropdown.Root>
+        <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
             <SuspectIcon />
             <p>{values.label || values.value}</p>
-            <Arrow />
+            <Dropdown.Arrow />
           </S.FieldSelect>
-        </Trigger>
-        <Menu style={{ minWidth: '17.4rem' }}>
+        </Dropdown.Trigger>
+        <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
           {items.map(({ value, label }) => {
             if (value === values.value) return <></>;
             return (
@@ -32,8 +32,8 @@ export function Select({
               </S.ItemSelect>
             );
           })}
-        </Menu>
-      </Dropdown>
+        </Dropdown.Menu>
+      </Dropdown.Root>
     </S.Container>
   );
 }
