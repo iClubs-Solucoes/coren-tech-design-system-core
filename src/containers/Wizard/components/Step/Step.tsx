@@ -6,7 +6,7 @@ export function Step({ preIcon, name, currentStep, onClick }: StepProps) {
     typeof preIcon === 'string' || typeof preIcon === 'number';
 
   return (
-    <S.StepContainer onClick={onClick}>
+    <S.StepContainer currentStep={currentStep} onClick={onClick}>
       <S.PreIcon>
         {displayNumber && (
           <S.Number currentStep={currentStep}>{preIcon}</S.Number>

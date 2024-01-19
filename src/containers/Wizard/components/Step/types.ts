@@ -13,3 +13,7 @@ export type NameStyleProps = {
 export type NumberStyleProps = {
   currentStep: boolean;
 };
+
+export type StepContainerStyleProps = {
+  currentStep: boolean;
+};

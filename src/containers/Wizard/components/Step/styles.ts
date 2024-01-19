@@ -2,13 +2,32 @@ import { KeyboardArrowRightIcon } from 'common/assets/icons';
 import { colors, font } from 'common/styles';
 import styled, { css } from 'styled-components';
 
-import { NameStyleProps, NumberStyleProps } from './types';
+import {
+  NameStyleProps,
+  NumberStyleProps,
+  StepContainerStyleProps,
+} from './types';
 
-export const StepContainer = styled.div`
+export const StepContainer = styled.div<StepContainerStyleProps>`
   display: flex;
   align-items: center;
   cursor: pointer;
   width: fit-content;
+
+  ${({ currentStep }) => css`
+    ${!currentStep &&
+    css`
+      &:not(:hover) {
+        max-width: 6.4rem;
+        max-height: 4rem;
+      }
+
+      &:hover {
+        max-width: unset;
+        max-height: unset;
+      }
+    `}
+  `}
 `;
 
 export const IconCSS = css`
@@ -78,7 +97,7 @@ export const PreIconContainer = styled.div`
   ${IconCSS}
 `;
 
-export const Number = styled.div<NumberStyleProps>`
+export const Number = styled.span<NumberStyleProps>`
   ${IconCSS}
   font: 600 1.6rem Inter;
   padding: 0.8rem 1.6rem;
@@ -93,4 +112,8 @@ export const NextArrow = styled(KeyboardArrowRightIcon)`
   width: 2.4rem;
   height: 2.4rem;
   flex-shrink: 0;
+
+  > g > path {
+    fill: ${colors.neutral.gray3};
+  }
 `;
