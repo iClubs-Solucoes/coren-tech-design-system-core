@@ -17,10 +17,17 @@ export function Wizard({
   const nextStep = currentStep + 1;
   const blockContinue = steps[nextStep]?.disabled;
 
-  const handleGoToNextStep = useCallback((nextStep: number) => {
-    onChangeStep?.();
-    setCurrentStep(nextStep);
-  }, []);
+  const handleGoToNextStep = useCallback(
+    (nextStep: number) => {
+      const lastStep = steps.length - 1;
+      const goingInexistentStep = nextStep > lastStep;
+
+      if (!goingInexistentStep) setCurrentStep(nextStep);
+
+      onChangeStep?.();
+    },
+    [steps],
+  );
 
   const renderHeader = useCallback(() => {
     return steps.map((steps, index) => {
