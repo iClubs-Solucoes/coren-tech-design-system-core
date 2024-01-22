@@ -117,21 +117,6 @@ describe('<Wizard />', () => {
     expect(onCompletion).not.toBeCalled();
   });
 
-  it('should not go to a inexistent step', async () => {
-    render(<Wizard {...defaultProps} />);
-
-    const index = steps.length - 1;
-    const lastStep = screen.getByText(new RegExp(steps[index].name!, 'i'));
-    fireEvent.click(lastStep);
-
-    handleStepChange.mockClear();
-
-    const continueButton = screen.getByText(/Continuar/i);
-    fireEvent.click(continueButton);
-
-    expect(onChangeStep).not.toBeCalled();
-  });
-
   it('should render a without children step', () => {
     const name = 'Step without Children';
 

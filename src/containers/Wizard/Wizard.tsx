@@ -23,17 +23,10 @@ export function Wizard({
     ? onCompletion
     : () => handleGoToNextStep(currentStep + 1);
 
-  const handleGoToNextStep = useCallback(
-    (nextStep: number) => {
-      const goingInexistentStep = nextStep > lastStep;
-
-      if (!goingInexistentStep) {
-        setCurrentStep(nextStep);
-        onChangeStep?.();
-      }
-    },
-    [lastStep],
-  );
+  const handleGoToNextStep = useCallback((nextStep: number) => {
+    setCurrentStep(nextStep);
+    onChangeStep?.();
+  }, []);
 
   const renderHeader = useCallback(() => {
     return steps.map((steps, index) => {
