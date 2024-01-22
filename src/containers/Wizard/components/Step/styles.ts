@@ -74,7 +74,7 @@ const modifiers = {
       color: ${colors.neutral.gray3};
       font: 800 1.6rem Inter;
 
-      ${StepContainer}:hover > & {
+      ${StepContainer}:hover & {
         ${IconCSS}
       }
 
