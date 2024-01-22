@@ -1,62 +1,111 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { Step, WizardProps } from './types';
 import { Wizard } from './Wizard';
 
-const handleStepChange = vi.fn();
-const handleCancelClick = vi.fn();
-const handleChangeStep = vi.fn();
-
-const steps: Step[] = [
-  {
-    name: 'Novo picolé',
-    children: <p>Nomeie seu picolé</p>,
-    onClick: handleStepChange,
-  },
-  {
-    name: 'Escolha o sabor',
-    children: <p>Chocolate, baunilha ou cereja?</p>,
-    disabled: true,
-    onClick: handleStepChange,
-  },
-];
-
-const defaultProps: WizardProps = {
-  steps,
-  onCancel: handleCancelClick,
-  onChangeStep: handleChangeStep,
-};
-
-const {
-  steps: wizardSteps,
-  onCancel,
-  blockCancel,
-  onChangeStep,
-} = defaultProps;
-
 describe('<Wizard />', () => {
+  const handleStepChange = vi.fn();
+  const handleCancelClick = vi.fn();
+  const handleWizardConclusion = vi.fn();
+
+  const steps: Step[] = [
+    {
+      name: 'Novo picolé',
+      children: <p>Nomeie seu picolé</p>,
+      onClick: handleStepChange,
+    },
+    {
+      name: 'Escolha o sabor',
+      children: <p>Chocolate, baunilha ou cereja?</p>,
+      onClick: handleStepChange,
+    },
+  ];
+
+  const defaultProps: WizardProps = {
+    steps,
+    onCancel: handleCancelClick,
+    onChangeStep: handleStepChange,
+    onCompletion: handleWizardConclusion,
+  };
+
+  const {
+    steps: wizardSteps,
+    onChangeStep,
+    onCancel,
+    onCompletion,
+  } = defaultProps;
+
+  beforeEach(() => {
+    handleStepChange.mockClear();
+    handleWizardConclusion.mockClear();
+  });
+
   it('should render component', () => {
     render(<Wizard {...defaultProps} />);
 
-    for (const step of wizardSteps) {
+    for (const [index, step] of wizardSteps.entries()) {
+      const stepNumber = (index + 1).toString();
+      const stepNumberEl = screen.getByText(new RegExp(stepNumber, 'i'));
+
       const stepName = screen.getByText(new RegExp(step.name!, 'i'));
+
+      expect(stepNumberEl).toBeTruthy();
       expect(stepName).toBeTruthy();
     }
+
+    const firstStep = steps[0];
+
+    const children = (firstStep.children as JSX.Element).props.children;
+    const childrenEl = screen.getByText(new RegExp(children, 'i'));
+
+    const continueButton = screen.getByText(/Continuar/i);
+    const cancelButton = screen.getByText(/Cancelar/i);
+
+    expect(childrenEl).toBeTruthy();
+    expect(continueButton).toBeTruthy();
+    expect(cancelButton).toBeTruthy();
   });
 
-  // it('should handle page change', () => {
-  //   render(<Wizard {...defaultProps} />);
+  it('should handle page change by continue button', () => {
+    render(<Wizard {...defaultProps} />);
 
-  //   const firstStep = screen.getByText(/Nomeie seu picolé/i);
-  //   expect(firstStep).toBeTruthy();
+    const firstStep = steps[0];
+    const secondStep = steps[1];
 
-  //   const continueButton = screen.getByText(/Continuar/i);
-  //   fireEvent.click(continueButton);
+    const firstChildren = (firstStep.children as JSX.Element).props.children;
+    const firstChildrenEl = screen.getByText(new RegExp(firstChildren, 'i'));
 
-  //   const secondStep = screen.getByText(/Chocolate, baunilha ou cereja\?/i);
-  //   expect(secondStep).toBeTruthy();
-  // });
+    expect(firstChildrenEl).toBeTruthy();
+
+    const continueButton = screen.getByText(/Continuar/i);
+    fireEvent.click(continueButton);
+
+    const secondChildren = (secondStep.children as JSX.Element).props.children;
+    const secondChildrenEl = screen.getByText(new RegExp(secondChildren, 'i'));
+
+    expect(secondChildrenEl).toBeTruthy();
+  });
+
+  it('should handle page change by step name on wizard header', () => {
+    render(<Wizard {...defaultProps} />);
+
+    const firstStep = steps[0];
+    const secondStep = steps[1];
+
+    const firstChildren = (firstStep.children as JSX.Element).props.children;
+    const firstChildrenEl = screen.getByText(new RegExp(firstChildren, 'i'));
+
+    expect(firstChildrenEl).toBeTruthy();
+
+    const secondStepName = screen.getByText(new RegExp(secondStep.name!, 'i'));
+    fireEvent.click(secondStepName);
+
+    const secondChildren = (secondStep.children as JSX.Element).props.children;
+    const secondChildrenEl = screen.getByText(new RegExp(secondChildren, 'i'));
+
+    expect(secondChildrenEl).toBeTruthy();
+  });
 
   it('should handle continue click', async () => {
     render(<Wizard {...defaultProps} />);
@@ -64,7 +113,23 @@ describe('<Wizard />', () => {
     const continueButton = screen.getByText(/Continuar/i);
     fireEvent.click(continueButton);
 
-    await waitFor(() => expect(onChangeStep).toBeTruthy(), {});
+    expect(onChangeStep).toBeCalledTimes(1);
+    expect(onCompletion).not.toBeCalled();
+  });
+
+  it('should not go to a inexistent step', async () => {
+    render(<Wizard {...defaultProps} />);
+
+    const index = steps.length - 1;
+    const lastStep = screen.getByText(new RegExp(steps[index].name!, 'i'));
+    fireEvent.click(lastStep);
+
+    handleStepChange.mockClear();
+
+    const continueButton = screen.getByText(/Continuar/i);
+    fireEvent.click(continueButton);
+
+    expect(onChangeStep).not.toBeCalled();
   });
 
   it('should render a without children step', () => {
@@ -87,9 +152,24 @@ describe('<Wizard />', () => {
     render(<Wizard {...defaultProps} />);
 
     const cancelButton = screen.getByText(/Cancelar/i);
-
     fireEvent.click(cancelButton);
 
     expect(onCancel).toBeCalledTimes(1);
+  });
+
+  it('should call onCompletion when continue button is clicked in the last step', () => {
+    render(<Wizard {...defaultProps} />);
+
+    const index = steps.length - 1;
+    const lastStep = screen.getByText(new RegExp(steps[index].name!, 'i'));
+    fireEvent.click(lastStep);
+
+    handleStepChange.mockClear();
+
+    const continueButton = screen.getByText(/Continuar/i);
+    fireEvent.click(continueButton);
+
+    expect(onCompletion).toBeCalledTimes(1);
+    expect(onChangeStep).not.toBeCalled();
   });
 });

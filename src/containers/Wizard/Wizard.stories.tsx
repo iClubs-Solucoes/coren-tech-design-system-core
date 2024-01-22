@@ -39,4 +39,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   steps: steps,
+  onChangeStep: () => console.log('Continue click! Going to next step.'),
+  onCompletion: () => console.log('Finalizando criação do picolé!'),
 };

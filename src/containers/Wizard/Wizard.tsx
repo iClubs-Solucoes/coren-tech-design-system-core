@@ -8,25 +8,31 @@ import { Steps, WizardProps } from './types';
 
 export function Wizard({
   steps,
-  blockCancel,
   onChangeStep,
   onCancel,
+  onCompletion,
 }: WizardProps) {
   const [currentStep, setCurrentStep] = useState(Steps.FIRST);
 
   const nextStep = currentStep + 1;
   const blockContinue = steps[nextStep]?.disabled;
 
+  const lastStep = steps.length - 1;
+  const isLastStep = currentStep === lastStep;
+  const continueClickFunction = isLastStep
+    ? onCompletion
+    : () => handleGoToNextStep(currentStep + 1);
+
   const handleGoToNextStep = useCallback(
     (nextStep: number) => {
-      const lastStep = steps.length - 1;
       const goingInexistentStep = nextStep > lastStep;
 
-      if (!goingInexistentStep) setCurrentStep(nextStep);
-
-      onChangeStep?.();
+      if (!goingInexistentStep) {
+        setCurrentStep(nextStep);
+        onChangeStep?.();
+      }
     },
-    [steps],
+    [lastStep],
   );
 
   const renderHeader = useCallback(() => {
@@ -40,7 +46,7 @@ export function Wizard({
         name,
         preIcon: preIcon || stepNumber,
         currentStep: isCurrentStep,
-        disabled: disabled,
+        disabled,
         onClick: () => handleGoToNextStep(index),
       };
 
@@ -76,18 +82,14 @@ export function Wizard({
       <S.Body>{body}</S.Body>
 
       <S.Footer>
-        <Button
-          buttonTheme="fifth"
-          disabledBtn={blockCancel}
-          onClick={onCancel}
-        >
+        <Button buttonTheme="fifth" onClick={onCancel}>
           Cancelar
         </Button>
 
         <S.SquareButton
           buttonTheme="third"
           disabledBtn={blockContinue}
-          onClick={() => handleGoToNextStep(currentStep + 1)}
+          onClick={continueClickFunction}
         >
           Continuar
         </S.SquareButton>

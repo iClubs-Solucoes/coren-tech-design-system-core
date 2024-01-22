@@ -10,9 +10,9 @@ export type Step = {
 
 export type WizardProps = {
   steps: Step[];
-  blockCancel?: boolean;
-  onCancel?: () => void;
   onChangeStep?: () => void;
+  onCancel?: () => void;
+  onCompletion?: () => void;
 };
 
 export enum Steps {
