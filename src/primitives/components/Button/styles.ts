@@ -93,6 +93,38 @@ const modifier = {
         }
       }
     `,
+    fifth: () => css`
+      padding: 1.2rem 1.6rem;
+      border-radius: 0.8rem;
+      border: 0.1rem solid ${colors.neutral.gray3};
+      background-color: ${colors.neutral.white1};
+      font: ${font.presets.titlesAndLabels};
+
+      *[fill] {
+        transition: all 0.4s ease-out;
+        color: ${colors.neutral.gray5};
+      }
+
+      &:not(:disabled):hover {
+        border: 0.1rem solid ${colors.neutral.gray4};
+        background-color: ${colors.normal.white};
+
+        *[fill] {
+          transition: all 0.4s ease-out;
+          color: ${colors.neutral.gray5};
+        }
+      }
+
+      &:disabled {
+        border: 0.1rem solid ${colors.neutral.gray2};
+        background-color: ${colors.neutral.white1};
+
+        *[fill] {
+          transition: all 0.4s ease-out;
+          color: ${colors.neutral.gray3};
+        }
+      }
+    `,
   },
   onlyIcon: () => css`
     padding: 1.6rem;
