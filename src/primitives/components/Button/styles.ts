@@ -14,7 +14,7 @@ const modifier = {
         color: ${colors.neutral.gray4};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           fill: ${colors.neutral.gray4};
         }
       }
@@ -23,7 +23,7 @@ const modifier = {
       background-color: transparent;
 
       *[fill] {
-        transition: all 0.4s ease-out;
+        transition: fill 0.4s ease-out;
         fill: ${colors.neutral.gray4};
       }
 
@@ -32,7 +32,7 @@ const modifier = {
         color: ${colors.normal.white};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           fill: ${colors.normal.white};
         }
       }
@@ -42,7 +42,7 @@ const modifier = {
       color: ${colors.normal.white};
 
       *[fill] {
-        transition: all 0.4s ease-out;
+        transition: fill 0.4s ease-out;
         fill: ${colors.normal.white};
       }
 
@@ -50,7 +50,7 @@ const modifier = {
         background-color: ${colors.neutral.gray5};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           fill: ${colors.normal.white};
         }
       }
@@ -60,7 +60,7 @@ const modifier = {
         color: ${colors.neutral.gray3};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           color: ${colors.neutral.gray3};
         }
       }
@@ -70,7 +70,7 @@ const modifier = {
       color: ${colors.neutral.gray5};
 
       *[fill] {
-        transition: all 0.4s ease-out;
+        transition: fill 0.4s ease-out;
         color: ${colors.neutral.gray5};
       }
 
@@ -78,7 +78,7 @@ const modifier = {
         background-color: ${colors.neutral.white1};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           color: ${colors.neutral.gray5};
         }
       }
@@ -88,7 +88,7 @@ const modifier = {
         color: ${colors.neutral.gray3};
 
         *[fill] {
-          transition: all 0.4s ease-out;
+          transition: fill 0.4s ease-out;
           color: ${colors.neutral.gray3};
         }
       }
@@ -119,7 +119,7 @@ export const Wrapper = styled.button<ButtonStyleProps>`
   align-items: center;
   padding: 1.05rem 1.6rem;
   border-radius: 6.4rem;
-  transition: all 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
 
   font: ${font.presets.titlesAndLabels};
 

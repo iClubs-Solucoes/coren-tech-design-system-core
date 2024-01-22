@@ -39,7 +39,7 @@ export const ButtonPagination = styled(Button)<PaginationStyleProps>`
   height: 4.8rem;
   border-radius: 0.8rem;
   padding: 1.2rem;
-  transition: all 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
   background-color: ${colors.neutral.gray1};
   cursor: pointer;
 

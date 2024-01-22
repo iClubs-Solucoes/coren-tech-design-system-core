@@ -15,7 +15,7 @@ export const Container = styled.div<NavbarStyleProps>`
   display: flex;
   flex-direction: column;
   position: fixed;
-  transition: all 0.5s ease-out;
+  transition: right 0.5s ease-out;
   width: 64rem;
   height: 100%;
   padding: 8rem 5.6rem 5.6rem 5.6rem;
