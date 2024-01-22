@@ -22,6 +22,7 @@ const steps: Step[] = [
     name: 'Escolha o sabor',
     children: <p style={{ backgroundColor: 'pink' }}>456</p>,
     onClick: () => console.log('Going to next step'),
+    disabled: true,
   },
   {
     name: 'Escolha a embalagem',

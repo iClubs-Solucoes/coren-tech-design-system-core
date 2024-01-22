@@ -1,15 +1,17 @@
 export { VisualizationDetails } from './VisualizationDetails';
 
 export {
-  Table,
-  TableHeader,
-  TableBody,
-  TableCell,
-  TableRow,
-  TableHeaderRow,
   Pagination,
   Search,
+  Table,
+  TableBody,
+  TableCell,
+  TableHeader,
+  TableHeaderRow,
+  TableRow,
 } from './Table';
+
+export * from './Wizard';
 
 export type * from './Table';
 

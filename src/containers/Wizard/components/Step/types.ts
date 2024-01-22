@@ -15,6 +15,6 @@ export type NumberStyleProps = {
 };
 
 export type StepContainerStyleProps = {
-  currentStep: boolean;
+  currentStep?: boolean;
   disabled?: boolean;
 };

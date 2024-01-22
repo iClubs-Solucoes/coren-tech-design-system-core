@@ -19,6 +19,7 @@ export function Wizard({
 
   const lastStep = steps.length - 1;
   const isLastStep = currentStep === lastStep;
+
   const continueClickFunction = isLastStep
     ? onCompletion
     : () => handleGoToNextStep(currentStep + 1);
@@ -49,13 +50,13 @@ export function Wizard({
 
   const renderBody = useCallback(() => {
     return steps.map((step, index) => {
-      const { children } = step;
+      const { name, children } = step;
       const isCurrentStep = index === currentStep;
 
       if (children) {
         return (
-          <Children key={step.name} currentChildren={isCurrentStep}>
-            {step.children}
+          <Children key={name} currentChildren={isCurrentStep}>
+            {children}
           </Children>
         );
       } else {

@@ -6,7 +6,7 @@ import { StepProps } from './types';
 export function Step({
   preIcon,
   name,
-  currentStep,
+  currentStep = true,
   disabled,
   onClick,
 }: StepProps) {

@@ -1,3 +1,3 @@
 export { Wizard } from './Wizard';
 
-export type * from './components';
+export * from './components';
