@@ -11,7 +11,6 @@ describe('<Step />', () => {
     preIcon: '1',
     name: 'Novo picolé',
     onClick: handleStepClick,
-    currentStep: true,
   };
 
   beforeEach(() => handleStepClick.mockClear());
