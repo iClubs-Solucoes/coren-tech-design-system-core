@@ -5,7 +5,7 @@ import * as S from './styles';
 import { SelectItemProps } from './types';
 
 export function SelectItem({
-  value = 'lorem ipsun',
+  value,
   icon,
   label,
   placeholder,
