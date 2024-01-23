@@ -3,13 +3,12 @@ import styled, { css } from 'styled-components';
 import { TriggerProps } from './types';
 
 const modifier = {
-  disabled: () => css`
-    opacity: 0.6;
-  `,
+  disabled: () => css``,
 };
 
 export const Container = styled.div<TriggerProps>`
   display: flex;
+  width: 100%;
   flex-direction: row;
 
   ${({ disabled }) => css`

@@ -26,7 +26,7 @@ export const Container = styled.div<SearchStyleProps>`
   height: 4.8rem;
   width: 100%;
   padding: 1.2rem 1.6rem;
-  transition: all 0.3s ease-in;
+  transition: width 0.3s ease-in;
   max-width: 20rem;
 
   > svg {

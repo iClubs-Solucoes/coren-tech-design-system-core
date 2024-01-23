@@ -74,7 +74,7 @@ export default defineConfig({
       fileName: format => fileName[format],
     },
     rollupOptions: {
-      external: ['react', 'styled-components'],
+      external: ['react','react-dom', 'styled-components'],
       output: {
         globals: {
           react: 'React',
