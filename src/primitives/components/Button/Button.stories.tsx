@@ -15,6 +15,9 @@ const Template: StoryFn<typeof Button> = function Template(args) {
 export const Default = Template.bind({});
 Default.args = {};
 
+export const SecondaryTheme = Template.bind({});
+SecondaryTheme.args = { buttonTheme: 'secondary' };
+
 export const ThirdTheme = Template.bind({});
 ThirdTheme.args = {
   buttonTheme: 'third',
@@ -23,6 +26,11 @@ ThirdTheme.args = {
 export const FourthTheme = Template.bind({});
 FourthTheme.args = {
   buttonTheme: 'fourth',
+};
+
+export const FifthTheme = Template.bind({});
+FifthTheme.args = {
+  buttonTheme: 'fifth',
 };
 
 export const Icon = Template.bind({});
