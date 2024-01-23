@@ -8,7 +8,7 @@ export type ButtonProps = {
 export type ButtonStyleProps = {
   type?: 'button' | 'submit' | 'reset';
   onlyIcon?: boolean;
-  buttonTheme?: 'primary' | 'secondary' | 'third' | 'fourth';
+  buttonTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
   icon?: ReactElement;
   disabledBtn?: boolean;
   border?: boolean;
