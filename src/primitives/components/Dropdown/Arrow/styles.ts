@@ -32,6 +32,9 @@ const modifier = {
       transform: rotate(0deg);
     `,
   },
+  disabled: () => css`
+    display: none;
+  `,
   open: (direction: ArrowStyleProps['direction']) => css`
     ${animationInvert[direction || 'right']}
   `,
@@ -46,8 +49,9 @@ export const Container = styled.ins<ArrowStyleProps>`
   cursor: pointer;
   transition: transform 0.4s ease-out;
 
-  ${({ direction, open }) => css`
+  ${({ direction, open, disabled }) => css`
     ${!!direction && !open && modifier.direction[direction]}
     ${!!open && modifier.open(direction)}
+    ${!!disabled && modifier.disabled()}
   `}
 `;

@@ -2,14 +2,14 @@
   "name": "@iclubs-packages/design-system",
   "description": "Coren design-system",
   "private": false,
-  "version": "1.0.1",
-  "main": "./dist/design-system-boilerplate.cjs",
-  "module": "./dist/design-system-boilerplate.mjs",
+  "version": "1.0.3",
+  "main": "./dist/design-system.cjs",
+  "module": "./dist/design-system.mjs",
   "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/design-system-boilerplate.mjs",
-      "require": "./dist/design-system-boilerplate.cjs",
+      "import": "./dist/design-system.mjs",
+      "require": "./dist/design-system.cjs",
       "types": "./dist/components/index.d.ts"
     }
   },
@@ -37,6 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@iclubs-packages/design-system": "^1.0.2",
     "react": "^18.2.0",
     "react-imask": "^7.3.0",
     "styled-components": "^6.0.7",

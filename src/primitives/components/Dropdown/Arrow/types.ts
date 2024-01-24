@@ -1,12 +1,13 @@
 import { ReactElement } from 'react';
 
-import { Directions } from 'models';
-
 export type ArrowProps = {
   icon?: ReactElement;
 } & ArrowStyleProps;
 
 export type ArrowStyleProps = {
   direction?: Directions;
+  disabled?: boolean;
   open?: boolean;
 };
+
+export type Directions = 'top' | 'left' | 'bottom' | 'right';

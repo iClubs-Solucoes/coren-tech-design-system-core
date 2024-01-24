@@ -59,7 +59,7 @@ export const ButtonTourOk = styled(Button)`
   border-radius: 0.4rem;
   height: 2.4rem;
   background-color: ${colors.neutral.gray2};
-  transition: all 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
 
   &:hover {
     background-color: ${colors.neutral.white1};
@@ -91,7 +91,7 @@ export const ButtonShowPopOver = styled.div<VisualizationDetailsStyleProps>`
   border-radius: 0.8rem;
   background: ${({ disabled }) =>
     disabled ? colors.neutral.gray1 : colors.neutral.gray4};
-  transition: all 0.4s ease-out;
+  transition: background-color 0.4s ease-out;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
 
   ${({ disabled }) => css`

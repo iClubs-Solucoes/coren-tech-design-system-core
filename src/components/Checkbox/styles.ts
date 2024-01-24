@@ -17,7 +17,7 @@ export const Container = styled.div<CheckboxStyleProps>`
   gap: 1rem;
   width: max-content;
   height: 3.2rem;
-  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: background-color 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 
   &:hover {
     background-color: ${colors.neutral.gray1};

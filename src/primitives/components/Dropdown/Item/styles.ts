@@ -25,7 +25,7 @@ export const Container = styled.div<ItemStyleProps>`
   cursor: pointer;
   border-radius: 0.8rem;
 
-  ${({ hover, select }) => css`
+  ${({ hover = true, select }) => css`
     ${!!hover && modifier.hover()}
     ${!!select && modifier.select()}
   `}

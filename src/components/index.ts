@@ -13,3 +13,5 @@ export { Checkbox } from './Checkbox';
 export { SkeletonLoading } from './SkeletonLoading';
 
 export { HourglassLoading } from './HourglassLoading';
+
+export { SelectItem } from './SelectItem';
