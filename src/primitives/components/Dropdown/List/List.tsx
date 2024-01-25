@@ -14,13 +14,14 @@ export function List({
       return cloneElement(c, {
         ...c.props,
         open,
-        onClick: () => {
-          c.props?.onClick?.();
+        onClick: e => {
+          e.stopPropagation();
+          c.props?.onClick?.(e);
           if (!c.props?.noopClose) onCloseDropdown?.(false);
         },
       });
     },
-    [open, children],
+    [open, children, onCloseDropdown],
   );
 
   const render = useCallback(() => {

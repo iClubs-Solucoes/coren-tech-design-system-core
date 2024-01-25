@@ -1,11 +1,12 @@
 import { colors, font } from 'common/styles';
-import { Dropdown } from 'primitives';
+import { Button, Dropdown } from 'primitives';
 import styled from 'styled-components';
 
 export const Container = styled.div``;
 
 export const ItemSelect = styled(Dropdown.Item)`
   padding-left: 1.6rem;
+  cursor: pointer;
 `;
 
 export const Label = styled.p`
@@ -15,6 +16,10 @@ export const Label = styled.p`
 `;
 
 export const Value = styled.p`
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: ${font.sizes.large};
   color: ${colors.neutral.gray5};
 `;
@@ -25,3 +30,19 @@ export const Placeholder = styled.p`
 `;
 
 export const FieldSelect = styled(Dropdown.Field)``;
+
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const ButtonSelectItems = styled(Button).attrs({
+  buttonTheme: 'fifth',
+})`
+  width: 7.4rem;
+  height: 2.4rem;
+  background-color: ${colors.neutral.gray2};
+  color: ${colors.neutral.gray5};
+  margin-left: auto;
+`;

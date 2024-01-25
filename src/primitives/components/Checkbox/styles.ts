@@ -55,4 +55,5 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   text-align: center;
+  cursor: pointer;
 `;

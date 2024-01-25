@@ -17,7 +17,7 @@ export function SelectItem({
     <S.Container>
       <Dropdown.Root disabled={disabled}>
         <Dropdown.Trigger>
-          <S.FieldSelect fieldTheme="select" disabled={disabled}>
+          <S.FieldSelect fieldTheme="field" disabled={disabled}>
             {icon || <SortIcon />}
             <div>
               <S.Label>{label}</S.Label>

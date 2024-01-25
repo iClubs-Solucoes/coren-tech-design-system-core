@@ -15,11 +15,30 @@ const modifier = {
       padding: 0.8rem 1.6rem;
       border-radius: 6.4rem;
     `,
+    field: () => css`
+      height: 5.6rem;
+      width: 100%;
+      background-color: ${colors.neutral.gray1};
+      border-radius: 0.8rem;
+      padding: 1rem 2rem 1rem 2rem;
+      gap: 1.6rem;
+    `,
     select: () => css`
       background-color: ${colors.normal.white};
       color: ${colors.normal.black};
       padding: 0.4rem 0.8rem;
       border-radius: 0.8rem;
+    `,
+    disabled: () => css`
+      p {
+        color: ${colors.neutral.gray2};
+      }
+
+      svg {
+        * {
+          fill: ${colors.neutral.gray3};
+        }
+      }
     `,
   },
 };
@@ -33,8 +52,9 @@ export const Container = styled.div<FieldStyleProps>`
   cursor: pointer;
   color: ${colors.neutral.gray4};
 
-  ${({ fieldTheme }) => css`
+  ${({ fieldTheme, disabled }) => css`
     ${!!fieldTheme && modifier.theme[fieldTheme]}
+    ${!!disabled && modifier.theme.disabled()}
   `}
 
   > p {
