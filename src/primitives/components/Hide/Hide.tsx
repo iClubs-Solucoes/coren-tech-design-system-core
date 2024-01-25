@@ -20,8 +20,12 @@ export function Hide({ passwordInput, onClick }: HideProps) {
 
   return (
     <>
-      {hidden && <S.HiddenIcon onClick={handleHideClick} />}
-      {!hidden && <S.UnhiddenIcon onClick={handleHideClick} />}
+      {hidden && (
+        <S.HiddenIcon data-testid="hidden-icon" onClick={handleHideClick} />
+      )}
+      {!hidden && (
+        <S.UnhiddenIcon data-testid="unhidden-icon" onClick={handleHideClick} />
+      )}
     </>
   );
 }
