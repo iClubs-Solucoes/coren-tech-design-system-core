@@ -7,5 +7,6 @@ export type FieldProps = {
 } & FieldStyleProps;
 
 export type FieldStyleProps = {
-  fieldTheme?: 'primary' | 'secondary' | 'select';
+  fieldTheme?: 'primary' | 'secondary' | 'select' | 'field';
+  disabled?: boolean;
 };

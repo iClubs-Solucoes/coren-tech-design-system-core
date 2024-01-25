@@ -1,6 +1,6 @@
 import { CSSProperties, MouseEventHandler, ReactElement } from 'react';
 
-import { Directions } from 'models';
+import { Directions } from '../Arrow/types';
 
 export type MenuProps = {
   open?: boolean;
