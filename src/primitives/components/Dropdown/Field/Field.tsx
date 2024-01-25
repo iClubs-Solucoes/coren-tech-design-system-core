@@ -3,7 +3,13 @@ import { cloneElement, useCallback } from 'react';
 import * as S from './styles';
 import { FieldProps } from './types';
 
-export function Field({ children, fieldTheme, open, className }: FieldProps) {
+export function Field({
+  children,
+  fieldTheme,
+  open,
+  className,
+  disabled,
+}: FieldProps) {
   const render = useCallback(() => {
     if (typeof children === 'string') return children;
 
@@ -23,7 +29,11 @@ export function Field({ children, fieldTheme, open, className }: FieldProps) {
   }, [children, open]);
 
   return (
-    <S.Container className={className} fieldTheme={fieldTheme}>
+    <S.Container
+      className={className}
+      fieldTheme={fieldTheme}
+      disabled={disabled}
+    >
       {render()}
     </S.Container>
   );
