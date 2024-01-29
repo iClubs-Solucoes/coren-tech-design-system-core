@@ -15,4 +15,11 @@ describe('<TextField />', () => {
 
     expect(screen.getByText(/Error show/i)).toBeTruthy();
   });
+
+  it("should display hide if input's type is password", () => {
+    render(<TextField type="password" />);
+
+    const hide = screen.getByTestId('hidden-icon');
+    expect(hide).toBeTruthy();
+  });
 });

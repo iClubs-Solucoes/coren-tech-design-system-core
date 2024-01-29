@@ -50,7 +50,7 @@ export function Input({
       {...styleProps}
       ref={element => {
         if (inputRef) inputRef.current = element || undefined;
-        return ref;
+        ref.current = element || null;
       }}
       type={type}
       value={valueMask}
