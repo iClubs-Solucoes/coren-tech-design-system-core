@@ -1,14 +1,8 @@
-import {
-  Dispatch,
-  InputHTMLAttributes,
-  KeyboardEvent,
-  MouseEvent,
-  MutableRefObject,
-} from 'react';
+import { Dispatch, KeyboardEvent, MouseEvent, MutableRefObject } from 'react';
 
 import { FactoryOpts } from 'imask/esm/index';
 
-export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+export type InputProps = {
   type?: InputTypes;
   value?: string;
   placeholder?: string;
