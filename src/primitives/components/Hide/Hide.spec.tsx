@@ -8,11 +8,17 @@ import { Hide } from './Hide';
 type PasswordFieldProps = { inputType: 'text' | 'password' };
 
 function PasswordField({ inputType }: PasswordFieldProps) {
-  const ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>();
 
   return (
     <div>
-      <input ref={ref} type={inputType} placeholder="Type your password" />
+      <input
+        ref={element => {
+          if (element) ref.current = element;
+        }}
+        type={inputType}
+        placeholder="Type your password"
+      />
       <Hide passwordInput={ref} />
     </div>
   );
@@ -53,13 +59,14 @@ describe('<Hide />', () => {
   it('should hide', () => {
     render(<Hide onClick={handleHideClick} />);
 
-    const hiddenIcon = screen.getByTestId('hidden-icon');
+    let hiddenIcon: HTMLElement | null = screen.getByTestId('hidden-icon');
     fireEvent.click(hiddenIcon);
 
     let unhiddenIcon: HTMLElement | null = screen.getByTestId('unhidden-icon');
-    fireEvent.click(hiddenIcon);
+    fireEvent.click(unhiddenIcon);
 
-    unhiddenIcon = screen.queryByTestId('hidden-icon');
+    hiddenIcon = screen.queryByTestId('hidden-icon');
+    unhiddenIcon = screen.queryByTestId('unhidden-icon');
 
     expect(hiddenIcon).toBeTruthy();
     expect(unhiddenIcon).not.toBeTruthy();
