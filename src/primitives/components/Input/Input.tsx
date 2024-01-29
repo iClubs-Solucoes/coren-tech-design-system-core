@@ -1,4 +1,4 @@
-import { KeyboardEvent, MutableRefObject, useCallback, useEffect } from 'react';
+import { KeyboardEvent, useCallback, useEffect } from 'react';
 import { useIMask } from 'react-imask';
 
 import * as S from './styles';
@@ -15,6 +15,7 @@ export function Input({
   onClick,
   onKeyDown,
   onKeyEnter,
+  inputRef,
   ...styleProps
 }: InputProps) {
   const {
@@ -47,7 +48,10 @@ export function Input({
   return (
     <S.Container
       {...styleProps}
-      ref={ref as MutableRefObject<HTMLInputElement>}
+      ref={element => {
+        if (inputRef) inputRef.current = element || undefined;
+        ref.current = element || null;
+      }}
       type={type}
       value={valueMask}
       placeholder={placeholder}

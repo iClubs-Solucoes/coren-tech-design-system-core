@@ -1,4 +1,6 @@
-import { Input } from 'primitives';
+import { useRef } from 'react';
+
+import { Hide } from 'primitives';
 
 import * as S from './styles';
 import { TextFieldProps } from './types';
@@ -10,13 +12,21 @@ export function TextField({
   error,
   ...propsInput
 }: TextFieldProps) {
+  const inputRef = useRef<HTMLInputElement>();
+
+  const { disabled, value, type } = propsInput;
+
   return (
-    <S.Container disabled={propsInput.disabled}>
+    <S.Container disabled={disabled}>
       <S.Icon error={error}>{icon}</S.Icon>
       <div>
         <S.Field error={error}>
-          <S.FieldLabel fill={!!propsInput.value}>{label}</S.FieldLabel>
-          <Input {...propsInput} />
+          <S.LabelAndInput>
+            <S.FieldLabel fill={!!value}>{label}</S.FieldLabel>
+            <S.StyledInput inputRef={inputRef} {...propsInput} />
+          </S.LabelAndInput>
+
+          {type === 'password' && <Hide passwordInput={inputRef} />}
         </S.Field>
         {error && <S.LabelErr>{labelErr}</S.LabelErr>}
       </div>

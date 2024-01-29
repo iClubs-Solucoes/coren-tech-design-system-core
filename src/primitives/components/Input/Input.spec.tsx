@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
@@ -13,6 +13,12 @@ function Wrapper() {
   return (
     <Input placeholder="Test" value={value} onChange={handleInputChange} />
   );
+}
+
+function InputContainer() {
+  const ref = useRef();
+
+  return <Input inputRef={ref} />;
 }
 
 describe('<Input />', () => {
@@ -102,5 +108,9 @@ describe('<Input />', () => {
     );
 
     expect(input).toBeTruthy();
+  });
+
+  it('should set a reference if inputRef is passed ', () => {
+    render(<InputContainer />);
   });
 });

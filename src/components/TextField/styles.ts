@@ -1,4 +1,5 @@
 import { colors, font } from 'common/styles';
+import { Input } from 'primitives';
 import styled, { css, keyframes } from 'styled-components';
 
 import { TextFieldStyleProps } from './types';
@@ -101,25 +102,15 @@ export const Icon = styled.div<TextFieldStyleProps>`
 `;
 
 export const Field = styled.div<TextFieldStyleProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0.8rem 1.6rem;
   border-radius: 0.8rem;
   position: relative;
   z-index: 2;
   background-color: ${colors.neutral.gray1};
-
-  > input {
-    background-color: ${colors.neutral.gray1};
-    font-size: ${font.sizes.large};
-    color: ${colors.neutral.gray5};
-    padding: 0;
-
-    &::placeholder {
-      font-size: ${font.sizes.large};
-      color: ${colors.neutral.gray4};
-      opacity: 1;
-    }
-  }
 
   ${({ error }) => css`
     ${!!error && modifier.error()}
@@ -145,4 +136,19 @@ export const LabelErr = styled.div`
   z-index: 0;
 
   animation: ${animationErrorMessage} 0.5s;
+`;
+
+export const LabelAndInput = styled.span``;
+
+export const StyledInput = styled(Input)`
+  background-color: ${colors.neutral.gray1};
+  font-size: ${font.sizes.large};
+  color: ${colors.neutral.gray5};
+  padding: 0;
+
+  &::placeholder {
+    font-size: ${font.sizes.large};
+    color: ${colors.neutral.gray4};
+    opacity: 1;
+  }
 `;
