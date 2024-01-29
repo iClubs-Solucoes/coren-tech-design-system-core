@@ -16,7 +16,7 @@ export function Hide({ passwordInput, onClick }: HideProps) {
 
     if (input && typeIsPassword) input.type = 'text';
     if (input && !typeIsPassword) input.type = 'password';
-  }, []);
+  }, [passwordInput]);
 
   return (
     <>

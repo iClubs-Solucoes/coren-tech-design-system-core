@@ -7,3 +7,5 @@ export { Navbar } from './Navbar';
 export { ProgressBar } from './ProgressBar';
 
 export { Dropdown } from './Dropdown';
+
+export { Hide } from './Hide';

@@ -1,6 +1,6 @@
-import { RefObject } from 'react';
+import { MutableRefObject } from 'react';
 
 export type HideProps = {
-  passwordInput?: RefObject<HTMLInputElement>;
+  passwordInput?: MutableRefObject<HTMLInputElement | undefined>;
   onClick?: () => void;
 };
