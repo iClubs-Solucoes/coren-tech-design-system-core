@@ -18,3 +18,11 @@ Default.args = {
   labelErr: 'Campo obrigatório',
   error: true,
 };
+
+export const Password = Template.bind({});
+Password.args = {
+  value: 'Minha senha 123',
+  label: 'Senha',
+  placeholder: 'Digite sua senha',
+  type: 'password',
+};

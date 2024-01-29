@@ -9,3 +9,5 @@ export { ProgressBar } from './ProgressBar';
 export { Dropdown } from './Dropdown';
 
 export { Checkbox } from './Checkbox';
+
+export { Hide } from './Hide';

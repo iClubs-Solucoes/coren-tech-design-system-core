@@ -1,4 +1,4 @@
-import { Dispatch, KeyboardEvent, MouseEvent } from 'react';
+import { Dispatch, KeyboardEvent, MouseEvent, MutableRefObject } from 'react';
 
 import { FactoryOpts } from 'imask/esm/index';
 
@@ -8,6 +8,7 @@ export type InputProps = {
   placeholder?: string;
   disabled?: boolean;
   mask?: FactoryOpts;
+  inputRef?: MutableRefObject<HTMLInputElement | undefined>;
   onChange?: (value: string) => void;
   onChangeUnmasked?: (value: string) => void;
   onClick?: (e: MouseEvent<Element>) => void;
