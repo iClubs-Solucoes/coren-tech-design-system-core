@@ -15,3 +15,5 @@ export { HourglassLoading } from './HourglassLoading';
 export { SelectItem } from './SelectItem';
 
 export { SelectItems } from './SelectItems';
+
+export { Textarea } from './Textarea';
