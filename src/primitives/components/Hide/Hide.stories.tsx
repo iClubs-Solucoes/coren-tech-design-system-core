@@ -20,11 +20,16 @@ export const NotHidden = Template.bind({});
 NotHidden.args = {};
 
 const PasswordField: StoryFn<typeof Hide> = function PasswordField() {
-  const ref = useRef<HTMLInputElement>(null);
+  const ref = useRef<HTMLInputElement>();
 
   return (
     <div style={{ display: 'flex', gap: '1.6rem' }}>
-      <input ref={ref} type="password" />
+      <input
+        ref={element => {
+          if (element) ref.current = element;
+        }}
+        type="password"
+      />
       <Hide passwordInput={ref} />
     </div>
   );
