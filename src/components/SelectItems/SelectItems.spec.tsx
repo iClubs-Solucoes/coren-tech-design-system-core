@@ -12,7 +12,7 @@ const handleChange = vi.fn();
 describe('<SelectItems />', () => {
   it('should render the component', () => {
     render(
-      createTestWithWrapper(<SelectItems value={['Test']} />, CoreProvider),
+      createTestWithWrapper(<SelectItems values={['Test']} />, CoreProvider),
     );
 
     expect(screen.getByText(/Test/i)).toBeTruthy();
@@ -42,7 +42,7 @@ describe('<SelectItems />', () => {
       createTestWithWrapper(
         <SelectItems
           icon={<SuspectIcon />}
-          value={['Item 2']}
+          values={['Item 2']}
           placeholder="Test"
           items={itemsMock}
           onChange={handleChange}
