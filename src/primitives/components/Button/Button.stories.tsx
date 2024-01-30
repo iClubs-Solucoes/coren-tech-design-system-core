@@ -43,3 +43,13 @@ Icon.args = {
   },
   border: true,
 };
+
+const LoadingTemplate: StoryFn<typeof Button> = function LoadingTemplate(args) {
+  return <Button {...args}></Button>;
+};
+
+export const Loading = LoadingTemplate.bind({});
+Loading.args = {
+  buttonTheme: 'third',
+  loading: true,
+};

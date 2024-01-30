@@ -12,4 +12,9 @@ export type ButtonStyleProps = {
   icon?: ReactElement;
   disabledBtn?: boolean;
   border?: boolean;
+  loading?: boolean;
+};
+
+export type BulletsStyleProps = {
+  bulletTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
 };
