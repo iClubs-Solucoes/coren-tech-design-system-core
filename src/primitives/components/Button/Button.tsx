@@ -27,7 +27,12 @@ export function Button({
     >
       {!!icon && !loading && icon}
       <div>{!onlyIcon && !loading && children}</div>
-      {loading && <S.Bullets bulletTheme={bulletTheme} />}
+      {loading && (
+        <S.Bullets
+          bulletTheme={bulletTheme}
+          data-testid="button-loading-bullets"
+        />
+      )}
     </S.Wrapper>
   );
 }
