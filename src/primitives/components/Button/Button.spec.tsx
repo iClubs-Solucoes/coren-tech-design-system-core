@@ -59,7 +59,7 @@ describe('<Button />', () => {
     expect(handleClick).toBeCalled();
   });
 
-  it('should render loading button', () => {
+  it('should render loading button if loading is informed', () => {
     render(<Button loading={true}></Button>);
 
     const loadingBullets = screen.getByTestId('button-loading-bullets');
