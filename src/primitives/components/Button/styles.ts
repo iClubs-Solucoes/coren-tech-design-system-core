@@ -144,7 +144,7 @@ const modifier = {
     border: 0.1rem solid ${colors.neutral.gray3};
   `,
   loading: () => css`
-    padding: 1.9rem 17.1rem;
+    padding: 2rem 17.1rem 2rem 17.3rem;
     border-radius: 0.8rem;
   `,
 };
