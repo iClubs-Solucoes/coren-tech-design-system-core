@@ -14,3 +14,7 @@ export type ButtonStyleProps = {
   border?: boolean;
   loading?: boolean;
 };
+
+export type BulletsStyleProps = {
+  bulletTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
+};
