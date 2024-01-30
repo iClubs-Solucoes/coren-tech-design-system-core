@@ -201,7 +201,7 @@ const modifier = {
   `,
   loading: () => css`
     padding: 2rem 17.1rem 2rem 17.3rem;
-    border-radius: 0.8rem;
+    flex-shrink: 0;
   `,
 };
 
