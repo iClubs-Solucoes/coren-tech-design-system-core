@@ -10,6 +10,8 @@ export function Button({
   onClick,
   ...styleProps
 }: ButtonProps) {
+  const { loading } = styleProps;
+
   return (
     <S.Wrapper
       data-testid="button-test"
@@ -21,8 +23,9 @@ export function Button({
       onClick={onClick}
       {...styleProps}
     >
-      {!!icon && icon}
-      <div>{!onlyIcon && children}</div>
+      {!!icon && !loading && icon}
+      <div>{!onlyIcon && !loading && children}</div>
+      {loading && <S.Bullets />}
     </S.Wrapper>
   );
 }

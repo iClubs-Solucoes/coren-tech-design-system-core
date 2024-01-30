@@ -1,5 +1,5 @@
 import { colors, font } from 'common/styles';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 import { ButtonStyleProps } from './types';
 
@@ -143,6 +143,10 @@ const modifier = {
   border: () => css`
     border: 0.1rem solid ${colors.neutral.gray3};
   `,
+  loading: () => css`
+    padding: 1.9rem 17.1rem;
+    border-radius: 0.8rem;
+  `,
 };
 
 export const Wrapper = styled.button<ButtonStyleProps>`
@@ -155,11 +159,57 @@ export const Wrapper = styled.button<ButtonStyleProps>`
 
   font: ${font.presets.titlesAndLabels};
 
-  ${({ buttonTheme, border, onlyIcon, icon, disabledBtn }) => css`
+  ${({ buttonTheme, border, onlyIcon, icon, disabledBtn, loading }) => css`
     ${!!onlyIcon && modifier.onlyIcon()}
     ${!!icon && !onlyIcon && modifier.hasIcon()}
     ${!!buttonTheme && modifier.theme[buttonTheme]}
     ${!!disabledBtn && modifier.disabledBtn()}
     ${!!border && modifier.border()};
+    ${!!loading && modifier.loading()}
   `}
+`;
+
+const flashing = () => keyframes`
+  0% {
+    background-color: ${colors.normal.white};
+    transform: scale(1.25);
+  }
+  50%, 100% {
+    background-color: ${colors.neutral.gray3};
+  }
+`;
+
+export const Bullets = styled.div`
+  position: relative;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 1.6rem;
+  background-color: ${colors.normal.white};
+  color: ${colors.normal.white};
+  animation: ${flashing} 750ms infinite linear alternate;
+  animation-delay: 375ms;
+
+  &::before,
+  &::after {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 1.6rem;
+    background-color: ${colors.normal.white};
+    color: ${colors.normal.white};
+    animation: ${flashing} 750ms infinite alternate;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+  }
+
+  &::before {
+    left: -1.5rem;
+    animation-delay: 0ms;
+  }
+
+  &::after {
+    left: 1.5rem;
+    animation-delay: 750ms;
+  }
 `;

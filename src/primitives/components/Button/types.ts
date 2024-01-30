@@ -12,4 +12,5 @@ export type ButtonStyleProps = {
   icon?: ReactElement;
   disabledBtn?: boolean;
   border?: boolean;
+  loading?: boolean;
 };
