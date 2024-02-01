@@ -3,10 +3,11 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
-import tsconfigPaths from 'vite-tsconfig-paths';
-import packageJson from './package.json';
-import coverageConfig from './coverage.json' assert { type: 'json' }; 
 import svgr from 'vite-plugin-svgr';
+import tsconfigPaths from 'vite-tsconfig-paths';
+
+import coverageConfig from './coverage.json' assert { type: 'json' };
+import packageJson from './package.json';
 
 const getPackageName = () => {
   return packageJson.name.split('/')[1];
@@ -47,6 +48,8 @@ export default defineConfig({
         'src/hooks',
         'src/contexts',
         'src/index.ts',
+        'src/common/styles/index.ts',
+        'src/common/styles/theme.ts',
       ],
       exclude: ['**/*.spec.tsx/**', '**/*.stories.tsx/**'],
     }),
@@ -56,16 +59,13 @@ export default defineConfig({
         icon: 24,
         dimensions: true,
         svgoConfig: {
-          plugins: [
-            { moveGroupAttrsToElems: true },
-            { convertPathData: true },
-          ],
+          plugins: [{ moveGroupAttrsToElems: true }, { convertPathData: true }],
         },
       },
     }),
     tsconfigPaths(),
   ],
-  
+
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -74,7 +74,7 @@ export default defineConfig({
       fileName: format => fileName[format],
     },
     rollupOptions: {
-      external: ['react','react-dom', 'styled-components'],
+      external: ['react', 'react-dom', 'styled-components'],
       output: {
         globals: {
           react: 'React',
@@ -89,8 +89,7 @@ export default defineConfig({
     setupFiles: './src/setupTests.ts',
     include: ['./src/**/*.spec.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     coverage: {
-      ...coverageConfig as any
+      ...(coverageConfig as any),
     },
-  }
-
+  },
 });
