@@ -35,6 +35,7 @@ export const colors = {
   },
   neutral: {
     white1: '#F4F4F4',
+    white2: '#F2F2F2',
 
     gray1: '#E8E8E8',
     gray2: '#CDCDCD',
@@ -43,6 +44,7 @@ export const colors = {
     gray5: '#323232',
     gray6: '#DCDCDC',
     gray7: '#565656',
+    gray8: '#B8B8B829',
 
     black1: '#161616',
     black2: '#2A2A2A',
