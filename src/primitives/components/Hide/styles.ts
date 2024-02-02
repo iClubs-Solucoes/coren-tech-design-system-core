@@ -1,4 +1,4 @@
-import { EyeIcon, EyeShowIcon } from 'common/assets/icons';
+import { VisibilityCrossedIcon, VisibilityIcon } from 'common/assets/icons';
 import { colors } from 'common/styles';
 import styled, { css } from 'styled-components';
 
@@ -10,10 +10,10 @@ export const BaseCSS = css`
   cursor: pointer;
 `;
 
-export const HiddenIcon = styled(EyeIcon)`
+export const HiddenIcon = styled(VisibilityCrossedIcon)`
   ${BaseCSS}
 `;
 
-export const UnhiddenIcon = styled(EyeShowIcon)`
+export const UnhiddenIcon = styled(VisibilityIcon)`
   ${BaseCSS}
 `;
