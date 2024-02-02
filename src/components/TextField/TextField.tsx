@@ -29,7 +29,7 @@ export function TextField({
           {type === 'password' && <Hide passwordInput={inputRef} />}
         </S.Field>
 
-        {labelErr && <S.LabelErr>{labelErr}</S.LabelErr>}
+        {error && labelErr && <S.LabelErr>{labelErr}</S.LabelErr>}
       </div>
     </S.Container>
   );
