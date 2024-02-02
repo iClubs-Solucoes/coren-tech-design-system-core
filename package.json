@@ -27,7 +27,7 @@
     "test": "vitest run --coverage --silent",
     "test-visible": "vitest run --coverage",
     "check-coverage": "node ./scripts/check-coverage.js",
-    "prepublishOnly": "yarn test-visible && yarn check-coverage",
+    "prepublishOnly": "yarn build && yarn test-visible && yarn check-coverage",
     "lint": "eslint --ext .ts,.tsx .",
     "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "format": "prettier --write .",
