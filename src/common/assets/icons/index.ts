@@ -40,6 +40,7 @@ import SuspectIcon from './suspect.svg?react';
 import TransactionIcon from './transaction.svg?react';
 import TransactionsIcon from './transactions.svg?react';
 import UserNotFoundIcon from './user_not_found.svg?react';
+import VisibilityCrossedIcon from './visibility_crossed.svg?react';
 import VisibilityIcon from './visibility.svg?react';
 import WalletIcon from './wallet.svg?react';
 
@@ -86,6 +87,7 @@ export {
   TransactionIcon,
   TransactionsIcon,
   UserNotFoundIcon,
+  VisibilityCrossedIcon,
   VisibilityIcon,
   WalletIcon,
 };
