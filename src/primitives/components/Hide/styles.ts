@@ -7,6 +7,7 @@ export const BaseCSS = css`
   height: 2.4rem;
 
   fill: ${colors.neutral.gray4};
+  flex-shrink: 0;
   cursor: pointer;
 `;
 
