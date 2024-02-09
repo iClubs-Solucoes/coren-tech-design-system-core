@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { KeyIcon } from 'common/assets/icons';
 
 import { TextField } from './TextField';
 
@@ -25,4 +26,15 @@ Password.args = {
   label: 'Senha',
   placeholder: 'Digite sua senha',
   type: 'password',
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  value: '@Coren2024',
+  label: 'Senha',
+  placeholder: 'Digite sua senha',
+  type: 'password',
+  success: true,
+  successLabel: 'senha forte e confirmada',
+  icon: <KeyIcon />,
 };
