@@ -39,7 +39,9 @@ export function Button({
   return (
     <>
       {disabledBtn && (
-        <S.NotAllowedContainer>{renderButton()}</S.NotAllowedContainer>
+        <S.NotAllowedContainer data-testid="button-not-allowed-container">
+          {renderButton()}
+        </S.NotAllowedContainer>
       )}
 
       {!disabledBtn && renderButton()}

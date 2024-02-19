@@ -65,4 +65,24 @@ describe('<Button />', () => {
     const loadingBullets = screen.getByTestId('button-loading-bullets');
     expect(loadingBullets).toBeTruthy();
   });
+
+  it('should render not allowed container if disabledBtn is informed', () => {
+    render(<Button disabledBtn></Button>);
+
+    const notAllowedContainer = screen.getByTestId(
+      'button-not-allowed-container',
+    );
+
+    expect(notAllowedContainer).toBeTruthy();
+  });
+
+  it('should not render not allowed container if disabledBtn is not informed', () => {
+    render(<Button></Button>);
+
+    const notAllowedContainer = screen.queryByTestId(
+      'button-not-allowed-container',
+    );
+
+    expect(notAllowedContainer).not.toBeTruthy();
+  });
 });
