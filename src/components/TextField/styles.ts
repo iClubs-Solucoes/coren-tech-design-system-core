@@ -58,8 +58,14 @@ const modifier = {
     border: 0.2rem solid ${colors.soft.orange4};
     animation: ${animationError} 0.5s;
   `,
+  success: () => css`
+    border: 0.2rem solid ${colors.soft.green5};
+  `,
   errorIcon: () => css`
     fill: ${colors.soft.orange4};
+  `,
+  successIcon: () => css`
+    fill: ${colors.soft.green5};
   `,
   disabled: () => css`
     opacity: 0.5;
@@ -94,8 +100,9 @@ export const Icon = styled.div<TextFieldStyleProps>`
     margin-right: 1.6rem;
     path {
       transition: fill 0.5s ease-out;
-      ${({ error }) => css`
+      ${({ error, success }) => css`
         ${!!error && modifier.errorIcon()}
+        ${!!success && modifier.successIcon()}
       `}
     }
   }
@@ -112,8 +119,9 @@ export const Field = styled.div<TextFieldStyleProps>`
   z-index: 2;
   background-color: ${colors.neutral.gray1};
 
-  ${({ error }) => css`
+  ${({ error, success }) => css`
     ${!!error && modifier.error()}
+    ${!!success && modifier.success()}
   `}
 `;
 
@@ -136,6 +144,14 @@ export const LabelErr = styled.div`
   z-index: 0;
 
   animation: ${animationErrorMessage} 0.5s;
+`;
+
+export const SuccessLabel = styled.div`
+  margin-top: 0.8rem;
+  margin-left: 0.8rem;
+  font-size: ${font.sizes.small};
+  color: ${colors.soft.green5};
+  z-index: 0;
 `;
 
 export const LabelAndInput = styled.span``;

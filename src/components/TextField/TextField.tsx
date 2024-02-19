@@ -8,8 +8,10 @@ import { TextFieldProps } from './types';
 export function TextField({
   label,
   labelErr,
+  successLabel,
   icon,
   error,
+  success,
   ...propsInput
 }: TextFieldProps) {
   const inputRef = useRef<HTMLInputElement>();
@@ -18,9 +20,11 @@ export function TextField({
 
   return (
     <S.Container disabled={disabled}>
-      <S.Icon error={error}>{icon}</S.Icon>
+      <S.Icon error={error} success={success}>
+        {icon}
+      </S.Icon>
       <div>
-        <S.Field error={error}>
+        <S.Field error={error} success={success}>
           <S.LabelAndInput>
             <S.FieldLabel fill={!!value}>{label}</S.FieldLabel>
             <S.StyledInput inputRef={inputRef} {...propsInput} />
@@ -30,6 +34,9 @@ export function TextField({
         </S.Field>
 
         {error && labelErr && <S.LabelErr>{labelErr}</S.LabelErr>}
+        {success && successLabel && (
+          <S.SuccessLabel>{successLabel}</S.SuccessLabel>
+        )}
       </div>
     </S.Container>
   );
