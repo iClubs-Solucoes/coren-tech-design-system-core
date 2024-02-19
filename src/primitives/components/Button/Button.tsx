@@ -14,7 +14,7 @@ export function Button({
 
   const bulletTheme = buttonTheme;
 
-  return (
+  const renderButton = () => (
     <S.Wrapper
       data-testid="button-test"
       disabledBtn={disabledBtn}
@@ -34,5 +34,15 @@ export function Button({
         />
       )}
     </S.Wrapper>
+  );
+
+  return (
+    <>
+      {disabledBtn && (
+        <S.NotAllowedContainer>{renderButton()}</S.NotAllowedContainer>
+      )}
+
+      {!disabledBtn && renderButton()}
+    </>
   );
 }

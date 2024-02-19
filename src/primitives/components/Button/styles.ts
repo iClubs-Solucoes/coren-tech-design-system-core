@@ -194,7 +194,6 @@ const modifier = {
   disabledBtn: () => css`
     opacity: 0.4;
     pointer-events: none;
-    cursor: not-allowed;
   `,
   border: () => css`
     border: 0.1rem solid ${colors.neutral.gray3};
@@ -228,4 +227,8 @@ export const Bullets = styled.div<BulletsStyleProps>`
   ${({ bulletTheme }) => css`
     ${bulletTheme && modifier.bullets.theme[bulletTheme]}
   `}
+`;
+
+export const NotAllowedContainer = styled.div<BulletsStyleProps>`
+  cursor: not-allowed;
 `;
