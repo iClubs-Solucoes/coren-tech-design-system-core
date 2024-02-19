@@ -4,6 +4,8 @@ import { describe, expect, it } from 'vitest';
 import { TextField } from './TextField';
 
 describe('<TextField />', () => {
+  const successLabel = 'Está tudo certo!';
+
   it('should render the component', () => {
     render(<TextField placeholder="Test" />);
 
@@ -21,5 +23,29 @@ describe('<TextField />', () => {
 
     const hide = screen.getByTestId('hidden-icon');
     expect(hide).toBeTruthy();
+  });
+
+  it('should display success label if success properties are sent', () => {
+    render(<TextField success={true} successLabel={successLabel} />);
+
+    const label = screen.getByText(new RegExp(successLabel, 'i'));
+
+    expect(label).toBeTruthy();
+  });
+
+  it('should not display success label if success is missing', () => {
+    render(<TextField success={false} successLabel={successLabel} />);
+
+    const label = screen.queryByText(new RegExp(successLabel, 'i'));
+
+    expect(label).not.toBeTruthy();
+  });
+
+  it('should not display success label if it does not exists', () => {
+    render(<TextField success={true} />);
+
+    const label = screen.queryByText(new RegExp(successLabel, 'i'));
+
+    expect(label).not.toBeTruthy();
   });
 });

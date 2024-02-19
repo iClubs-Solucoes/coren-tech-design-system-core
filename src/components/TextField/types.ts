@@ -5,12 +5,14 @@ import { InputProps } from 'primitives/components/Input';
 export type TextFieldProps = {
   label?: string;
   labelErr?: string;
+  successLabel?: string;
   icon?: ReactElement;
 } & TextFieldStyleProps &
   InputProps;
 
 export type TextFieldStyleProps = {
   error?: boolean;
+  success?: boolean;
   fill?: boolean;
   disabled?: boolean;
 };
