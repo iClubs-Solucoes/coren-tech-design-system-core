@@ -2,7 +2,7 @@
   "name": "@iclubs-packages/design-system",
   "description": "Coren design-system",
   "private": false,
-  "version": "1.0.23",
+  "version": "1.0.24",
   "main": "./dist/design-system.cjs",
   "module": "./dist/design-system.mjs",
   "type": "module",
@@ -39,7 +39,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-imask": "7.3.0",
-    "styled-components": "5.3.5",
+    "styled-components": "6.1.8",
     "vite-plugin-svgr": "4.2.0"
   },
   "devDependencies": {
