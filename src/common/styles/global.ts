@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'dynamic-styled-components';
 
 import { colors, font } from './theme';
 

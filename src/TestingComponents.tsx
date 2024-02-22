@@ -1,5 +1,5 @@
+import styled from 'dynamic-styled-components';
 import { useToast } from 'hooks/Toast';
-import styled from 'styled-components';
 
 import { Button } from './index';
 

@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 
 import path from 'path';
-import { defineConfig } from 'vite';
+import { UserConfig, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 import svgr from 'vite-plugin-svgr';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -92,4 +92,12 @@ export default defineConfig({
       ...(coverageConfig as any),
     },
   },
-});
+  resolve: {
+    alias: {
+      'dynamic-styled-components': path.resolve(
+        __dirname,
+        'src/config/dynamic-styled-components',
+      ),
+    },
+  },
+} as UserConfig);

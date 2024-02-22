@@ -1,5 +1,5 @@
 import { colors, font } from 'common/styles';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'dynamic-styled-components';
 
 import { BulletsStyleProps, ButtonStyleProps } from './types';
 

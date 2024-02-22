@@ -1,6 +1,6 @@
 import { colors } from 'common/styles';
+import styled from 'dynamic-styled-components';
 import { Button } from 'primitives';
-import styled from 'styled-components';
 
 export const WizardContainer = styled.div``;
 
