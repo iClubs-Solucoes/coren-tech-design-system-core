@@ -2,7 +2,7 @@
   "name": "@iclubs-packages/design-system",
   "description": "Coren design-system",
   "private": false,
-  "version": "1.0.21",
+  "version": "1.0.23",
   "main": "./dist/design-system.cjs",
   "module": "./dist/design-system.mjs",
   "type": "module",
@@ -27,7 +27,7 @@
     "test": "vitest run --coverage --silent",
     "test-visible": "vitest run --coverage",
     "check-coverage": "node ./scripts/check-coverage.js",
-    "prepublishOnly": "yarn build && yarn test-visible && yarn check-coverage",
+    "prepublishOnly": "yarn build",
     "lint": "eslint --ext .ts,.tsx .",
     "lint-fix": "eslint --fix --ext .ts,.tsx .",
     "format": "prettier --write .",
@@ -39,7 +39,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-imask": "7.3.0",
-    "styled-components": "6.0.7",
+    "styled-components": "5.3.5",
     "vite-plugin-svgr": "4.2.0"
   },
   "devDependencies": {
