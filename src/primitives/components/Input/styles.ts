@@ -1,5 +1,5 @@
 import { colors } from 'common/styles';
-import styled from 'styled-components';
+import styled from 'dynamic-styled-components';
 
 export const Container = styled.input`
   outline: none;

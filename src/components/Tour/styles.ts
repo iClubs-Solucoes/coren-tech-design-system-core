@@ -1,8 +1,8 @@
 import { ArrowTourIcon } from 'common/assets/icons';
 import { coordinatesMock } from 'common/mocks';
 import { colors, font } from 'common/styles';
+import styled, { css } from 'dynamic-styled-components';
 import { Button } from 'primitives';
-import styled, { css } from 'styled-components';
 
 import { TourStyleProps } from './types';
 

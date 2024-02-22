@@ -1,7 +1,7 @@
 import { coordinatesMock } from 'common/mocks';
 import { colors } from 'common/styles';
 import { shadow } from 'common/styles/theme';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'dynamic-styled-components';
 
 import { Adjust, MenuStyleProps } from './types';
 
