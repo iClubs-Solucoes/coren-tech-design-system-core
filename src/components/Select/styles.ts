@@ -1,5 +1,5 @@
+import styled from 'dynamic-styled-components';
 import { Dropdown } from 'primitives';
-import styled from 'styled-components';
 
 export const Container = styled.div``;
 

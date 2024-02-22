@@ -1,4 +1,4 @@
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'dynamic-styled-components';
 
 import { SkeletonLoadingProps } from './types';
 

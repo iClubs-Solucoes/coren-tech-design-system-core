@@ -1,6 +1,6 @@
 import { VisibilityCrossedIcon, VisibilityIcon } from 'common/assets/icons';
 import { colors } from 'common/styles';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'dynamic-styled-components';
 
 export const BaseCSS = css`
   width: 2.4rem;

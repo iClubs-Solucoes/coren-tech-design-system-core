@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { ExecutionProps } from 'styled-components';
+import { ExecutionProps } from 'dynamic-styled-components';
 
 export type CoreProviderProps = {
   children: ReactElement;

@@ -1,6 +1,6 @@
 import { colors, font, ZIndex } from 'common/styles';
 import { shadow } from 'common/styles/theme';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'dynamic-styled-components';
 
 import { ToastListStyleProps, ToastStyleProps } from './types';
 

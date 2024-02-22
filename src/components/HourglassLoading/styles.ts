@@ -1,5 +1,5 @@
 import { font } from 'common/styles';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes } from 'dynamic-styled-components';
 
 const hourglass = keyframes`
     0% {

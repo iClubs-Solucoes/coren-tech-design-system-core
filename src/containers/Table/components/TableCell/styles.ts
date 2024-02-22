@@ -1,5 +1,5 @@
 import { font } from 'common/styles';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'dynamic-styled-components';
 
 import { TableCellStyleProps } from './types';
 

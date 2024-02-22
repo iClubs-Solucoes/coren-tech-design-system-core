@@ -1,6 +1,6 @@
 import { colors, font } from 'common/styles';
+import styled, { css, keyframes } from 'dynamic-styled-components';
 import { Input } from 'primitives';
-import styled, { css, keyframes } from 'styled-components';
 
 import { TextFieldStyleProps } from './types';
 

@@ -1,8 +1,8 @@
 import isPropValid from '@emotion/is-prop-valid';
+import { StyleSheetManager } from 'dynamic-styled-components';
 import { ScrollProvider } from 'hooks';
 import { ToastProvider } from 'hooks/Toast';
 import { theme } from 'index';
-import { StyleSheetManager } from 'styled-components';
 
 import { CoreProviderProps } from './types';
 

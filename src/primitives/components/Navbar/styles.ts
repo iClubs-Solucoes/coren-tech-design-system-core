@@ -1,6 +1,6 @@
 import { colors } from 'common/styles';
 import { shadow } from 'common/styles/theme';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'dynamic-styled-components';
 
 import { NavbarStyleProps } from './types';
 
