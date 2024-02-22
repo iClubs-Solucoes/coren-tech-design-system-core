@@ -92,4 +92,12 @@ export default defineConfig({
       ...(coverageConfig as any),
     },
   },
+  resolve: {
+    alias: {
+      'dynamic-styled-components': path.resolve(
+        __dirname,
+        'src/config/dynamic-styled-components',
+      ),
+    },
+  },
 } as UserConfig);
