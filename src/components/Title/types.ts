@@ -1,3 +1,3 @@
 export type TitleProps = {
-  text: string;
+  children: string;
 };

@@ -5,7 +5,7 @@ import { Title } from './Title';
 
 describe('<Title />', () => {
   it('should render the component', () => {
-    render(<Title text="Test" />);
+    render(<Title>Test</Title>);
 
     expect(screen.getByText(/Test/i)).toBeTruthy();
   });
