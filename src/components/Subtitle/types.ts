@@ -1,3 +1,3 @@
 export type SubtitleProps = {
-  text: string;
+  children: string;
 };

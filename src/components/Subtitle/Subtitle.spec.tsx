@@ -5,7 +5,7 @@ import { Subtitle } from './Subtitle';
 
 describe('<Subtitle />', () => {
   it('should render the component', () => {
-    render(<Subtitle text="Test" />);
+    render(<Subtitle>Test</Subtitle>);
 
     expect(screen.getByText(/Test/i)).toBeTruthy();
   });
