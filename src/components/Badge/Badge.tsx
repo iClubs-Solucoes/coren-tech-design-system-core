@@ -1,6 +1,6 @@
 import * as S from './styles';
 import { BadgeProps } from './types';
 
-export function Badge({ children }: BadgeProps) {
-  return <S.BadgeContainer>{children}</S.BadgeContainer>;
+export function Badge({ children, className }: BadgeProps) {
+  return <S.BadgeContainer className={className}>{children}</S.BadgeContainer>;
 }
