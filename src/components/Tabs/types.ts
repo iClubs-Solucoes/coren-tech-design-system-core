@@ -2,6 +2,7 @@ export type TabsProps = {
   filter?: string;
   iconFilter?: string;
   filters?: string[];
+  className?: string;
   onChange?: (filter: string) => void;
 };
 
