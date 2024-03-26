@@ -1,5 +1,5 @@
 import { colors, font } from 'common/styles';
-import styled from 'styled-components';
+import styled from 'dynamic-styled-components';
 
 export const BadgeContainer = styled.div`
   font: ${font.presets.bodyAndValue};
