@@ -13,5 +13,5 @@ const Template: StoryFn<typeof Title> = function Template(args) {
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Título',
+  children: 'Título',
 };
