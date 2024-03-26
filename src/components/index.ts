@@ -17,3 +17,9 @@ export { SelectItem } from './SelectItem';
 export { SelectItems } from './SelectItems';
 
 export { Textarea } from './Textarea';
+
+export { Title } from './Title';
+
+export { Subtitle } from './Subtitle';
+
+export { Badge } from './Badge';
