@@ -26,7 +26,7 @@ export function Tabs({
   );
 
   return (
-    <S.Container className={className}>
+    <S.Container data-testid="tabs" className={className}>
       <S.Filters filters={filters.length}>
         {filters.map((fItem, index) => (
           <S.Filter
