@@ -13,5 +13,5 @@ const Template: StoryFn<typeof Subtitle> = function Template(args) {
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Subtítulo',
+  children: 'Subtítulo',
 };
