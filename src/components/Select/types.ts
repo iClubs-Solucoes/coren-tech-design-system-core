@@ -6,6 +6,7 @@ export type SelectValues = {
 }[];
 
 export type SelectProps = {
+  className?: string;
   values?: SelectValues[0];
   items?: SelectValues;
   disabled?: boolean;

@@ -4,13 +4,14 @@ import * as S from './styles';
 import { SelectProps } from './types';
 
 export function Select({
+  className,
   values = { value: '', label: '' },
   items = [],
   icon,
   onChange,
 }: SelectProps) {
   return (
-    <S.Container>
+    <S.Container className={className}>
       <Dropdown.Root>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
