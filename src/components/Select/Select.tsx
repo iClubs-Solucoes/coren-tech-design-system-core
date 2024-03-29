@@ -1,4 +1,3 @@
-import { SuspectIcon } from 'common/assets/icons';
 import { Dropdown } from 'primitives';
 
 import * as S from './styles';
@@ -7,6 +6,7 @@ import { SelectProps } from './types';
 export function Select({
   values = { value: '', label: '' },
   items = [],
+  icon,
   onChange,
 }: SelectProps) {
   return (
@@ -14,7 +14,7 @@ export function Select({
       <Dropdown.Root>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
-            <SuspectIcon />
+            <>{icon}</>
             <p>{values.label || values.value}</p>
             <Dropdown.Arrow />
           </S.FieldSelect>
