@@ -13,3 +13,5 @@ export { Checkbox } from './Checkbox';
 export { Hide } from './Hide';
 
 export { Card } from './Card';
+
+export { Criteria } from './Criteria';
