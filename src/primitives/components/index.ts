@@ -11,3 +11,5 @@ export { Dropdown } from './Dropdown';
 export { Checkbox } from './Checkbox';
 
 export { Hide } from './Hide';
+
+export { Card } from './Card';
