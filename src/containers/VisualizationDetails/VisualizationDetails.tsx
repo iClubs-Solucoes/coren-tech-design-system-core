@@ -5,6 +5,7 @@ import * as S from './styles';
 import { VisualizationDetailsProps } from './types';
 
 export function VisualizationDetails({
+  className,
   children,
   title,
   disabledOk,
@@ -16,7 +17,7 @@ export function VisualizationDetails({
   ...navbarProps
 }: VisualizationDetailsProps) {
   return (
-    <Navbar {...navbarProps}>
+    <Navbar className={className} {...navbarProps}>
       <>
         <S.Header>
           <S.Title>{title}</S.Title>

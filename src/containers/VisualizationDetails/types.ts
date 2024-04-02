@@ -4,6 +4,7 @@ import { TourProps } from 'components/Tour/types';
 import { NavbarProps } from 'primitives/components/Navbar/types';
 
 export type VisualizationDetailsProps = {
+  className?: string;
   showAlert?: boolean;
   title?: string;
   children: ReactElement | string;
