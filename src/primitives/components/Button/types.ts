@@ -1,6 +1,7 @@
 import { MouseEventHandler, ReactElement } from 'react';
 
 export type ButtonProps = {
+  className?: string;
   children?: string | ReactElement;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 } & ButtonStyleProps;
