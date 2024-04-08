@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import { describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Tabs } from './Tabs';
 
@@ -12,6 +12,12 @@ describe('<Tabs />', () => {
     filters: ['Todos', 'Pendente', 'Em análise', 'Analisado'],
     onChange: handleChange,
   };
+
+  const { filters, onChange } = defaultProps;
+
+  afterEach(() => {
+    handleChange.mockClear();
+  });
 
   it('should render the component', () => {
     const { container } = render(<Tabs />);
@@ -33,5 +39,29 @@ describe('<Tabs />', () => {
     const tabs = screen.getByTestId('tabs');
 
     expect(tabs.className).includes('123');
+  });
+
+  it('should call onChange when the tab is clicked', () => {
+    render(<Tabs {...defaultProps} />);
+
+    const tabName = filters[1];
+
+    const tab = screen.getByText(new RegExp(tabName, 'i'));
+    fireEvent.click(tab);
+
+    expect(onChange).toBeCalledTimes(1);
+  });
+
+  it('should not call onChange if the tab is disabled', async () => {
+    const disabledFilter = filters[1];
+
+    const disabledFilters = [disabledFilter];
+
+    render(<Tabs {...defaultProps} disabledFilters={disabledFilters} />);
+
+    const tab = await screen.findByText(new RegExp(disabledFilter, 'i'));
+    fireEvent.click(tab);
+
+    expect(onChange).not.toBeCalled();
   });
 });
