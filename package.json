@@ -2,7 +2,7 @@
   "name": "@iclubs-packages/design-system",
   "description": "Coren design-system",
   "private": false,
-  "version": "1.0.40",
+  "version": "1.0.41",
   "main": "./dist/design-system.cjs",
   "module": "./dist/design-system.mjs",
   "type": "module",
