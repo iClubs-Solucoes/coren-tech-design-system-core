@@ -1,4 +1,5 @@
 export type CriteriaProps = {
+  className?: string;
   satisfactionRule?: boolean;
   text?: string;
   displayError?: boolean;

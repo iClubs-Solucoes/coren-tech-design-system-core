@@ -2,6 +2,7 @@ import * as S from './styles';
 import { CriteriaProps } from './types';
 
 export function Criteria({
+  className,
   satisfactionRule,
   text,
   displayError,
@@ -9,7 +10,7 @@ export function Criteria({
   const error = !satisfactionRule;
 
   return (
-    <S.CriteriaContainer>
+    <S.CriteriaContainer className={className}>
       {satisfactionRule && (
         <S.Satisfied data-testid="criteria-satisfied-icon" />
       )}
