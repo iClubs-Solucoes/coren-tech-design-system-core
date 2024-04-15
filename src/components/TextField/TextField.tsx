@@ -6,6 +6,7 @@ import * as S from './styles';
 import { TextFieldProps } from './types';
 
 export function TextField({
+  inputId,
   label,
   labelErr,
   successLabel,
@@ -26,8 +27,11 @@ export function TextField({
       <div>
         <S.Field error={error} success={success}>
           <S.LabelAndInput>
-            <S.FieldLabel fill={!!value}>{label}</S.FieldLabel>
-            <S.StyledInput inputRef={inputRef} {...propsInput} />
+            <S.FieldLabel htmlFor={inputId} fill={!!value}>
+              {label}
+            </S.FieldLabel>
+
+            <S.StyledInput id={inputId} inputRef={inputRef} {...propsInput} />
           </S.LabelAndInput>
 
           {type === 'password' && <Hide passwordInput={inputRef} />}
