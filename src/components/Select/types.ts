@@ -12,4 +12,5 @@ export type SelectProps = {
   disabled?: boolean;
   icon?: ReactElement;
   onChange?: (value: SelectValues[0]) => void;
+  onOpeningDropdownChange?: (open: boolean) => void;
 };

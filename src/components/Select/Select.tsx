@@ -9,10 +9,11 @@ export function Select({
   items = [],
   icon,
   onChange,
+  onOpeningDropdownChange,
 }: SelectProps) {
   return (
     <S.Container className={className}>
-      <Dropdown.Root>
+      <Dropdown.Root onChange={onOpeningDropdownChange}>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
             <>{icon}</>
