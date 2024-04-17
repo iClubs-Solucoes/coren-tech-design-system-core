@@ -1,10 +1,10 @@
-import { {{pascalCase name}}Props } from './types';
 import * as S from './styles';
+import { {{pascalCase name}}Props } from './types';
 
-export function {{pascalCase name}}({ text }: {{pascalCase name}}Props) {
+export function {{pascalCase name}}({ className, text }: {{pascalCase name}}Props) {
   return (
-    <S.Container>
+    <S.{{pascalCase name}}Container className={className}>
       <h1>{text}</h1>
-    </S.Container>
+    </S.{{pascalCase name}}Container>
   );
 }
