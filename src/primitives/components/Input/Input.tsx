@@ -5,6 +5,7 @@ import * as S from './styles';
 import { InputProps } from './types';
 
 export function Input({
+  id,
   type = 'text',
   value = '',
   placeholder,
@@ -48,6 +49,7 @@ export function Input({
   return (
     <S.Container
       {...styleProps}
+      id={id}
       ref={element => {
         if (inputRef) inputRef.current = element || undefined;
         ref.current = element || null;

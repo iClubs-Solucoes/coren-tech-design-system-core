@@ -3,6 +3,7 @@ import { Dispatch, KeyboardEvent, MouseEvent, MutableRefObject } from 'react';
 import { FactoryOpts } from 'imask/esm/index';
 
 export type InputProps = {
+  id?: string;
   type?: InputTypes;
   value?: string;
   placeholder?: string;

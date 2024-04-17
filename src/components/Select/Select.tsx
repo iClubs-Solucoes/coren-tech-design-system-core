@@ -1,20 +1,22 @@
-import { SuspectIcon } from 'common/assets/icons';
 import { Dropdown } from 'primitives';
 
 import * as S from './styles';
 import { SelectProps } from './types';
 
 export function Select({
+  className,
   values = { value: '', label: '' },
   items = [],
+  icon,
   onChange,
+  onOpeningDropdownChange,
 }: SelectProps) {
   return (
-    <S.Container>
-      <Dropdown.Root>
+    <S.Container data-testid="select-container" className={className}>
+      <Dropdown.Root onChange={onOpeningDropdownChange}>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
-            <SuspectIcon />
+            <>{icon}</>
             <p>{values.label || values.value}</p>
             <Dropdown.Arrow />
           </S.FieldSelect>

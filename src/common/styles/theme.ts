@@ -2,7 +2,7 @@ export const shadow = {
   card: '0 0.8rem 1.6rem 0 #B8B8B829',
   toast: '-1.6rem 1.6rem 3.2rem 0 ##E8E8E8',
   drawer: '-1.6rem -1.6rem 8rem 0rem #B8B8B829',
-};
+} as const;
 
 export const colors = {
   normal: {

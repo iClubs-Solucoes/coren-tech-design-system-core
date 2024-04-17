@@ -10,6 +10,7 @@ export function Tabs({
   iconFilter = '',
   filters = [],
   className,
+  disabledFilters,
   onChange,
 }: TabsProps) {
   const refFilter = useRef<HTMLDivElement>(null);
@@ -28,19 +29,24 @@ export function Tabs({
   return (
     <S.Container data-testid="tabs" className={className}>
       <S.Filters filters={filters.length}>
-        {filters.map((fItem, index) => (
-          <S.Filter
-            key={fItem}
-            ref={refFilter}
-            selected={selectedFilter === index}
-            onClick={() => {
-              handleSelectFilter(fItem);
-            }}
-          >
-            {iconFilter === fItem && <FilterIcon />}
-            {fItem}
-          </S.Filter>
-        ))}
+        {filters.map((fItem, index) => {
+          const disabled = disabledFilters?.includes(fItem);
+
+          return (
+            <S.Filter
+              key={fItem}
+              ref={refFilter}
+              selected={selectedFilter === index}
+              disabled={disabled}
+              onClick={() => {
+                if (!disabled) handleSelectFilter(fItem);
+              }}
+            >
+              {iconFilter === fItem && <FilterIcon />}
+              {fItem}
+            </S.Filter>
+          );
+        })}
       </S.Filters>
     </S.Container>
   );

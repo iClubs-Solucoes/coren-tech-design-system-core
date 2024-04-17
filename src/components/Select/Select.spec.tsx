@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { EyeIcon } from 'common/assets/icons';
 import { ScrollProvider } from 'hooks';
 import { describe, expect, it, vi } from 'vitest';
 
@@ -63,5 +64,21 @@ describe('<Select />', () => {
     });
 
     expect(screen.getByText(/Teste 2/i)).toBeTruthy();
+  });
+
+  it('should render with a custom icon', () => {
+    render(<Wrapper icon={<EyeIcon data-testid="eye-icon" />} />);
+
+    const icon = screen.getByTestId(/eye-icon/i);
+
+    expect(icon).toBeTruthy();
+  });
+
+  it('should forward className to the DOM element', () => {
+    render(<Wrapper className="123" />);
+
+    const select = screen.getByTestId(/select-container/i);
+
+    expect(select.className).includes('123');
   });
 });

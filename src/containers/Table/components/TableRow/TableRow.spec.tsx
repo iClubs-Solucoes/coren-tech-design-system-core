@@ -16,4 +16,14 @@ describe('<TableRow />', () => {
     fireEvent.click(screen.getByText('Row Renderizado'));
     expect(handleClick).toBeCalled();
   });
+
+  it('should forward className to the DOM element', () => {
+    const children = 'abc';
+
+    render(<TableRow className="123">{children}</TableRow>);
+
+    const tableRow = screen.getByText(new RegExp(children, 'i'));
+
+    expect(tableRow.className).includes('123');
+  });
 });
