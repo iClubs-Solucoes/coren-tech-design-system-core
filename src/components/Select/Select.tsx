@@ -12,7 +12,7 @@ export function Select({
   onOpeningDropdownChange,
 }: SelectProps) {
   return (
-    <S.Container className={className}>
+    <S.Container data-testid="select-container" className={className}>
       <Dropdown.Root onChange={onOpeningDropdownChange}>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="select">
