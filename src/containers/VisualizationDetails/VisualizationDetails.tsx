@@ -17,7 +17,11 @@ export function VisualizationDetails({
   ...navbarProps
 }: VisualizationDetailsProps) {
   return (
-    <Navbar className={className} {...navbarProps}>
+    <Navbar
+      data-testid="visualization-details-container"
+      className={className}
+      {...navbarProps}
+    >
       <>
         <S.Header>
           <S.Title>{title}</S.Title>
