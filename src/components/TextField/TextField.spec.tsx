@@ -7,7 +7,7 @@ describe('<TextField />', () => {
   const successLabel = 'Está tudo certo!';
 
   it('should render the component', () => {
-    render(<TextField placeholder="Test" />);
+    render(<TextField inputId="text-field" placeholder="Test" />);
 
     expect(screen.getByPlaceholderText(/Test/i)).toBeTruthy();
   });

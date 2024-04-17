@@ -85,4 +85,12 @@ describe('<Button />', () => {
 
     expect(notAllowedContainer).not.toBeTruthy();
   });
+
+  it('should forward className to the DOM element', () => {
+    render(<Button className="123" />);
+
+    const button = screen.getByTestId(/button-test/i);
+
+    expect(button.className).includes('123');
+  });
 });

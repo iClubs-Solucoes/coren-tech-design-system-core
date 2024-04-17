@@ -11,7 +11,12 @@ function Wrapper() {
   const handleInputChange = (newValue: string) => setValue(newValue);
 
   return (
-    <Input placeholder="Test" value={value} onChange={handleInputChange} />
+    <Input
+      id="input"
+      placeholder="Test"
+      value={value}
+      onChange={handleInputChange}
+    />
   );
 }
 

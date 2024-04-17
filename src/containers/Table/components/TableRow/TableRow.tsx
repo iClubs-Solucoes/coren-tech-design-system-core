@@ -2,6 +2,7 @@ import * as S from './styles';
 import { TableRowProps } from './types';
 
 export function TableRow({
+  className,
   children,
   onClick,
   onMouseEnter,
@@ -10,6 +11,7 @@ export function TableRow({
   return (
     <S.Container
       {...styleProps}
+      className={className}
       onMouseEnter={onMouseEnter}
       tabIndex={styleProps.index}
       onClick={e => {

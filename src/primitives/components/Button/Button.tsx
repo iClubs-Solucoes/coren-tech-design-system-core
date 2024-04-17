@@ -2,6 +2,7 @@ import * as S from './styles';
 import { ButtonProps } from './types';
 
 export function Button({
+  className,
   children,
   icon,
   type,
@@ -17,6 +18,7 @@ export function Button({
   const renderButton = () => (
     <S.Wrapper
       data-testid="button-test"
+      className={className}
       disabledBtn={disabledBtn}
       disabled={disabledBtn}
       onlyIcon={onlyIcon}

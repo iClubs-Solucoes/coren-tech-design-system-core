@@ -3,6 +3,14 @@ import styled, { css } from 'dynamic-styled-components';
 
 import { TabsStyleProps } from './types';
 
+const modifier = {
+  filter: {
+    disabled: css`
+      cursor: not-allowed;
+    `,
+  },
+};
+
 export const Container = styled.div`
   width: 100%;
   display: grid;
@@ -35,4 +43,8 @@ export const Filter = styled.div<TabsStyleProps>`
   > svg {
     margin-right: 0.8rem;
   }
+
+  ${({ disabled }) => css`
+    ${disabled && modifier.filter.disabled}
+  `}
 `;
