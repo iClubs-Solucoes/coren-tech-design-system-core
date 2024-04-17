@@ -63,4 +63,12 @@ describe('<Criteria />', () => {
 
     expect(notSatisfiedIcon).toBeTruthy();
   });
+
+  it('should forward className to the DOM element', () => {
+    render(<Criteria className="123" />);
+
+    const criteria = screen.getByTestId(/criteria-container/i);
+
+    expect(criteria.className).includes('123');
+  });
 });

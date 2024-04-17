@@ -10,7 +10,7 @@ export function Criteria({
   const error = !satisfactionRule;
 
   return (
-    <S.CriteriaContainer className={className}>
+    <S.CriteriaContainer data-testid="criteria-container" className={className}>
       {satisfactionRule && (
         <S.Satisfied data-testid="criteria-satisfied-icon" />
       )}
