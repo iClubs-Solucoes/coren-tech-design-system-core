@@ -15,3 +15,5 @@ export { Hide } from './Hide';
 export { Card } from './Card';
 
 export { Criteria } from './Criteria';
+
+export { Attach } from './Attach';
