@@ -23,3 +23,5 @@ export { Title } from './Title';
 export { Subtitle } from './Subtitle';
 
 export { Badge } from './Badge';
+
+export { AttachImage } from './AttachImage';
