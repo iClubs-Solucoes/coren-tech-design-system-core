@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export type VerticalLinkProps = {
   className?: string;
-  linkText?: string;
+  linkText?: 'e' | 'ou';
   childrens: ChildrenToLink[];
 };
 
@@ -14,4 +14,8 @@ export type ChildrenToLink = {
 export type LinkedChildrenStyleProps = {
   havePredecessor: boolean;
   haveSuccessor: boolean;
+};
+
+export type LinkTextStyleProps = {
+  children: string;
 };

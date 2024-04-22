@@ -1,14 +1,14 @@
 import { colors } from 'common/styles';
 import styled, { css } from 'dynamic-styled-components';
 
-import { LinkedChildrenStyleProps } from './types';
+import { LinkTextStyleProps, LinkedChildrenStyleProps } from './types';
 
 const JoinCSS = css`
   content: '';
   position: absolute;
   width: 2.75rem;
   height: 4rem;
-  margin-left: -2rem;
+  margin-left: -1.5rem;
 `;
 
 const modifier = {
@@ -36,6 +36,14 @@ const modifier = {
       border-top-left-radius: 1.6rem;
     }
   `,
+  linkText: {
+    and: css`
+      margin-left: -2.2rem;
+    `,
+    or: css`
+      margin-left: -2.5rem;
+    `,
+  },
 };
 
 export const VerticalLinkContainer = styled.div``;
@@ -56,13 +64,19 @@ export const LinkedChildren = styled.li<LinkedChildrenStyleProps>`
   `}
 `;
 
-export const LinkText = styled.div`
+export const LinkText = styled.div<LinkTextStyleProps>`
   position: absolute;
   padding: 0.4rem 0.4rem 0.533rem 0.3rem;
   background-color: ${colors.neutral.gray6};
   border-radius: 0.8rem;
-  margin: 8rem 1.6rem 0 -2.7rem;
+  margin-top: 8rem;
+  margin-right: 1.6rem;
   font: 400 1.4rem Inter;
   color: ${colors.neutral.gray4};
   z-index: 1;
+
+  ${({ children }) => css`
+    ${children === 'e' && modifier.linkText.and}
+    ${children === 'ou' && modifier.linkText.or}
+  `}
 `;
