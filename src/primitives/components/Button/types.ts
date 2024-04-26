@@ -9,7 +9,7 @@ export type ButtonProps = {
 export type ButtonStyleProps = {
   type?: 'button' | 'submit' | 'reset';
   onlyIcon?: boolean;
-  buttonTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
+  buttonTheme?: ButtonTheme;
   icon?: ReactElement;
   disabledBtn?: boolean;
   border?: boolean;
@@ -19,3 +19,10 @@ export type ButtonStyleProps = {
 export type BulletsStyleProps = {
   bulletTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
 };
+
+export type ButtonTheme =
+  | 'primary'
+  | 'secondary'
+  | 'third'
+  | 'fourth'
+  | 'fifth';
