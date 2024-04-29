@@ -4,23 +4,23 @@ import { Meta, StoryFn } from '@storybook/react';
 import { DatePicker } from './DatePicker';
 
 export default {
-  title: 'Components/DatePicker',
+  title: 'Containers/DatePicker',
   component: DatePicker,
 } as Meta<typeof DatePicker>;
 
 const Template: StoryFn<typeof DatePicker> = function Template(args) {
   const [props, updateArgs] = useArgs();
 
-  const handleDateChange = (date: Date) => {
+  const handleDateChange = (selectedDate: Date) => {
     console.log('Data selecionada:');
-    console.log(date);
-    updateArgs({ ...props, date });
+    console.log(selectedDate);
+    updateArgs({ ...props, selectedDate });
   };
 
-  return <DatePicker {...args} onChange={handleDateChange} />;
+  return <DatePicker {...args} {...props} setSelectedDate={handleDateChange} />;
 };
 
 export const Default = Template.bind({});
 Default.args = {
-  date: new Date(),
+  openingTrigger: <p>Abra o DatePicker</p>,
 };
