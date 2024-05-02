@@ -136,6 +136,37 @@ const modifier = {
           }
         }
       `,
+      sixth: () => css`
+        padding: 0.6rem;
+        border-radius: 0.8rem;
+        background-color: ${colors.normal.white};
+        color: ${colors.neutral.gray4};
+
+        *[fill] {
+          transition: all 0.4s ease-out;
+          color: ${colors.neutral.gray4};
+        }
+
+        &:not(:disabled):hover {
+          border: ${colors.neutral.gray5};
+          background-color: ${colors.neutral.white1};
+
+          *[fill] {
+            transition: all 0.4s ease-out;
+            fill: ${colors.neutral.gray5};
+          }
+        }
+
+        &:disabled {
+          background-color: ${colors.neutral.gray1};
+          color: ${colors.neutral.gray3};
+
+          *[fill] {
+            transition: all 0.4s ease-out;
+            color: ${colors.neutral.gray3};
+          }
+        }
+      `,
     },
   },
   bullets: {
@@ -180,6 +211,7 @@ const modifier = {
       `,
       fourth: () => css``,
       fifth: () => css``,
+      sixth: () => css``,
     },
   },
   onlyIcon: () => css`

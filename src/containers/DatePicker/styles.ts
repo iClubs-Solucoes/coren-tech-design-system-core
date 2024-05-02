@@ -39,7 +39,15 @@ const modifier = {
       cursor: not-allowed;
 
       > p {
+        background-color: inherit !important;
         color: ${colors.neutral.gray2} !important;
+      }
+    `,
+    keyboardSelected: css`
+      background-color: ${colors.neutral.gray1};
+
+      > p {
+        color: ${colors.neutral.gray4};
       }
     `,
   },
@@ -57,10 +65,6 @@ const globalConfigs = css`
 
   .react-datepicker__triangle {
     ${disappearanceCSS}
-  }
-
-  .react-datepicker__tab-loop * {
-    color: ${colors.neutral.gray4};
   }
 `;
 
@@ -82,17 +86,30 @@ const dayStylings = css`
     ${modifier.day.selected}
   }
 
+  .react-datepicker__day--keyboard-selected {
+    ${modifier.day.keyboardSelected}
+  }
+
   .react-datepicker__day:hover {
     ${modifier.day.hover}
   }
 
+  .react-datepicker__day-names {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .react-datepicker__day-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 3.2rem;
     height: 3.2rem;
     font: 600 1.6rem Inter;
     text-align: center;
     vertical-align: middle;
     color: ${colors.neutral.gray4};
+    margin: 0;
   }
 `;
 
@@ -136,4 +153,17 @@ export const DatePickerContainer = styled.div`
     display: flex;
     gap: 0.4rem;
   }
+
+  .react-datepicker-time__caption {
+    font: 600 1.6rem Inter;
+    color: ${colors.neutral.gray5};
+  }
+
+  .react-datepicker-time__input-container .react-datepicker-time__input {
+    margin-left: 0.8rem;
+  }
+`;
+
+export const InputContainer = styled.div`
+  margin-bottom: 0.8rem;
 `;

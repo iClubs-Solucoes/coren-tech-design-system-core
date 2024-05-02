@@ -33,7 +33,8 @@
     "format": "prettier --write .",
     "new:component": "plop --plopfile ./generators/plopfile.js component",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "start-dev": "yarn storybook"
   },
   "license": "MIT",
   "dependencies": {

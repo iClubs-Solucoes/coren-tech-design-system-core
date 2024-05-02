@@ -17,7 +17,13 @@ export type ButtonStyleProps = {
 };
 
 export type BulletsStyleProps = {
-  bulletTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
+  bulletTheme?:
+    | 'primary'
+    | 'secondary'
+    | 'third'
+    | 'fourth'
+    | 'fifth'
+    | 'sixth';
 };
 
 export type ButtonTheme =
@@ -25,4 +31,5 @@ export type ButtonTheme =
   | 'secondary'
   | 'third'
   | 'fourth'
-  | 'fifth';
+  | 'fifth'
+  | 'sixth';

@@ -12,11 +12,12 @@ export function SelectItem({
   items = [],
   disabled,
   onChange,
+  onClick,
 }: SelectItemProps) {
   return (
     <S.Container>
       <Dropdown.Root disabled={disabled}>
-        <Dropdown.Trigger>
+        <Dropdown.Trigger onClick={onClick}>
           <S.FieldSelect fieldTheme="field" disabled={disabled}>
             {icon || <SortIcon />}
             <div>
@@ -27,15 +28,18 @@ export function SelectItem({
             <Dropdown.Arrow disabled={disabled} />
           </S.FieldSelect>
         </Dropdown.Trigger>
-        <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
-          <Dropdown.List>
-            {items.map(item => (
-              <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
-                {item}
-              </S.ItemSelect>
-            ))}
-          </Dropdown.List>
-        </Dropdown.Menu>
+
+        {items.length > 0 && (
+          <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
+            <Dropdown.List>
+              {items.map(item => (
+                <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
+                  {item}
+                </S.ItemSelect>
+              ))}
+            </Dropdown.List>
+          </Dropdown.Menu>
+        )}
       </Dropdown.Root>
     </S.Container>
   );

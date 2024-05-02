@@ -9,6 +9,7 @@ export function Field({
   open,
   className,
   disabled,
+  filled,
 }: FieldProps) {
   const render = useCallback(() => {
     if (typeof children === 'string') return children;
@@ -33,6 +34,7 @@ export function Field({
       className={className}
       fieldTheme={fieldTheme}
       disabled={disabled}
+      filled={filled}
     >
       {render()}
     </S.Container>

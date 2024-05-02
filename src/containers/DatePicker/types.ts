@@ -7,6 +7,8 @@ export type DatePickerProps = ReactDatePickerProps & {
   minDate?: Date;
   maxDate?: Date;
   openingTrigger?: ReactElement | string;
+  timeInputLabel?: string;
   selectedDate: Date;
+  dropdownYears: number[];
   setSelectedDate: (date: Date) => void;
 };

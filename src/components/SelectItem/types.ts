@@ -8,6 +8,7 @@ export type SelectItemProps = {
   disabled?: boolean;
   placeholder?: string;
   onChange?: (value: string) => void;
+  onClick?: () => void;
 };
 
 export type SelectItemStyleProps = {

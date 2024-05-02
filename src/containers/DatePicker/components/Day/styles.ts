@@ -7,6 +7,11 @@ const modifier = {
   notCurrentMonthDay: css`
     color: ${colors.neutral.gray2} !important;
     background-color: ${colors.normal.white} !important;
+
+    &:hover {
+      background-color: ${colors.neutral.gray1} !important;
+      color: ${colors.neutral.gray4} !important;
+    }
   `,
 };
 
