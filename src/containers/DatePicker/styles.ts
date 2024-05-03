@@ -44,6 +44,7 @@ const modifier = {
       }
     `,
     keyboardSelected: css`
+      outline: none;
       background-color: ${colors.neutral.gray1};
 
       > p {
@@ -72,10 +73,6 @@ const dayStylings = css`
   .react-datepicker__day {
     ${modifier.day.common}
     ${modifier.day.default}
-  }
-
-  .react-datepicker__day + .react-datepicker__day {
-    margin-left: 0.4rem;
   }
 
   .react-datepicker__day--disabled {
@@ -115,6 +112,7 @@ const dayStylings = css`
 
 const monthStylings = css`
   .react-datepicker__month-container {
+    width: 100%;
     padding: 1.6rem;
   }
 
@@ -127,6 +125,8 @@ const monthStylings = css`
 `;
 
 export const DatePickerContainer = styled.div`
+  width: 28rem;
+
   ${globalConfigs}
 
   ${dayStylings}
@@ -138,6 +138,7 @@ export const DatePickerContainer = styled.div`
   }
 
   .react-datepicker {
+    width: 100%;
     border: none;
     border-radius: 0.8rem;
     background-color: ${colors.normal.white};
@@ -151,7 +152,7 @@ export const DatePickerContainer = styled.div`
 
   .react-datepicker__week {
     display: flex;
-    gap: 0.4rem;
+    justify-content: space-between;
   }
 
   .react-datepicker-time__caption {

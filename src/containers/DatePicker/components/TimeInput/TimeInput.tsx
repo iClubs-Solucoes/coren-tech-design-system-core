@@ -1,36 +1,30 @@
-import { IMask } from 'react-imask';
+import { MutableRefObject, useRef } from 'react';
+
+import { timeMask } from 'common/mocks';
 
 import * as S from './styles';
 import { TimeInputProps } from './types';
 
-export function TimeInput({ value, onChange }: TimeInputProps) {
+export function TimeInput({
+  className,
+  value,
+  disabled,
+  onChange,
+}: TimeInputProps) {
+  const ref: MutableRefObject<HTMLInputElement | undefined> = useRef();
+
+  const handleInputClick = () => ref.current?.setSelectionRange(0, 0);
+
   return (
     <S.TimeInputContainer
-      // className={className}
-      mask={{
-        overwrite: true,
-        autofix: true,
-        mask: 'HH:MM',
-        blocks: {
-          HH: {
-            mask: IMask.MaskedRange,
-            placeholderChar: 'HH',
-            from: 0,
-            to: 23,
-            maxLength: 2,
-          },
-          MM: {
-            mask: IMask.MaskedRange,
-            placeholderChar: 'MM',
-            from: 0,
-            to: 59,
-            maxLength: 2,
-          },
-        },
-      }}
+      placeholder="00:00"
+      className={className}
+      inputRef={ref}
+      mask={timeMask}
       value={value}
+      disabled={disabled}
+      onClick={handleInputClick}
       onChange={onChange}
-      onChangeUnmasked={onChange}
     />
   );
 }

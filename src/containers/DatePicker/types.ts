@@ -6,9 +6,14 @@ export type DatePickerProps = ReactDatePickerProps & {
   startDate?: Date;
   minDate?: Date;
   maxDate?: Date;
-  openingTrigger?: ReactElement | string;
+  input?: ReactElement | string;
   timeInputLabel?: string;
   selectedDate: Date;
   dropdownYears: number[];
-  setSelectedDate: (date: Date) => void;
+  inputLabel?: string;
+  inputPlaceholder?: string;
+  inputValue?: string;
+  timeInput?: boolean;
+  onChange?: (date: Date) => void;
+  onOpenChange?: (open: boolean) => void;
 };

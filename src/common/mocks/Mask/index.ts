@@ -1,0 +1,1 @@
+export { timeMask } from './time';

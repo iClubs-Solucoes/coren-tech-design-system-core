@@ -1,9 +1,10 @@
-import { ReactElement } from 'react';
+import { ReactElement, RefObject } from 'react';
 
 export type FieldProps = {
   children: ReactElement[] | ReactElement | string;
   className?: string;
   open?: boolean;
+  fieldRef?: RefObject<HTMLDivElement>;
 } & FieldStyleProps;
 
 export type FieldStyleProps = {

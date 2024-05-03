@@ -10,4 +10,5 @@ export const TimeInputContainer = styled(Input)`
   font: ${font.presets.bodyAndValue};
   color: ${colors.neutral.gray4};
   text-align: center;
+  padding-left: 0;
 `;

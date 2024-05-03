@@ -69,7 +69,7 @@ export function Header({
     <S.HeaderContainer className={className}>
       <S.SelectYear
         selectTheme="secondary"
-        menuStyle={{ marginTop: '0.8rem', height: '25.6rem' }}
+        menuStyle={{ marginTop: '0.8rem', maxHeight: '25.6rem' }}
         values={currentDropdownItem}
         items={yearDropdownItems}
         filled={!!selectedDate}

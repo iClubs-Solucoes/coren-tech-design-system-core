@@ -5,6 +5,7 @@ import { FieldProps } from './types';
 
 export function Field({
   children,
+  fieldRef,
   fieldTheme,
   open,
   className,
@@ -31,6 +32,7 @@ export function Field({
 
   return (
     <S.Container
+      ref={fieldRef}
       className={className}
       fieldTheme={fieldTheme}
       disabled={disabled}

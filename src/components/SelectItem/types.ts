@@ -1,6 +1,7 @@
 import { ReactElement } from 'react';
 
 export type SelectItemProps = {
+  className?: string;
   value?: string;
   icon?: ReactElement;
   label?: string;

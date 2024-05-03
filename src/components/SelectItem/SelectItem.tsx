@@ -5,6 +5,7 @@ import * as S from './styles';
 import { SelectItemProps } from './types';
 
 export function SelectItem({
+  className,
   value,
   icon,
   label,
@@ -15,7 +16,7 @@ export function SelectItem({
   onClick,
 }: SelectItemProps) {
   return (
-    <S.Container>
+    <S.Container className={className}>
       <Dropdown.Root disabled={disabled}>
         <Dropdown.Trigger onClick={onClick}>
           <S.FieldSelect fieldTheme="field" disabled={disabled}>

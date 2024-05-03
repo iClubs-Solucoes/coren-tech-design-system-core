@@ -5,6 +5,7 @@ import * as S from './styles';
 import { InputProps } from './types';
 
 export function Input({
+  className,
   id,
   type = 'text',
   value = '',
@@ -49,6 +50,7 @@ export function Input({
   return (
     <S.Container
       {...styleProps}
+      className={className}
       id={id}
       ref={element => {
         if (inputRef) inputRef.current = element || undefined;

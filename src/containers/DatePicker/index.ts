@@ -1,3 +1,8 @@
-export { Day as DatePickerDay, Header as DatePickerHeader } from './components';
+export {
+  Day as DatePickerDay,
+  DefaultInput as DatePickerDefaultInput,
+  Header as DatePickerHeader,
+  TimeInput,
+} from './components';
 
 export { DatePicker } from './DatePicker';
