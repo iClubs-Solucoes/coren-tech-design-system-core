@@ -12,6 +12,10 @@ export function VisualizationDetails({
   labelOk,
   tour,
   progress,
+  okButtonTheme = 'primary',
+  cancelButtonTheme = 'secondary',
+  okLoading,
+  xButton,
   onCancel,
   onOk,
   ...navbarProps
@@ -24,14 +28,18 @@ export function VisualizationDetails({
     >
       <>
         <S.Header>
-          <S.Title>{title}</S.Title>
+          <S.TitleContainer>
+            <S.Title>{title}</S.Title>
+            {xButton && <S.X onClick={onCancel} />}
+          </S.TitleContainer>
+
           <ProgressBar progress={progress} />
         </S.Header>
         <S.Content>{children}</S.Content>
         <S.Footer>
           <S.ButtonFooter
             border
-            buttonTheme="secondary"
+            buttonTheme={cancelButtonTheme}
             onClick={onCancel}
             type="button"
           >
@@ -43,7 +51,8 @@ export function VisualizationDetails({
               <S.ButtonFooter
                 border
                 disabledBtn={disabledOk}
-                buttonTheme="primary"
+                buttonTheme={okButtonTheme}
+                loading={okLoading}
                 onClick={onOk}
               >
                 {labelOk}

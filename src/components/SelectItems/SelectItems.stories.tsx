@@ -4,7 +4,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { SelectItems } from './SelectItems';
 
 export default {
-  title: 'Components/SelectItems',
+  title: 'Components/Selects/SelectItems',
   component: SelectItems,
 } as Meta<typeof SelectItems>;
 

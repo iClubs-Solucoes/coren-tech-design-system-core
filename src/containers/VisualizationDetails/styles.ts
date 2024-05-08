@@ -1,4 +1,4 @@
-import { BoxTailIcon } from 'common/assets/icons';
+import { BoxTailIcon, CloseIcon } from 'common/assets/icons';
 import { colors, font } from 'common/styles';
 import styled, { css } from 'dynamic-styled-components';
 import { Button } from 'primitives';
@@ -10,6 +10,11 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div``;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const Title = styled.h2`
   font: ${font.presets.primaryTitles};
@@ -109,4 +114,16 @@ export const ButtonShowPopOverText = styled(
 )<VisualizationDetailsStyleProps>`
   color: ${({ disabled }) =>
     disabled ? colors.neutral.gray3 : colors.normal.white};
+`;
+
+export const X = styled(CloseIcon)`
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: auto;
+  margin-bottom: 3.2rem;
+  cursor: pointer;
+
+  > path {
+    fill: ${colors.neutral.black1};
+  }
 `;

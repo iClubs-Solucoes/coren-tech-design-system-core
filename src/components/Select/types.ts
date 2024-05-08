@@ -1,16 +1,23 @@
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 
-export type SelectValues = {
+export type SelectValue = {
   value: string;
   label: string;
-}[];
+};
+
+export type SelectValues = SelectValue[];
 
 export type SelectProps = {
   className?: string;
-  values?: SelectValues[0];
+  selectTheme?: SelectTheme;
+  values?: SelectValue;
   items?: SelectValues;
   disabled?: boolean;
   icon?: ReactElement;
-  onChange?: (value: SelectValues[0]) => void;
+  menuStyle?: CSSProperties;
+  filled?: boolean;
+  onChange?: (value: SelectValue) => void;
   onOpeningDropdownChange?: (open: boolean) => void;
 };
+
+export type SelectTheme = 'primary' | 'secondary';

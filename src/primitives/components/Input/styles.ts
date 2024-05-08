@@ -11,4 +11,8 @@ export const Container = styled.input`
     color: ${colors.neutral.gray3};
     opacity: 1;
   }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 `;

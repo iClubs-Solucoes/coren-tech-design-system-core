@@ -16,3 +16,5 @@ export * from './Wizard';
 export type * from './Table';
 
 export type * from './VisualizationDetails';
+
+export * from './DatePicker';

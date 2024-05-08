@@ -4,6 +4,7 @@ import * as S from './styles';
 import { TriggerProps } from './types';
 
 export function Trigger({
+  className,
   children,
   open,
   hover,
@@ -22,6 +23,7 @@ export function Trigger({
 
   return (
     <S.Container
+      className={className}
       disabled={disabled}
       data-testid="trigger-dropdown"
       onMouseEnter={e => {

@@ -26,6 +26,7 @@ import Feedback from './feedback.svg?react';
 import FilterIcon from './filter.svg?react';
 import History from './history.svg?react';
 import HourglassIcon from './hourglass.svg?react';
+import ImageIcon from './image.svg?react';
 import KeyIcon from './key.svg?react';
 import KeyboardArrowRightIcon from './keyboard_arrow_right.svg?react';
 import LessIcon from './less.svg?react';
@@ -74,6 +75,7 @@ export {
   FilterIcon,
   History,
   HourglassIcon,
+  ImageIcon,
   KeyIcon,
   KeyboardArrowRightIcon,
   LessIcon,

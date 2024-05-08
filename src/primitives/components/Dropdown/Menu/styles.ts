@@ -79,6 +79,7 @@ export const Container = styled.div<MenuStyleProps>`
   padding-bottom: 2.4rem;
   gap: 1.6rem;
   box-shadow: ${shadow.card};
+  overflow-y: scroll;
 
   ${({
     coordinates = coordinatesMock,

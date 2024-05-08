@@ -11,7 +11,13 @@ const Template: StoryFn<typeof Badge> = function Template(args) {
   return <Badge {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const PrimaryTheme = Template.bind({});
+PrimaryTheme.args = {
   children: 'Hello Storybook',
+};
+
+export const SecondaryTheme = Template.bind({});
+SecondaryTheme.args = {
+  children: 'Hello Storybook',
+  badgeTheme: 'secondary',
 };
