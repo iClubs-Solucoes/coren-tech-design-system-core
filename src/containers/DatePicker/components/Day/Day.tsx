@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import * as S from './styles';
 import { DayProps } from './types';
 
@@ -5,12 +7,16 @@ export function Day({
   className,
   day,
   dayDate,
-  monthBeenDisplayedDate,
+  monthDisplayedDate,
+  disabled,
+  selected,
 }: DayProps) {
+  const ref = useRef<HTMLButtonElement>(null);
+
   const handleNotCurrentMonthDayVerification = () => {
     if (!dayDate) return;
 
-    const currentMonth = monthBeenDisplayedDate.getMonth();
+    const currentMonth = monthDisplayedDate.getMonth();
     const dayMonth = dayDate.getMonth();
 
     return currentMonth !== dayMonth;
@@ -18,12 +24,23 @@ export function Day({
 
   const notCurrentMonthDay = handleNotCurrentMonthDayVerification();
 
+  const parent = ref.current?.parentNode as HTMLDivElement;
+
+  const disabledDay =
+    disabled || parent?.classList.contains('react-datepicker__day--disabled');
+
+  const selectedDay =
+    selected || parent?.classList.contains('react-datepicker__day--selected');
+
   return (
     <S.DayContainer
+      ref={ref}
       className={className}
+      disabled={disabledDay}
+      selected={selectedDay}
       notCurrentMonthDay={notCurrentMonthDay}
     >
-      {day}
+      {String(day)}
     </S.DayContainer>
   );
 }

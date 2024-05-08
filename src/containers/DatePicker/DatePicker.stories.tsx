@@ -40,9 +40,9 @@ const twoYearsFromNow = new Date(yearInTwoYears, currentMonth, currentDay);
 
 export const Default = Template.bind({});
 Default.args = {
-  // input: <h1>AAAAAAAAA</h1>,
   inputLabel: 'Data e horário de início*',
   inputPlaceholder: 'DD/MM/AAAA às 00:00',
+  inputValue: '',
   minDate: now,
   maxDate: twoYearsFromNow,
   dropdownYears: range(currentYear, yearInTwoYears),

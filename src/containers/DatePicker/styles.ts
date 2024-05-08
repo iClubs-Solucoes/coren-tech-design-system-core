@@ -7,48 +7,15 @@ const modifier = {
   day: {
     common: css`
       width: 3.2rem;
-      height: 3.2rem;
-      font: 400 1.4rem Inter;
       border-radius: 0.4rem;
       margin: 0;
     `,
-    default: css`
-      background-color: ${colors.normal.white};
-
-      > p {
-        color: ${colors.neutral.gray4};
-      }
-    `,
-    hover: css`
-      background-color: ${colors.neutral.gray1};
-
-      > p {
-        color: ${colors.neutral.gray4};
-      }
-    `,
-    selected: css`
-      background-color: ${colors.neutral.gray2};
-      outline: none;
-
-      > p {
-        color: ${colors.neutral.gray5};
-      }
-    `,
-    disabled: css`
-      background-color: ${colors.normal.white} !important;
-      cursor: not-allowed;
-
-      > p {
-        background-color: inherit !important;
-        color: ${colors.neutral.gray2} !important;
-      }
-    `,
     keyboardSelected: css`
       outline: none;
-      background-color: ${colors.neutral.gray1};
 
-      > p {
+      > button {
         color: ${colors.neutral.gray4};
+        background-color: ${colors.neutral.gray1};
       }
     `,
   },
@@ -72,23 +39,10 @@ const globalConfigs = css`
 const dayStylings = css`
   .react-datepicker__day {
     ${modifier.day.common}
-    ${modifier.day.default}
-  }
-
-  .react-datepicker__day--disabled {
-    ${modifier.day.disabled}
-  }
-
-  .react-datepicker__day--selected {
-    ${modifier.day.selected}
   }
 
   .react-datepicker__day--keyboard-selected {
     ${modifier.day.keyboardSelected}
-  }
-
-  .react-datepicker__day:hover {
-    ${modifier.day.hover}
   }
 
   .react-datepicker__day-names {
@@ -104,7 +58,6 @@ const dayStylings = css`
     height: 3.2rem;
     font: 600 1.6rem Inter;
     text-align: center;
-    vertical-align: middle;
     color: ${colors.neutral.gray4};
     margin: 0;
   }
@@ -113,7 +66,7 @@ const dayStylings = css`
 const monthStylings = css`
   .react-datepicker__month-container {
     width: 100%;
-    padding: 1.6rem;
+    padding: 1.6rem 1.6rem 0 1.6rem;
   }
 
   .react-datepicker__month {
@@ -162,6 +115,17 @@ export const DatePickerContainer = styled.div`
 
   .react-datepicker-time__input-container .react-datepicker-time__input {
     margin-left: 0.8rem;
+  }
+
+  .react-datepicker__input-time-container
+    .react-datepicker-time__input-container
+    .react-datepicker-time__input
+    input {
+    width: 7.7rem;
+  }
+
+  .react-datepicker__input-time-container {
+    margin: 1rem 1.6rem 1.6rem 1.6rem;
   }
 `;
 

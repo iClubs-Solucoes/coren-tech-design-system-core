@@ -11,7 +11,7 @@ export function DefaultInput({
 }: DefaultInputProps) {
   return (
     <Dropdown.Trigger className={className}>
-      <Dropdown.Field fieldTheme="field">
+      <S.Field fieldTheme="field">
         <div>
           <S.Label>{label}</S.Label>
 
@@ -21,7 +21,7 @@ export function DefaultInput({
         </div>
 
         <Dropdown.Arrow />
-      </Dropdown.Field>
+      </S.Field>
     </Dropdown.Trigger>
   );
 }

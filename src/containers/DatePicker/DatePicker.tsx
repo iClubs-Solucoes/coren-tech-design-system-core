@@ -14,11 +14,10 @@ registerLocale('pt-BR', ptBR);
 
 export function DatePicker({
   className,
-  startDate = new Date(),
   selectedDate,
   minDate,
   maxDate,
-  input,
+  customInput,
   timeInputLabel = 'Horário',
   dropdownYears,
   inputLabel,
@@ -29,7 +28,12 @@ export function DatePicker({
   onOpenChange,
   ...reactDatePickerProps
 }: DatePickerProps) {
-  const [open, setOpen] = useState(true);
+  const [monthDisplayedDate, setMonthDisplayedDate] = useState(
+    minDate || new Date(),
+  );
+
+  const [open, setOpen] = useState(false);
+
   const [time, setTime] = useState('');
 
   const handleWeekDayFormatation = (nameOfDay: string) => {
@@ -61,7 +65,7 @@ export function DatePicker({
     <Day
       day={dayOfMonth}
       dayDate={date}
-      monthBeenDisplayedDate={selectedDate || startDate}
+      monthDisplayedDate={monthDisplayedDate}
     />
   );
 
@@ -79,31 +83,38 @@ export function DatePicker({
       }
     : undefined;
 
+  const handleDateValidation = (date: Date) => {
+    const dateTime = date.getTime();
+    return date instanceof Date && !isNaN(dateTime);
+  };
+
   const handleDateChange = (date: Date) => {
-    if (date instanceof Date && !isNaN(date)) {
-      onChange(date);
-      // handleDatePickerOpeningChange(false);
-    }
+    const validDate = handleDateValidation(date);
+
+    if (validDate) onChange(date);
+    if (validDate && !timeInput) handleDatePickerOpeningChange(false);
   };
 
   return (
     <S.DatePickerContainer className={className}>
       <S.InputContainer onClick={handleInputClick}>
-        {input && input}
+        {customInput && customInput}
 
-        {!input && inputLabel && inputPlaceholder && (
-          <DefaultInput
-            label={inputLabel}
-            placeholder={inputPlaceholder}
-            value={inputValue}
-          />
-        )}
+        {!customInput &&
+          inputLabel &&
+          inputPlaceholder &&
+          inputValue !== undefined && (
+            <DefaultInput
+              label={inputLabel}
+              placeholder={inputPlaceholder}
+              value={inputValue}
+            />
+          )}
       </S.InputContainer>
 
       <ReactDatePicker
         locale="pt-BR"
         {...reactDatePickerProps}
-        startDate={startDate}
         selected={selectedDate}
         open={open}
         minDate={minDate}
@@ -112,6 +123,7 @@ export function DatePicker({
         formatWeekDay={handleWeekDayFormatation}
         renderCustomHeader={handleCustomHeaderRender}
         renderDayContents={handleDayContentsRender}
+        onMonthChange={setMonthDisplayedDate}
         {...timeInputProps}
         onChange={handleDateChange}
       />

@@ -1,8 +1,9 @@
-import { MouseEventHandler, ReactElement } from 'react';
+import { MouseEventHandler, ReactElement, RefObject } from 'react';
 
 export type ButtonProps = {
   className?: string;
   children?: string | ReactElement;
+  buttonRef?: RefObject<HTMLButtonElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 } & ButtonStyleProps;
 

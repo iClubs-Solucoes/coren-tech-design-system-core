@@ -157,6 +157,15 @@ const modifier = {
           }
         }
 
+        &&:not(:disabled):active {
+          background-color: ${colors.neutral.gray2};
+
+          *[fill] {
+            transition: all 0.4s ease-out;
+            fill: ${colors.neutral.gray4};
+          }
+        }
+
         &:disabled {
           background-color: ${colors.neutral.gray1};
           color: ${colors.neutral.gray3};

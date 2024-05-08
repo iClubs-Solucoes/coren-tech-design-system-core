@@ -3,7 +3,7 @@ import styled from 'dynamic-styled-components';
 import { Input } from 'primitives';
 
 export const TimeInputContainer = styled(Input)`
-  width: 8rem !important;
+  width: 7.7rem;
   height: 3.2rem;
   background-color: ${colors.neutral.gray1};
   border-radius: 0.8rem;

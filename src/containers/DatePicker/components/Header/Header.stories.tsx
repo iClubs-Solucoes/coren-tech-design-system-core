@@ -11,5 +11,18 @@ const Template: StoryFn<typeof Header> = function Template(args) {
   return <Header {...args} />;
 };
 
+const now = new Date();
+const currentYear = now.getFullYear();
+
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  date: now,
+  dropdownYears: [
+    currentYear,
+    currentYear + 1,
+    currentYear + 2,
+    currentYear + 3,
+    currentYear + 4,
+    currentYear + 5,
+  ],
+};
