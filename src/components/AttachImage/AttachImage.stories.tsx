@@ -32,41 +32,25 @@ const Template: StoryFn<typeof AttachImage> = function Template(args) {
   return (
     <AttachImage
       {...args}
-      selectedImage={props.selectedImage}
+      {...props}
+      inputId="attach-image"
       setSelectedImage={setSelectedImage as StateSetter<File | null>}
       onAttach={handleImageAttach}
     />
   );
 };
 
-const defaultProps = {
-  inputId: 'attach-image',
-};
-
 export const Default = Template.bind({});
-Default.args = {
-  ...defaultProps,
-};
 
 export const NotFilledImageHover = Template.bind({});
-NotFilledImageHover.args = {
-  ...defaultProps,
-};
 NotFilledImageHover.parameters = { pseudo: { hover: true } };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  ...defaultProps,
   disabled: true,
 };
 
 export const FilledImage = Template.bind({});
-FilledImage.args = {
-  ...defaultProps,
-};
 
 export const FilledImageHover = Template.bind({});
-FilledImageHover.args = {
-  ...defaultProps,
-};
 FilledImageHover.parameters = { pseudo: { hover: true } };

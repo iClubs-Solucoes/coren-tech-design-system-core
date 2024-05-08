@@ -13,12 +13,11 @@ export function SelectItem({
   items = [],
   disabled,
   onChange,
-  onClick,
 }: SelectItemProps) {
   return (
     <S.Container className={className}>
       <Dropdown.Root disabled={disabled}>
-        <Dropdown.Trigger onClick={onClick}>
+        <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="field" disabled={disabled}>
             {icon || <SortIcon />}
             <div>
@@ -30,17 +29,15 @@ export function SelectItem({
           </S.FieldSelect>
         </Dropdown.Trigger>
 
-        {items.length > 0 && (
-          <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
-            <Dropdown.List>
-              {items.map(item => (
-                <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
-                  {item}
-                </S.ItemSelect>
-              ))}
-            </Dropdown.List>
-          </Dropdown.Menu>
-        )}
+        <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
+          <Dropdown.List>
+            {items.map(item => (
+              <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
+                {item}
+              </S.ItemSelect>
+            ))}
+          </Dropdown.List>
+        </Dropdown.Menu>
       </Dropdown.Root>
     </S.Container>
   );
