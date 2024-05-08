@@ -1,15 +1,16 @@
-import { MouseEventHandler, ReactElement } from 'react';
+import { MouseEventHandler, ReactElement, RefObject } from 'react';
 
 export type ButtonProps = {
   className?: string;
   children?: string | ReactElement;
+  buttonRef?: RefObject<HTMLButtonElement>;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 } & ButtonStyleProps;
 
 export type ButtonStyleProps = {
   type?: 'button' | 'submit' | 'reset';
   onlyIcon?: boolean;
-  buttonTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
+  buttonTheme?: ButtonTheme;
   icon?: ReactElement;
   disabledBtn?: boolean;
   border?: boolean;
@@ -17,5 +18,19 @@ export type ButtonStyleProps = {
 };
 
 export type BulletsStyleProps = {
-  bulletTheme?: 'primary' | 'secondary' | 'third' | 'fourth' | 'fifth';
+  bulletTheme?:
+    | 'primary'
+    | 'secondary'
+    | 'third'
+    | 'fourth'
+    | 'fifth'
+    | 'sixth';
 };
+
+export type ButtonTheme =
+  | 'primary'
+  | 'secondary'
+  | 'third'
+  | 'fourth'
+  | 'fifth'
+  | 'sixth';

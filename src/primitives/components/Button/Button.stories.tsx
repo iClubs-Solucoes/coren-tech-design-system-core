@@ -33,6 +33,11 @@ FifthTheme.args = {
   buttonTheme: 'fifth',
 };
 
+export const SixthTheme = Template.bind({});
+SixthTheme.args = {
+  buttonTheme: 'sixth',
+};
+
 export const Icon = Template.bind({});
 Icon.args = {
   icon: <SearchIcon />,

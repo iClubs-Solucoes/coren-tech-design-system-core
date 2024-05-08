@@ -1,0 +1,1 @@
+export { MONTHS } from './months';

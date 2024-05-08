@@ -5,10 +5,12 @@ import { FieldProps } from './types';
 
 export function Field({
   children,
+  fieldRef,
   fieldTheme,
   open,
   className,
   disabled,
+  filled,
 }: FieldProps) {
   const render = useCallback(() => {
     if (typeof children === 'string') return children;
@@ -30,9 +32,11 @@ export function Field({
 
   return (
     <S.Container
+      ref={fieldRef}
       className={className}
       fieldTheme={fieldTheme}
       disabled={disabled}
+      filled={filled}
     >
       {render()}
     </S.Container>

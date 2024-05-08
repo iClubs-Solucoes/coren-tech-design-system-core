@@ -19,5 +19,6 @@ const Template: StoryFn<typeof VisualizationDetails> = function Template(args) {
 export const Default = Template.bind({});
 Default.args = {
   title: 'Adicionar produto',
+  labelOk: 'Adicionar produto',
   open: true,
 };

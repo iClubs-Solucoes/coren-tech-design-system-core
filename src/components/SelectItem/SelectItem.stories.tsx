@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { SelectItem } from './SelectItem';
 
 export default {
-  title: 'Components/SelectItem',
+  title: 'Components/Selects/SelectItem',
   component: SelectItem,
 } as Meta<typeof SelectItem>;
 

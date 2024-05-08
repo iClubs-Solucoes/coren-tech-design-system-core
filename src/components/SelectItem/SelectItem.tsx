@@ -5,6 +5,7 @@ import * as S from './styles';
 import { SelectItemProps } from './types';
 
 export function SelectItem({
+  className,
   value,
   icon,
   label,
@@ -14,7 +15,7 @@ export function SelectItem({
   onChange,
 }: SelectItemProps) {
   return (
-    <S.Container>
+    <S.Container className={className}>
       <Dropdown.Root disabled={disabled}>
         <Dropdown.Trigger>
           <S.FieldSelect fieldTheme="field" disabled={disabled}>
@@ -27,6 +28,7 @@ export function SelectItem({
             <Dropdown.Arrow disabled={disabled} />
           </S.FieldSelect>
         </Dropdown.Trigger>
+
         <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
           <Dropdown.List>
             {items.map(item => (

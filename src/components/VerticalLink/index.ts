@@ -1,0 +1,1 @@
+export { VerticalLink } from './VerticalLink';

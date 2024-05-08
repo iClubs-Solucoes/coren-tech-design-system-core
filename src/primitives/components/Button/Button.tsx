@@ -8,6 +8,7 @@ export function Button({
   type,
   onlyIcon,
   disabledBtn,
+  buttonRef,
   onClick,
   ...styleProps
 }: ButtonProps) {
@@ -17,6 +18,7 @@ export function Button({
 
   const renderButton = () => (
     <S.Wrapper
+      ref={buttonRef}
       data-testid="button-test"
       className={className}
       disabledBtn={disabledBtn}
