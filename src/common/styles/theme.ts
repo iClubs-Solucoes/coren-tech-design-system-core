@@ -50,6 +50,7 @@ export const colors = {
     black1: '#161616',
     black2: '#2A2A2A',
     black3: '#1C1B1F',
+    black4: '#1C1C1C',
   },
 } as const;
 
