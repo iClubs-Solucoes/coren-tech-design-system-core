@@ -8,7 +8,7 @@ import { Button } from 'primitives';
 import { VerticalLink } from './VerticalLink';
 
 export default {
-  title: 'Components/VerticalLink',
+  title: 'Containers/Link Containers/VerticalLink',
   component: VerticalLink,
 } as Meta<typeof VerticalLink>;
 
