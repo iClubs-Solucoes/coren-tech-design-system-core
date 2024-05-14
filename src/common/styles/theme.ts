@@ -36,6 +36,7 @@ export const colors = {
   neutral: {
     white1: '#F4F4F4',
     white2: '#F2F2F2',
+    white3: '#FBFBFB',
 
     gray1: '#E8E8E8',
     gray2: '#CDCDCD',

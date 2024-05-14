@@ -11,4 +11,4 @@ export type BadgeContainerProps = {
   badgeTheme: BadgeTheme;
 };
 
-export type BadgeTheme = 'primary' | 'secondary';
+export type BadgeTheme = 'primary' | 'secondary' | 'third' | 'fourth';
