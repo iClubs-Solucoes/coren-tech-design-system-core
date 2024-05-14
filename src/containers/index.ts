@@ -11,3 +11,5 @@ export * from './DatePicker';
 export { VisualizationDetails } from './VisualizationDetails';
 
 export { VerticalLink } from './VerticalLink';
+
+export { TreeView } from './TreeView';
