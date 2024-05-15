@@ -11,7 +11,7 @@ export default {
 
 const Template: StoryFn<typeof SelectChildren> = function Template(args) {
   const defaultProps: SelectChildrenProps = {
-    values: {
+    selectedItem: {
       value: 'sum',
       label: 'Adição',
     },
@@ -37,7 +37,6 @@ const Template: StoryFn<typeof SelectChildren> = function Template(args) {
         ),
       },
     ],
-    disabled: false,
     onChange: data => console.log(data),
   };
 
@@ -46,3 +45,10 @@ const Template: StoryFn<typeof SelectChildren> = function Template(args) {
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const WithSearch = Template.bind({});
+WithSearch.args = {
+  search: {
+    value: 'Divi',
+  },
+};

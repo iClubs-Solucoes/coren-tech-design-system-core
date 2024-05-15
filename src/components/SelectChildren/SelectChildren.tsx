@@ -12,6 +12,7 @@ export function SelectChildren({
   icon,
   label,
   placeholder,
+  search,
   onChange,
   onOpeningDropdownChange,
 }: SelectChildrenProps) {
@@ -47,15 +48,19 @@ export function SelectChildren({
         </Dropdown.Trigger>
 
         <Dropdown.Menu style={{ width: selectWidth, marginTop: '0.7rem' }}>
-          {items.map(({ value, label, children }) => (
-            <S.Item
-              key={value}
-              hover
-              onClick={() => onChange?.({ value, label })}
-            >
-              {children}
-            </S.Item>
-          ))}
+          <>
+            {search && <Dropdown.Search {...search} />}
+
+            {items.map(({ value, label, children }) => (
+              <S.Item
+                key={value}
+                hover
+                onClick={() => onChange?.({ value, label })}
+              >
+                {children}
+              </S.Item>
+            ))}
+          </>
         </Dropdown.Menu>
       </Dropdown.Root>
     </S.Container>
