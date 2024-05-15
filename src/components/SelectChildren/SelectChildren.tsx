@@ -24,6 +24,14 @@ export function SelectChildren({
     if (ref.current) setSelectWidth(ref.current.clientWidth);
   }, []);
 
+  const listItems = items.map(({ value, label, children }) => (
+    <S.Item key={value} hover onClick={() => onChange?.({ value, label })}>
+      {children}
+    </S.Item>
+  ));
+
+  if (search) listItems.unshift(<Dropdown.Search {...search} />);
+
   return (
     <S.Container data-testid="select-children-container" className={className}>
       <Dropdown.Root onChange={onOpeningDropdownChange}>
@@ -48,19 +56,7 @@ export function SelectChildren({
         </Dropdown.Trigger>
 
         <Dropdown.Menu style={{ width: selectWidth, marginTop: '0.7rem' }}>
-          <>
-            {search && <Dropdown.Search {...search} />}
-
-            {items.map(({ value, label, children }) => (
-              <S.Item
-                key={value}
-                hover
-                onClick={() => onChange?.({ value, label })}
-              >
-                {children}
-              </S.Item>
-            ))}
-          </>
+          <Dropdown.List>{listItems}</Dropdown.List>
         </Dropdown.Menu>
       </Dropdown.Root>
     </S.Container>
