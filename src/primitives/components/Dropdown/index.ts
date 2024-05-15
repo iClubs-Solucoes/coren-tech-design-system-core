@@ -4,6 +4,7 @@ import { Item } from './Item';
 import { List } from './List';
 import { Menu } from './Menu';
 import { Root } from './Root';
+import { Search } from './Search';
 import { Trigger } from './Trigger';
 
 export const Dropdown = {
@@ -14,4 +15,5 @@ export const Dropdown = {
   List,
   Item,
   Field,
+  Search,
 };
