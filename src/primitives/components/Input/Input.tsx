@@ -12,12 +12,12 @@ export function Input({
   placeholder,
   disabled,
   mask = {},
+  inputRef,
   onChange,
   onChangeUnmasked,
   onClick,
   onKeyDown,
   onKeyEnter,
-  inputRef,
   ...styleProps
 }: InputProps) {
   const {

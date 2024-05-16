@@ -8,16 +8,23 @@ export default {
 } as Meta<typeof Badge>;
 
 const Template: StoryFn<typeof Badge> = function Template(args) {
-  return <Badge {...args} />;
+  return <Badge {...args}>Hello Storybook</Badge>;
 };
 
 export const PrimaryTheme = Template.bind({});
-PrimaryTheme.args = {
-  children: 'Hello Storybook',
-};
+PrimaryTheme.args = {};
 
 export const SecondaryTheme = Template.bind({});
 SecondaryTheme.args = {
-  children: 'Hello Storybook',
   badgeTheme: 'secondary',
+};
+
+export const ThirdTheme = Template.bind({});
+ThirdTheme.args = {
+  badgeTheme: 'third',
+};
+
+export const FourthTheme = Template.bind({});
+FourthTheme.args = {
+  badgeTheme: 'fourth',
 };
