@@ -73,11 +73,7 @@ const Template: StoryFn<typeof TreeView> = function Template(args) {
 
 const CustomLinksTemplate: StoryFn<typeof TreeView> = function Template(args) {
   return (
-    <CustomTreeView
-      parent={<Badge badgeTheme="fourth">Pai</Badge>}
-      links={{ shortLinkCSS, longLinkCSS }}
-      {...args}
-    >
+    <CustomTreeView parent={<Badge badgeTheme="fourth">Pai</Badge>} {...args}>
       <FieldsContainer>
         <Badge badgeTheme="fourth">Filho 1</Badge>
         <Badge badgeTheme="fourth">Filho 2</Badge>

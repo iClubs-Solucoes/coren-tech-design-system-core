@@ -38,7 +38,7 @@ describe('<SelectChildren />', () => {
     expect(container).toBeTruthy();
   });
 
-  it('should SelectChildren item', () => {
+  it('should select item', () => {
     const { rerender } = render(
       <Wrapper
         values={{ value: 'Test', label: '' }}

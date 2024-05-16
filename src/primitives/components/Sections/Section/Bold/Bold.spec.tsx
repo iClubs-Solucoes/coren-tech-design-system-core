@@ -8,15 +8,15 @@ describe('<Bold />', () => {
 
   it('should render the component', () => {
     render(<Bold>{children}</Bold>);
-    const title = screen.getByText(new RegExp(children, 'i'));
+    const bold = screen.getByText(new RegExp(children, 'i'));
 
-    expect(title).toBeTruthy();
+    expect(bold).toBeTruthy();
   });
 
   it('should forward className to the DOM element', () => {
     render(<Bold className="123">{children}</Bold>);
-    const title = screen.getByText(new RegExp(children, 'i'));
+    const bold = screen.getByText(new RegExp(children, 'i'));
 
-    expect(title.className).includes('123');
+    expect(bold.className).includes('123');
   });
 });

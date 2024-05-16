@@ -3,7 +3,7 @@ import { SearchProps } from './types';
 
 export function Search({
   className,
-  value,
+  value = '',
   placeholder = 'Pesquisar',
   onChange,
 }: SearchProps) {
