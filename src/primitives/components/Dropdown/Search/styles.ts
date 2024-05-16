@@ -1,7 +1,7 @@
 import { SearchIcon } from 'common/assets/icons';
 import { colors } from 'common/styles';
 import styled, { css } from 'dynamic-styled-components';
-import { Input } from 'primitives';
+import { Input } from 'primitives/components';
 
 const modifier = {
   searchContainer: {

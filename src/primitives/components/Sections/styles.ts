@@ -1,7 +1,7 @@
 import { colors } from 'common/styles';
 import styled, { css } from 'dynamic-styled-components';
-import { Divisor } from 'primitives';
 
+import { Divisor } from '../Divisor';
 import { SectionsContainerStyleProps } from './types';
 
 const divisorClass = 'divisor';
