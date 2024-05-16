@@ -22,6 +22,29 @@ export const modifier = {
         color: ${colors.neutral.gray4};
       }
     `,
+    third: css`
+      font: ${font.presets.bodyAndValue};
+      color: ${colors.neutral.gray4};
+      padding: 0.65rem 1rem;
+      background-color: ${colors.normal.white};
+
+      border: 0.15rem solid ${colors.neutral.gray2};
+
+      *[fill] {
+        color: ${colors.neutral.gray4};
+      }
+    `,
+    fourth: css`
+      font: ${font.presets.bodyAndValue};
+      color: ${colors.neutral.gray5};
+
+      padding: 0.25rem 0.8rem;
+      background-color: ${colors.neutral.white3};
+
+      *[fill] {
+        color: ${colors.neutral.gray5};
+      }
+    `,
   },
 };
 
