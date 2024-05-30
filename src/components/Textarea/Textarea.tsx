@@ -2,6 +2,7 @@ import * as S from './styles';
 import { TextareaProps } from './types';
 
 export function Textarea({
+  className,
   value,
   placeholder,
   label,
@@ -9,7 +10,7 @@ export function Textarea({
   onChange,
 }: TextareaProps) {
   return (
-    <S.Container disabled={disabled}>
+    <S.Container disabled={disabled} className={className}>
       <S.Label htmlFor="textarea">{label}</S.Label>
       <S.Textarea
         id="textarea"
