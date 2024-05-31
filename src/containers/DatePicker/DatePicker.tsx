@@ -91,7 +91,7 @@ export function DatePicker({
   const handleDateChange = (date: Date) => {
     const validDate = handleDateValidation(date);
 
-    if (validDate) onChange(date);
+    if (validDate) onChange?.(date);
     if (validDate && !timeInput) handleDatePickerOpeningChange(false);
   };
 
