@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import * as S from './styles';
 import { StepProps } from './types';
 
@@ -13,9 +11,9 @@ export function Step({
   const displayNumber =
     typeof preIcon === 'string' || typeof preIcon === 'number';
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     if (!disabled) onClick?.();
-  }, [disabled]);
+  };
 
   return (
     <S.StepContainer

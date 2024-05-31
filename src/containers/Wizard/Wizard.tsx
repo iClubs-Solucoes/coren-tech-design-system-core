@@ -7,7 +7,10 @@ import * as S from './styles';
 import { Steps, WizardProps } from './types';
 
 export function Wizard({
+  className,
   steps,
+  continueLoading,
+  disableContinue,
   onChangeStep,
   onCancel,
   onCompletion,
@@ -24,12 +27,19 @@ export function Wizard({
     ? onCompletion
     : () => handleGoToNextStep(currentStep + 1);
 
-  const handleGoToNextStep = useCallback((nextStep: number) => {
-    setCurrentStep(nextStep);
-    onChangeStep?.();
-  }, []);
+  const handleGoToNextStep = async (nextStep: number) => {
+    const shouldGoToNextStep = await onChangeStep?.(currentStep, nextStep);
 
-  const renderHeader = useCallback(() => {
+    if (shouldGoToNextStep === undefined) {
+      setCurrentStep(nextStep);
+      return;
+    }
+
+    if (shouldGoToNextStep !== undefined && shouldGoToNextStep)
+      setCurrentStep(nextStep);
+  };
+
+  const renderHeader = () => {
     return steps.map((steps, index) => {
       const { name, preIcon, disabled } = steps;
 
@@ -46,7 +56,7 @@ export function Wizard({
 
       return <Step key={name} {...props} />;
     });
-  }, [currentStep]);
+  };
 
   const renderBody = useCallback(() => {
     return steps.map((step, index) => {
@@ -70,7 +80,7 @@ export function Wizard({
   const body = renderBody();
 
   return (
-    <S.WizardContainer>
+    <S.WizardContainer className={className}>
       <S.Header>{header}</S.Header>
 
       <S.Body>{body}</S.Body>
@@ -82,7 +92,8 @@ export function Wizard({
 
         <S.SquareButton
           buttonTheme="third"
-          disabledBtn={blockContinue}
+          disabledBtn={blockContinue || disableContinue}
+          loading={continueLoading}
           onClick={continueClickFunction}
         >
           Continuar
