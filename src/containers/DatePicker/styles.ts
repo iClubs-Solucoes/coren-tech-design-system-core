@@ -66,7 +66,7 @@ const dayStylings = css`
 const monthStylings = css`
   .react-datepicker__month-container {
     width: 100%;
-    padding: 1.6rem 1.6rem 0 1.6rem;
+    padding: 1.6rem;
   }
 
   .react-datepicker__month {
@@ -125,7 +125,7 @@ export const DatePickerContainer = styled.div`
   }
 
   .react-datepicker__input-time-container {
-    margin: 1rem 1.6rem 1.6rem 1.6rem;
+    margin: 0 1.6rem 1.6rem 1.6rem;
   }
 `;
 
