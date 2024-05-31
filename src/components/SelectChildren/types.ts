@@ -1,11 +1,12 @@
 import { ReactElement } from 'react';
 
+import { CSSProperties } from 'dynamic-styled-components';
 import { SearchProps } from 'primitives/components/Dropdown/Search/types';
 
 export type Item = {
   value: string;
   label: string;
-  children: ReactElement | string;
+  children?: ReactElement | string;
 };
 
 export type SelectedItem = {
@@ -13,14 +14,15 @@ export type SelectedItem = {
   label: string;
 };
 
-export type SelectChildrenProps = {
+export type SelectChildrenProps<T extends SelectedItem = SelectedItem> = {
   className?: string;
-  selectedItem?: SelectedItem;
+  selectedItem?: T;
   items?: Item[];
   icon?: ReactElement;
   label?: string;
   placeholder?: string;
   search?: SearchProps;
-  onChange?: (newSelectedItem: SelectedItem) => void;
+  menuStyle?: CSSProperties;
+  onChange?: (newSelectedItem: T) => void;
   onOpeningDropdownChange?: (open: boolean) => void;
 };

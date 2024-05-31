@@ -13,6 +13,7 @@ export function SelectChildren({
   label,
   placeholder,
   search,
+  menuStyle,
   onChange,
   onOpeningDropdownChange,
 }: SelectChildrenProps) {
@@ -20,13 +21,15 @@ export function SelectChildren({
 
   const [selectWidth, setSelectWidth] = useState<number>();
 
+  const componentWidth = ref.current?.clientWidth;
+
   useEffect(() => {
-    if (ref.current) setSelectWidth(ref.current.clientWidth);
-  }, []);
+    if (ref.current) setSelectWidth(ref.current?.clientWidth);
+  }, [componentWidth]);
 
   const listItems = items.map(({ value, label, children }) => (
     <S.Item key={value} hover onClick={() => onChange?.({ value, label })}>
-      {children}
+      {children || label || value}
     </S.Item>
   ));
 
@@ -55,7 +58,9 @@ export function SelectChildren({
           </S.Field>
         </Dropdown.Trigger>
 
-        <Dropdown.Menu style={{ width: selectWidth, marginTop: '0.7rem' }}>
+        <Dropdown.Menu
+          style={{ width: selectWidth, marginTop: '0.7rem', ...menuStyle }}
+        >
           <Dropdown.List>{listItems}</Dropdown.List>
         </Dropdown.Menu>
       </Dropdown.Root>
