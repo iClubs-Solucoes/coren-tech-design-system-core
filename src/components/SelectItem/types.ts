@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 
 export type SelectItemProps = {
   className?: string;
@@ -8,6 +8,7 @@ export type SelectItemProps = {
   items?: string[];
   disabled?: boolean;
   placeholder?: string;
+  menuStyle?: CSSProperties;
   onChange?: (value: string) => void;
   onClick?: () => void;
 };

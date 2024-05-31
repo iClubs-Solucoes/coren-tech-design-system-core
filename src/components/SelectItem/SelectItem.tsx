@@ -12,6 +12,7 @@ export function SelectItem({
   placeholder,
   items = [],
   disabled,
+  menuStyle,
   onChange,
 }: SelectItemProps) {
   return (
@@ -29,7 +30,7 @@ export function SelectItem({
           </S.FieldSelect>
         </Dropdown.Trigger>
 
-        <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
+        <Dropdown.Menu style={{ minWidth: '17.4rem', ...menuStyle }}>
           <Dropdown.List>
             {items.map(item => (
               <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
