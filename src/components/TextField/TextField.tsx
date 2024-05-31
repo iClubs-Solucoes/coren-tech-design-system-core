@@ -6,6 +6,7 @@ import * as S from './styles';
 import { TextFieldProps } from './types';
 
 export function TextField({
+  className,
   inputId,
   label,
   labelErr,
@@ -20,7 +21,7 @@ export function TextField({
   const { disabled, value, type } = propsInput;
 
   return (
-    <S.Container disabled={disabled}>
+    <S.Container disabled={disabled} className={className}>
       <S.Icon error={error} success={success}>
         {icon}
       </S.Icon>
