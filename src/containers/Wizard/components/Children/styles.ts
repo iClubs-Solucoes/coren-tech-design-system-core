@@ -14,20 +14,21 @@ export const modifier = {
     ${modifier.visible};
 
     ${!currentChildren && modifier.invisible}
-
-    transition: opacity 0.8s;
   `,
   nextChildren: (currentChildren: boolean) => css`
-    width: 0%;
+    position: absolute;
+
+    pointer-events: none;
+
     ${modifier.invisible};
 
     ${currentChildren && modifier.visible}
-
-    transition: opacity 0.8s;
   `,
 };
 
 export const ChildrenContainer = styled.div<ChildrenContainerStyleProps>`
+  transition: opacity 0.8s ease-in-out;
+
   ${({ currentChildren }) => css`
     ${currentChildren && modifier.currentChildren(currentChildren)}
     ${!currentChildren && modifier.nextChildren(currentChildren)}
