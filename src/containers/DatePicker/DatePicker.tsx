@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import ReactDatePicker, {
   ReactDatePickerCustomHeaderProps,
   registerLocale,
@@ -28,6 +28,8 @@ export function DatePicker({
   onOpenChange,
   ...reactDatePickerProps
 }: DatePickerProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const [monthDisplayedDate, setMonthDisplayedDate] = useState(
     minDate || new Date(),
   );
@@ -35,6 +37,15 @@ export function DatePicker({
   const [open, setOpen] = useState(false);
 
   const [time, setTime] = useState('');
+
+  const timeInputProps = timeInput
+    ? {
+        showTimeInput: true,
+        customTimeInput: (
+          <TimeInput value={time} disabled={!selectedDate} onChange={setTime} />
+        ),
+      }
+    : undefined;
 
   const handleWeekDayFormatation = (nameOfDay: string) => {
     const firstLetter = nameOfDay[0];
@@ -74,15 +85,6 @@ export function DatePicker({
     onOpenChange?.(open);
   };
 
-  const timeInputProps = timeInput
-    ? {
-        showTimeInput: true,
-        customTimeInput: (
-          <TimeInput value={time} disabled={!selectedDate} onChange={setTime} />
-        ),
-      }
-    : undefined;
-
   const handleDateValidation = (date: Date) => {
     const dateTime = date.getTime();
     return date instanceof Date && !isNaN(dateTime);
@@ -96,8 +98,11 @@ export function DatePicker({
   };
 
   return (
-    <S.DatePickerContainer className={className}>
-      <S.InputContainer onClick={handleInputClick}>
+    <S.DatePickerContainer
+      className={className}
+      inputElement={inputRef.current}
+    >
+      <S.InputContainer onClick={handleInputClick} ref={inputRef}>
         {customInput && customInput}
 
         {!customInput &&

@@ -1,4 +1,4 @@
-export { coordinatesComponent } from './Coordinates';
+export * from './Coordinates';
 
 export * from './Date';
 

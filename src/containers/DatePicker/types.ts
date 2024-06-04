@@ -17,3 +17,7 @@ export type DatePickerProps = {
   onChange?: (date: Date) => void;
   onOpenChange?: (open: boolean) => void;
 };
+
+export type DatePickerContainerProps = {
+  inputElement?: HTMLInputElement | null;
+};
