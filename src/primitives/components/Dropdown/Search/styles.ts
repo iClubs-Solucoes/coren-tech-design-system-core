@@ -52,6 +52,8 @@ export const SearchContainer = styled.div`
 `;
 
 export const MagnifyingGlassIcon = styled(SearchIcon)`
+  flex-shrink: 0;
+
   > g > path {
     fill: ${colors.neutral.gray4};
   }

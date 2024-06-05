@@ -9,6 +9,17 @@ export function List({
   onCloseDropdown,
   ...styleProps
 }: ListProps) {
+  const handleSearchInputClean = (children: ReactElement[]) => {
+    const firstItem = children[0];
+
+    const searchInputExists = !!firstItem?.props?.onChange;
+
+    if (searchInputExists) {
+      const searchInput = firstItem;
+      searchInput.props?.onChange?.('');
+    }
+  };
+
   const renderItem = useCallback(
     (c: ReactElement) => {
       return cloneElement(c, {
@@ -18,6 +29,9 @@ export function List({
           e.stopPropagation();
           c.props?.onClick?.(e);
           if (!c.props?.noopClose) onCloseDropdown?.(false);
+
+          const childrenArray = Array.isArray(children);
+          if (childrenArray) handleSearchInputClean(children);
         },
       });
     },
