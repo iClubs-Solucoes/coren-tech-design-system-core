@@ -21,7 +21,7 @@ export function openAboveOrBelow({
     bottom = '',
     left = '';
 
-  const wasOpened: WasOpened = { y: '' };
+  const initialWasOpened: WasOpened = { y: '' };
 
   const {
     elementRect: refElementRect,
@@ -37,7 +37,7 @@ export function openAboveOrBelow({
     bottom = `unset`;
     left = `${refElementRect.left}px`;
 
-    wasOpened.y = 'below';
+    initialWasOpened.y = 'below';
   }
 
   if (open === 'above' || moreSpaceAbove) {
@@ -45,7 +45,7 @@ export function openAboveOrBelow({
     bottom = `${distanceFromElementToBottom + refElementRect.height + gap}px`;
     left = `${refElementRect.left}px`;
 
-    wasOpened.y = 'above';
+    initialWasOpened.y = 'above';
   }
 
   const openCSSObject = {
@@ -55,6 +55,8 @@ export function openAboveOrBelow({
   };
 
   const openCSS = css(openCSSObject);
+
+  const wasOpened = initialWasOpened as ElementOpening;
 
   return { refElementRect, openCSS, openCSSObject, wasOpened };
 }
