@@ -10,7 +10,7 @@ export type ChildrenWithId = {
 export type TreeViewProps = {
   className?: string;
   parent?: ReactNode;
-  children: ReactNode[] | ReactNode;
+  children?: ReactNode[] | ReactNode;
   links?: {
     shortLinkCSS?: CSS;
     longLinkCSS?: CSS;

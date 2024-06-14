@@ -51,7 +51,7 @@ export function TreeView({
     <S.TreeViewContainer className={className}>
       {parent && parent}
 
-      <S.LinkedChildrens>{linkedChildrens}</S.LinkedChildrens>
+      {children && <S.LinkedChildrens>{linkedChildrens}</S.LinkedChildrens>}
     </S.TreeViewContainer>
   );
 }
