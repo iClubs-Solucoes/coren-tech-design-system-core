@@ -16,3 +16,7 @@ export type SelectItemProps = {
 export type SelectItemStyleProps = {
   disabled?: boolean;
 };
+
+export type MenuStyleProps = {
+  field?: HTMLDivElement | null;
+};

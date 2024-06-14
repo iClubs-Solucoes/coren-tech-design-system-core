@@ -1,6 +1,34 @@
 import { colors, font } from 'common/styles';
-import styled from 'dynamic-styled-components';
+import { doesNotOverflowScreen, openAboveOrBelow } from 'common/utils';
+import styled, { css } from 'dynamic-styled-components';
 import { Dropdown } from 'primitives';
+
+import { MenuStyleProps } from './types';
+
+const modifier = {
+  menu: {
+    openMenu: (field: HTMLDivElement) => {
+      const gapToRefElement = 8;
+
+      const { openCSS, wasOpened } = openAboveOrBelow({
+        referenceElement: field,
+        gap: gapToRefElement,
+      });
+
+      const { doesNotOverflowScreenCSS } = doesNotOverflowScreen({
+        referenceElement: field,
+        distanceToBorder: 16,
+        gapToRefElement,
+        opened: wasOpened,
+      });
+
+      return css`
+        ${doesNotOverflowScreenCSS};
+        ${openCSS}
+      `;
+    },
+  },
+};
 
 export const Container = styled.div``;
 
@@ -25,3 +53,9 @@ export const Placeholder = styled.p`
 `;
 
 export const FieldSelect = styled(Dropdown.Field)``;
+
+export const Menu = styled(Dropdown.Menu)<MenuStyleProps>`
+  ${({ field }) => css`
+    ${field && modifier.menu.openMenu(field)}
+  `}
+`;

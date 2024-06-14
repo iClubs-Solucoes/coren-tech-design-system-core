@@ -21,6 +21,8 @@ export function SelectItem({
 
   const [selectWidth, setSelectWidth] = useState<number>();
 
+  const field = ref.current;
+
   useEffect(() => {
     if (ref.current) setSelectWidth(ref.current.clientWidth);
   }, []);
@@ -40,8 +42,9 @@ export function SelectItem({
           </S.FieldSelect>
         </Dropdown.Trigger>
 
-        <Dropdown.Menu
+        <S.Menu
           style={{ minWidth: '17.4rem', width: selectWidth, ...menuStyle }}
+          field={field && field}
         >
           <Dropdown.List>
             {items.map(item => (
@@ -50,7 +53,7 @@ export function SelectItem({
               </S.ItemSelect>
             ))}
           </Dropdown.List>
-        </Dropdown.Menu>
+        </S.Menu>
       </Dropdown.Root>
     </S.Container>
   );
