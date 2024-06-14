@@ -1,12 +1,15 @@
 import { getDistanceFromBordersInsights } from 'common/utils';
 import { css } from 'dynamic-styled-components';
-
-type Open = 'above' | 'below';
+import { ElementOpening, YDirections } from 'models';
 
 interface OpenAboveOrBelowParams {
   referenceElement: Element;
   gap?: number;
-  open?: Open;
+  open?: YDirections;
+}
+
+interface WasOpened {
+  y: ElementOpening['y'] | '';
 }
 
 export function openAboveOrBelow({
@@ -17,6 +20,8 @@ export function openAboveOrBelow({
   let top = '',
     bottom = '',
     left = '';
+
+  const wasOpened: WasOpened = { y: '' };
 
   const {
     elementRect: refElementRect,
@@ -31,12 +36,16 @@ export function openAboveOrBelow({
     top = `${refElementRect.top + refElementRect.height + gap}px`;
     bottom = `unset`;
     left = `${refElementRect.left}px`;
+
+    wasOpened.y = 'below';
   }
 
   if (open === 'above' || moreSpaceAbove) {
     top = 'unset';
     bottom = `${distanceFromElementToBottom + refElementRect.height + gap}px`;
     left = `${refElementRect.left}px`;
+
+    wasOpened.y = 'above';
   }
 
   const openCSSObject = {
@@ -47,5 +56,5 @@ export function openAboveOrBelow({
 
   const openCSS = css(openCSSObject);
 
-  return { refElementRect, openCSS, openCSSObject };
+  return { refElementRect, openCSS, openCSSObject, wasOpened };
 }
