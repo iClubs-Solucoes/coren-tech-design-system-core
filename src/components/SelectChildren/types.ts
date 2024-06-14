@@ -26,3 +26,7 @@ export type SelectChildrenProps<T extends SelectedItem = SelectedItem> = {
   onChange?: (newSelectedItem: T) => void;
   onOpeningDropdownChange?: (open: boolean) => void;
 };
+
+export type MenuStyleProps = {
+  field?: HTMLDivElement | null;
+};

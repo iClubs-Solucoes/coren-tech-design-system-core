@@ -21,7 +21,8 @@ export function SelectChildren({
 
   const [selectWidth, setSelectWidth] = useState<number>();
 
-  const componentWidth = ref.current?.clientWidth;
+  const field = ref.current;
+  const componentWidth = field?.clientWidth;
 
   useEffect(() => {
     if (ref.current) setSelectWidth(ref.current?.clientWidth);
@@ -58,11 +59,12 @@ export function SelectChildren({
           </S.Field>
         </Dropdown.Trigger>
 
-        <Dropdown.Menu
+        <S.Menu
           style={{ width: selectWidth, marginTop: '0.7rem', ...menuStyle }}
+          field={field && field}
         >
           <Dropdown.List>{listItems}</Dropdown.List>
-        </Dropdown.Menu>
+        </S.Menu>
       </Dropdown.Root>
     </S.Container>
   );
