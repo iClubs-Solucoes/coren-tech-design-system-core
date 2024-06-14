@@ -83,22 +83,24 @@ export function Wizard({
     <S.WizardContainer className={className}>
       <S.Header>{header}</S.Header>
 
-      <S.Body>{body}</S.Body>
+      <S.Content>
+        <S.Body>{body}</S.Body>
 
-      <S.Footer>
-        <Button buttonTheme="fifth" onClick={onCancel}>
-          Cancelar
-        </Button>
+        <S.Footer>
+          <Button buttonTheme="fifth" onClick={onCancel}>
+            Cancelar
+          </Button>
 
-        <S.SquareButton
-          buttonTheme="third"
-          disabledBtn={blockContinue || disableContinue}
-          loading={continueLoading}
-          onClick={continueClickFunction}
-        >
-          Continuar
-        </S.SquareButton>
-      </S.Footer>
+          <S.SquareButton
+            buttonTheme="third"
+            disabledBtn={blockContinue || disableContinue}
+            loading={continueLoading}
+            onClick={continueClickFunction}
+          >
+            Continuar
+          </S.SquareButton>
+        </S.Footer>
+      </S.Content>
     </S.WizardContainer>
   );
 }

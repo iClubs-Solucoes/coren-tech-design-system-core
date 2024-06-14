@@ -19,6 +19,7 @@ export const Body = styled.main`
   display: flex;
   height: 100%;
   overflow-y: scroll;
+  height: min-content;
 `;
 
 export const Footer = styled.footer`
@@ -28,4 +29,8 @@ export const Footer = styled.footer`
 
 export const SquareButton = styled(Button)`
   border-radius: 0.8rem;
+`;
+
+export const Content = styled.div`
+  overflow-y: scroll;
 `;
