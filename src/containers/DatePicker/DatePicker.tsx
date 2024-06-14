@@ -14,6 +14,7 @@ registerLocale('pt-BR', ptBR);
 
 export function DatePicker({
   className,
+  startDate,
   selectedDate,
   minDate,
   maxDate,
@@ -120,6 +121,7 @@ export function DatePicker({
       <ReactDatePicker
         locale="pt-BR"
         {...reactDatePickerProps}
+        startDate={startDate}
         selected={selectedDate}
         open={open}
         minDate={minDate}
