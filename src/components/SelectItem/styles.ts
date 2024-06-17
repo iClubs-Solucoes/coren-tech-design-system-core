@@ -37,18 +37,18 @@ export const ItemSelect = styled(Dropdown.Item)`
 `;
 
 export const Label = styled.p`
-  font-size: ${font.sizes.small};
+  font: 400 1.2rem Inter;
   color: ${colors.neutral.gray4};
   height: 1.6rem;
 `;
 
 export const Value = styled.p`
-  font-size: ${font.sizes.large};
+  font: ${font.presets.bodyAndValue};
   color: ${colors.neutral.gray5};
 `;
 
 export const Placeholder = styled.p`
-  font-size: ${font.sizes.large};
+  font: ${font.presets.bodyAndValue};
   color: ${colors.neutral.gray3};
 `;
 
