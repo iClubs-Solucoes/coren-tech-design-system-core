@@ -127,8 +127,7 @@ export const Field = styled.div<TextFieldStyleProps>`
 
 export const FieldLabel = styled.label<TextFieldStyleProps>`
   width: 100%;
-  font-size: ${font.sizes.small};
-  font-weight: ${font.regular};
+  font: 400 1.2rem Inter;
   color: ${colors.neutral.gray4};
 
   ${({ fill }) => css`
@@ -139,7 +138,7 @@ export const FieldLabel = styled.label<TextFieldStyleProps>`
 export const LabelErr = styled.div`
   margin-top: 0.8rem;
   margin-left: 0.8rem;
-  font-size: ${font.sizes.small};
+  font: 400 1.2rem Inter;
   color: ${colors.soft.orange6};
   z-index: 0;
 
@@ -149,7 +148,7 @@ export const LabelErr = styled.div`
 export const SuccessLabel = styled.div`
   margin-top: 0.8rem;
   margin-left: 0.8rem;
-  font-size: ${font.sizes.small};
+  font: 400 1.2rem Inter;
   color: ${colors.soft.green5};
   z-index: 0;
 `;
@@ -158,12 +157,12 @@ export const LabelAndInput = styled.span``;
 
 export const StyledInput = styled(Input)`
   background-color: ${colors.neutral.gray1};
-  font-size: ${font.sizes.large};
+  font: ${font.presets.bodyAndValue};
   color: ${colors.neutral.gray5};
   padding: 0;
 
   &::placeholder {
-    font-size: ${font.sizes.large};
+    font: ${font.presets.bodyAndValue};
     color: ${colors.neutral.gray4};
     opacity: 1;
   }
