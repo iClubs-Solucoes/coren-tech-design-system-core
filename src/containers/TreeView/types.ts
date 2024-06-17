@@ -11,15 +11,16 @@ export type TreeViewProps = {
   className?: string;
   parent?: ReactNode;
   children?: ReactNode[] | ReactNode;
-  links?: {
-    shortLinkCSS?: CSS;
-    longLinkCSS?: CSS;
-  };
+  shortLinkCSS?: CSS;
+  longLinkCSS?: CSS;
   blackLinks?: boolean;
 };
 
 export type LinkedChildrenStyleProps = {
-  shortLinkCSS?: CSS;
-  longLinkCSS?: CSS;
+  shortLinkCSS: CSS;
   blackLinks?: boolean;
+};
+
+export type LinkedChildrensStyleProps = {
+  longLinkCSS: CSS;
 };

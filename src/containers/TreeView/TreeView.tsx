@@ -3,13 +3,15 @@ import { Children, ReactNode, useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import * as S from './styles';
+import { defaultLongLinkCSS, defaultShortLinkCSS } from './styles';
 import { ChildrenWithId, TreeViewProps } from './types';
 
 export function TreeView({
   className,
   parent,
   children,
-  links,
+  shortLinkCSS = defaultShortLinkCSS,
+  longLinkCSS = defaultLongLinkCSS,
   blackLinks,
 }: TreeViewProps) {
   const [childrens, setChildrens] = useState<ChildrenWithId[]>([]);
@@ -21,8 +23,7 @@ export function TreeView({
       return (
         <S.LinkedChildren
           key={id}
-          shortLinkCSS={links?.shortLinkCSS}
-          longLinkCSS={links?.longLinkCSS}
+          shortLinkCSS={shortLinkCSS}
           blackLinks={blackLinks}
         >
           {currentChildren.children}
@@ -51,7 +52,11 @@ export function TreeView({
     <S.TreeViewContainer className={className}>
       {parent && parent}
 
-      {children && <S.LinkedChildrens>{linkedChildrens}</S.LinkedChildrens>}
+      {children && (
+        <S.LinkedChildrens longLinkCSS={longLinkCSS}>
+          {linkedChildrens}
+        </S.LinkedChildrens>
+      )}
     </S.TreeViewContainer>
   );
 }
