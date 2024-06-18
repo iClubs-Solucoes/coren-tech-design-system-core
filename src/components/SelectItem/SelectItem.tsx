@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 import { SortIcon } from 'common/assets/icons';
 import { Dropdown } from 'primitives';
 
@@ -12,13 +14,24 @@ export function SelectItem({
   placeholder,
   items = [],
   disabled,
+  menuStyle,
   onChange,
 }: SelectItemProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const [selectWidth, setSelectWidth] = useState<number>();
+
+  const field = ref.current;
+
+  useEffect(() => {
+    if (ref.current) setSelectWidth(ref.current.clientWidth);
+  }, []);
+
   return (
     <S.Container className={className}>
       <Dropdown.Root disabled={disabled}>
         <Dropdown.Trigger>
-          <S.FieldSelect fieldTheme="field" disabled={disabled}>
+          <S.FieldSelect fieldTheme="field" disabled={disabled} fieldRef={ref}>
             {icon || <SortIcon />}
             <div>
               <S.Label>{label}</S.Label>
@@ -29,7 +42,10 @@ export function SelectItem({
           </S.FieldSelect>
         </Dropdown.Trigger>
 
-        <Dropdown.Menu style={{ minWidth: '17.4rem' }}>
+        <S.Menu
+          style={{ minWidth: '17.4rem', width: selectWidth, ...menuStyle }}
+          field={field && field}
+        >
           <Dropdown.List>
             {items.map(item => (
               <S.ItemSelect key={item} onClick={() => onChange?.(item)}>
@@ -37,7 +53,7 @@ export function SelectItem({
               </S.ItemSelect>
             ))}
           </Dropdown.List>
-        </Dropdown.Menu>
+        </S.Menu>
       </Dropdown.Root>
     </S.Container>
   );

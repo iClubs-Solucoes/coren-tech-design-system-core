@@ -1,4 +1,5 @@
 export type TextareaProps = {
+  className?: string;
   value?: string;
   label?: string;
   placeholder?: string;

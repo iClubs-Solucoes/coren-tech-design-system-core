@@ -6,8 +6,10 @@ import { NavbarStyleProps } from './types';
 
 const modifier = {
   open: () => css`
-    right: 0rem;
-    box-shadow: ${shadow.drawer};
+    && {
+      right: 0rem;
+      box-shadow: ${shadow.drawer};
+    }
   `,
 };
 

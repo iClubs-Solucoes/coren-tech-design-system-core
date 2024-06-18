@@ -1,13 +1,15 @@
 import { ReactElement } from 'react';
-import { ReactDatePickerProps } from 'react-datepicker';
 
-export type DatePickerProps = ReactDatePickerProps & {
+export type DateType = Date | null | undefined;
+
+export type DatePickerProps = {
   className?: string;
-  minDate?: Date;
-  maxDate?: Date;
+  minDate?: DateType;
+  maxDate?: DateType;
   customInput?: ReactElement | string;
   timeInputLabel?: string;
-  selectedDate: Date;
+  startDate?: DateType;
+  selectedDate?: DateType;
   dropdownYears: number[];
   inputLabel?: string;
   inputPlaceholder?: string;
@@ -15,4 +17,8 @@ export type DatePickerProps = ReactDatePickerProps & {
   timeInput?: boolean;
   onChange?: (date: Date) => void;
   onOpenChange?: (open: boolean) => void;
+};
+
+export type DatePickerContainerProps = {
+  inputElement?: HTMLInputElement | null;
 };
