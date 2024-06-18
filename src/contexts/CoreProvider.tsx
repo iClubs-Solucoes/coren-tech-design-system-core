@@ -15,10 +15,13 @@ export function CoreProvider({ children }: CoreProviderProps) {
           : true;
       }}
     >
-      <ToastProvider>
-        <ScrollProvider>{children}</ScrollProvider>
-      </ToastProvider>
-      <theme.GlobalStyles />
+      <>
+        <ToastProvider>
+          <ScrollProvider>{children}</ScrollProvider>
+        </ToastProvider>
+
+        <theme.GlobalStyles />
+      </>
     </StyleSheetManager>
   );
 }

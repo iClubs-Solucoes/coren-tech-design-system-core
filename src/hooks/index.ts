@@ -1,2 +1,3 @@
-export { useScroll, ScrollProvider } from './Scroll';
-export { useToast, ToastProvider } from './Toast';
+export { ScrollProvider, useScroll } from './Scroll';
+
+export { ToastProvider, useToast } from './Toast';
