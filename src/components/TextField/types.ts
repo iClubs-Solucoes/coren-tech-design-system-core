@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { ReactElement, RefObject } from 'react';
 
 import { InputProps } from 'primitives/components/Input';
 
@@ -8,6 +8,7 @@ export type TextFieldProps = {
   labelErr?: string;
   successLabel?: string;
   icon?: ReactElement;
+  textFieldRef?: RefObject<HTMLDivElement>;
 } & TextFieldStyleProps &
   InputProps;
 
