@@ -9,7 +9,6 @@ import React, {
 
 import { Dropdown } from 'primitives';
 
-import { Field } from './components';
 import * as S from './styles';
 import { AutocompleteProps, ComputedItems } from './types';
 
@@ -88,14 +87,19 @@ export function Autocomplete({
     <S.AutocompleteContainer className={className}>
       <Dropdown.Root>
         <Dropdown.Trigger>
-          <Field
-            fieldRef={fieldRef}
-            label={label}
-            icon={<Dropdown.Arrow />}
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
-          />
+          <S.FieldContainer ref={fieldRef}>
+            <div>
+              {label && <Dropdown.Texts.Label>{label}</Dropdown.Texts.Label>}
+
+              <S.Value
+                value={value}
+                placeholder={placeholder}
+                onChange={onChange}
+              />
+            </div>
+
+            <Dropdown.Arrow />
+          </S.FieldContainer>
         </Dropdown.Trigger>
 
         <S.Menu
