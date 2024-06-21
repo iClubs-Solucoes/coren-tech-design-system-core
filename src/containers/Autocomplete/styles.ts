@@ -38,16 +38,9 @@ export const FieldContainer = styled.div`
 `;
 
 export const Field = styled(TextField)`
-  width: 100% - 2.4rem;
-
   &:nth-child(2) > div > div {
     height: 100%;
   }
-`;
-
-export const Arrow = styled(Dropdown.Arrow)`
-  margin-left: -4.4rem;
-  z-index: 2;
 `;
 
 export const NoSuggestions = styled.p`

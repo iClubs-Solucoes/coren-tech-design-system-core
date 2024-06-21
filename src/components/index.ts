@@ -27,5 +27,3 @@ export { Badge } from './Badge';
 export { AttachImage } from './AttachImage';
 
 export { SelectChildren } from './SelectChildren';
-
-export { Autocomplete } from './Autocomplete';

@@ -9,7 +9,7 @@ import { Autocomplete } from './Autocomplete';
 import { AutocompleteProps, Item } from './types';
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Containers/Autocomplete',
   component: Autocomplete,
 } as Meta<typeof Autocomplete>;
 

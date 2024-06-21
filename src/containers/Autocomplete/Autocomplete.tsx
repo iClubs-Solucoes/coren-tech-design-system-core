@@ -9,13 +9,13 @@ import React, {
 
 import { Dropdown } from 'primitives';
 
+import { Field } from './components';
 import * as S from './styles';
 import { AutocompleteProps, ComputedItems } from './types';
 
 export function Autocomplete({
   className,
   label,
-  icon,
   placeholder,
   value,
   menuStyle,
@@ -24,7 +24,7 @@ export function Autocomplete({
 }: AutocompleteProps) {
   const [textFieldWidth, setTextFieldWidth] = useState<number>();
 
-  const textFieldRef = useRef<HTMLDivElement>(null);
+  const fieldRef = useRef<HTMLDivElement>(null);
 
   const handleCreateSearchableItem = (item: ReactElement) => {
     const onClick = (event: ChangeEvent<HTMLElement>) => {
@@ -80,33 +80,27 @@ export function Autocomplete({
     return [computedItems.notSearchable, filteredItems];
   }, [items, value]);
 
-  const textField = textFieldRef.current;
-
   useEffect(() => {
-    if (textField) setTextFieldWidth(textFieldRef.current?.clientWidth);
+    if (fieldRef.current) setTextFieldWidth(fieldRef.current?.clientWidth);
   }, [textFieldWidth]);
 
   return (
     <S.AutocompleteContainer className={className}>
       <Dropdown.Root>
         <Dropdown.Trigger>
-          <S.FieldContainer>
-            <S.Field
-              textFieldRef={textFieldRef}
-              label={label}
-              icon={icon}
-              placeholder={placeholder}
-              value={value}
-              onChange={onChange}
-            />
-
-            <S.Arrow />
-          </S.FieldContainer>
+          <Field
+            fieldRef={fieldRef}
+            label={label}
+            icon={<Dropdown.Arrow />}
+            placeholder={placeholder}
+            value={value}
+            onChange={onChange}
+          />
         </Dropdown.Trigger>
 
         <S.Menu
           style={{ width: textFieldWidth, ...menuStyle }}
-          textField={textField}
+          textField={fieldRef.current}
         >
           <>{menuItems}</>
         </S.Menu>

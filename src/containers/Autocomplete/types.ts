@@ -13,7 +13,6 @@ export interface Item {
 export interface AutocompleteProps {
   className?: string;
   label?: string;
-  icon?: ReactElement;
   placeholder?: string;
   value?: string;
   menuStyle?: CSSProperties;
