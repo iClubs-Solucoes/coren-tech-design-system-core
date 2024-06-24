@@ -30,7 +30,9 @@ const modifier = {
   },
 };
 
-export const AutocompleteContainer = styled.div``;
+export const AutocompleteContainer = styled.div`
+  cursor: pointer;
+`;
 
 export const NoSuggestions = styled.p`
   padding: 0.65rem 0.8rem;
