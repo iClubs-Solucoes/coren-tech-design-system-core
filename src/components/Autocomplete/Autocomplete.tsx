@@ -76,7 +76,7 @@ export function Autocomplete({
 
     const filteredItems = handleFilterItems(computedItems.searchable);
 
-    return [computedItems.notSearchable, filteredItems];
+    return [...computedItems.notSearchable, ...filteredItems];
   }, [items, value]);
 
   useEffect(() => {
@@ -103,10 +103,10 @@ export function Autocomplete({
         </Dropdown.Trigger>
 
         <S.Menu
-          style={{ width: textFieldWidth, ...menuStyle }}
           textField={fieldRef.current}
+          style={{ width: textFieldWidth, ...menuStyle }}
         >
-          <>{menuItems}</>
+          <Dropdown.List>{menuItems}</Dropdown.List>
         </S.Menu>
       </Dropdown.Root>
     </S.AutocompleteContainer>
