@@ -7,16 +7,16 @@ import { MenuStyleProps } from './types';
 
 const modifier = {
   menu: {
-    openMenu: (textField: HTMLDivElement) => {
+    openMenu: (field: HTMLDivElement) => {
       const gapToRefElement = 8;
 
       const { openCSS, wasOpened } = openAboveOrBelow({
-        referenceElement: textField,
+        referenceElement: field,
         gap: gapToRefElement,
       });
 
       const { doesNotOverflowScreenCSS } = doesNotOverflowScreen({
-        referenceElement: textField,
+        referenceElement: field,
         distanceToBorder: 16,
         gapToRefElement,
         opened: wasOpened,
@@ -39,7 +39,7 @@ export const NoSuggestions = styled.p`
 `;
 
 export const Menu = styled(Dropdown.Menu)<MenuStyleProps>`
-  ${({ textField }) => textField && modifier.menu.openMenu(textField)}
+  ${({ field }) => field && modifier.menu.openMenu(field)}
 `;
 
 export const FieldContainer = styled.div`

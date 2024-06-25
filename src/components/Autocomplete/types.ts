@@ -21,5 +21,5 @@ export interface AutocompleteProps {
 }
 
 export interface MenuStyleProps {
-  textField: HTMLDivElement | null;
+  field: HTMLDivElement | null;
 }

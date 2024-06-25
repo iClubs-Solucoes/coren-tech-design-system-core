@@ -21,7 +21,7 @@ export function Autocomplete({
   items = [],
   onChange,
 }: AutocompleteProps) {
-  const [textFieldWidth, setTextFieldWidth] = useState<number>();
+  const [fieldWidth, setFieldWidth] = useState<number>();
 
   const fieldRef = useRef<HTMLDivElement>(null);
 
@@ -80,8 +80,8 @@ export function Autocomplete({
   }, [items, value]);
 
   useEffect(() => {
-    if (fieldRef.current) setTextFieldWidth(fieldRef.current?.clientWidth);
-  }, [textFieldWidth]);
+    if (fieldRef.current) setFieldWidth(fieldRef.current?.clientWidth);
+  }, [fieldWidth]);
 
   return (
     <S.AutocompleteContainer className={className}>
@@ -103,8 +103,8 @@ export function Autocomplete({
         </Dropdown.Trigger>
 
         <S.Menu
-          textField={fieldRef.current}
-          style={{ width: textFieldWidth, ...menuStyle }}
+          field={fieldRef.current}
+          style={{ width: fieldWidth, ...menuStyle }}
         >
           <Dropdown.List>{menuItems}</Dropdown.List>
         </S.Menu>
