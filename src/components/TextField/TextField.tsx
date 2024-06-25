@@ -7,6 +7,7 @@ import { TextFieldProps } from './types';
 
 export function TextField({
   className,
+  textFieldRef,
   inputId,
   label,
   labelErr,
@@ -21,7 +22,7 @@ export function TextField({
   const { disabled, value, type } = propsInput;
 
   return (
-    <S.Container disabled={disabled} className={className}>
+    <S.Container className={className} disabled={disabled} ref={textFieldRef}>
       <S.Icon error={error} success={success}>
         {icon}
       </S.Icon>

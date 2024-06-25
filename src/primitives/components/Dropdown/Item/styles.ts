@@ -20,7 +20,7 @@ export const Container = styled.div<ItemStyleProps>`
   flex-direction: row;
   width: 100%;
   padding: 0.65rem 0.8rem;
-  font-size: ${font.sizes.large};
+  font: ${font.presets.bodyAndValue};
   color: ${colors.neutral.gray5};
   cursor: pointer;
   border-radius: 0.8rem;
