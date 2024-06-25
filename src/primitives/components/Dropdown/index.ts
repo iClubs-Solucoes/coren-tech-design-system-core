@@ -5,12 +5,11 @@ import { List } from './List';
 import { Menu } from './Menu';
 import { Root } from './Root';
 import { Search } from './Search';
-import { Label, Value } from './Texts';
+import * as TextComponents from './Texts';
 import { Trigger } from './Trigger';
 
 export const Texts = {
-  Label,
-  Value,
+  ...TextComponents,
 };
 
 export const Dropdown = {

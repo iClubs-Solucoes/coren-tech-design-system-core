@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import { Button } from 'primitives';
 
@@ -15,6 +15,8 @@ export function Wizard({
   onCancel,
   onCompletion,
 }: WizardProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
   const [currentStep, setCurrentStep] = useState(Steps.FIRST);
 
   const nextStep = currentStep + 1;
@@ -27,16 +29,25 @@ export function Wizard({
     ? onCompletion
     : () => handleGoToNextStep(currentStep + 1);
 
+  const handleScrollReset = () => {
+    if (contentRef.current) contentRef.current.scrollTo(0, 0);
+  };
+
+  const handleStepChange = (nextStep: number) => {
+    setCurrentStep(nextStep);
+    handleScrollReset();
+  };
+
   const handleGoToNextStep = async (nextStep: number) => {
     const shouldGoToNextStep = await onChangeStep?.(currentStep, nextStep);
 
     if (shouldGoToNextStep === undefined) {
-      setCurrentStep(nextStep);
+      handleStepChange(nextStep);
       return;
     }
 
     if (shouldGoToNextStep !== undefined && shouldGoToNextStep)
-      setCurrentStep(nextStep);
+      handleStepChange(nextStep);
   };
 
   const renderHeader = () => {
@@ -83,7 +94,7 @@ export function Wizard({
     <S.WizardContainer className={className}>
       <S.Header>{header}</S.Header>
 
-      <S.Content>
+      <S.Content ref={contentRef}>
         <S.Body>{body}</S.Body>
 
         <S.Footer>
